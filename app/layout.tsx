@@ -13,12 +13,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mosaic Data | Fractional Data Science for PE Portfolio Companies",
-  description: "AI-powered analytics for private equity portfolio companies. Deploy predictive insights across your entire portfolio at the price of one FTE.",
-  keywords: ["data science", "private equity", "portfolio analytics", "AI", "predictive analytics"],
+  title: "Mosaic Data | Find the Revenue You're Missing",
+  description: "We find the money you're leaving on the table—and build systems so you never miss it again. Strategic revenue intelligence for growing companies.",
+  keywords: ["revenue optimization", "churn prediction", "pricing optimization", "demand forecasting", "business intelligence", "revenue intelligence", "data strategy"],
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon.png",
+  },
   openGraph: {
-    title: "Mosaic Data | Fractional Data Science for PE",
-    description: "Deploy AI-powered analytics across your entire portfolio at the price of one FTE.",
+    title: "Mosaic Data | Find the Revenue You're Missing",
+    description: "We find the money you're leaving on the table—and build systems so you never miss it again.",
     type: "website",
   },
 };

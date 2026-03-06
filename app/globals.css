@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #EDEDED;
+  --foreground: #1e293b;
 }
+
+/* Custom coral color to match logo */
+.text-coral { color: #D4705A; }
+.bg-coral { background-color: #D4705A; }
+.bg-coral-light { background-color: #E8A090; }
+.border-coral { border-color: #D4705A; }
 
 @theme inline {
   --color-background: var(--background);
@@ -12,15 +18,97 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: rgba(249, 115, 22, 0.3);
+}
+
+/* Form focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Animate pulse for the status indicator */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Floating mosaic animations */
+@keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -15px);
+  }
+  50% {
+    transform: translate(-5px, -25px);
+  }
+  75% {
+    transform: translate(-15px, -10px);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-12px, 10px);
+  }
+  50% {
+    transform: translate(8px, 20px);
+  }
+  75% {
+    transform: translate(15px, 5px);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(15px, 12px);
+  }
+  50% {
+    transform: translate(-10px, -8px);
+  }
+  75% {
+    transform: translate(-8px, 18px);
+  }
+}
+
+.animate-float1 {
+  animation: float1 8s ease-in-out infinite;
+}
+
+.animate-float2 {
+  animation: float2 10s ease-in-out infinite;
+}
+
+.animate-float3 {
+  animation: float3 12s ease-in-out infinite;
 }
