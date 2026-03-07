@@ -67,10 +67,10 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#contact"
+              href="/assess"
               className="px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
             >
-              See If We&apos;re a Fit →
+              Free Assessment →
             </a>
             <a
               href="#how-it-works"
