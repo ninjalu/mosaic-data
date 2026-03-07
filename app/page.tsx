@@ -21,13 +21,13 @@ export default function Home() {
               href="/assess"
               className="px-5 py-2 border border-coral text-coral rounded-lg font-semibold hover:bg-coral/5 transition-colors"
             >
-              2-Min Assessment
+              2-min assessment
             </a>
             <a
               href="#contact"
               className="px-5 py-2 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors"
             >
-              Book a Call
+              Book a call
             </a>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function Home() {
             href="/assess"
             className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
           >
-            Take the 2-Min Assessment →
+            Take the 2-min assessment →
           </a>
 
         </div>
@@ -492,7 +492,7 @@ export default function Home() {
               href="/assess"
               className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
             >
-              Take the 2-Min Assessment &rarr;
+              Take the 2-min assessment &rarr;
             </a>
           </div>
         </div>

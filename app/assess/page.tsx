@@ -425,7 +425,7 @@ export default function AssessPage() {
             href="/#contact"
             className="px-5 py-2 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors"
           >
-            Book a Call
+            Book a call
           </a>
         </div>
       </header>
