@@ -53,32 +53,24 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-6">
-            Stop Losing Revenue
+            Stop Losing Profit
             <br />
             <span className="text-coral">
-              You Can't See.
+              You Can&apos;t See.
             </span>
           </h1>
 
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            We find the money you&apos;re leaving on the table—and build systems
-            so you never miss it again.
+            Take our 2-minute assessment and find out if your company is leaking
+            money in places you don&apos;t even know to look.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/assess"
-              className="px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
-            >
-              Free Assessment →
-            </a>
-            <a
-              href="#how-it-works"
-              className="px-8 py-4 border border-slate-400 text-slate-700 rounded-lg font-semibold hover:border-slate-500 hover:text-slate-900 transition-colors text-lg"
-            >
-              How It Works
-            </a>
-          </div>
+          <a
+            href="/assess"
+            className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
+          >
+            Free Assessment →
+          </a>
 
         </div>
       </section>
