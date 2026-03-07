@@ -69,7 +69,7 @@ export default function Home() {
             href="/assess"
             className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
           >
-            Take Our 2-Min Assessment →
+            Take the 2-Min Assessment →
           </a>
 
         </div>
@@ -492,7 +492,7 @@ export default function Home() {
               href="/assess"
               className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
             >
-              Take Our 2-Min Assessment &rarr;
+              Take the 2-Min Assessment &rarr;
             </a>
           </div>
         </div>
