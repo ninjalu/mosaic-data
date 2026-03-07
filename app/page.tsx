@@ -21,7 +21,7 @@ export default function Home() {
               href="/assess"
               className="px-5 py-2 border border-coral text-coral rounded-lg font-semibold hover:bg-coral/5 transition-colors"
             >
-              Free Assessment
+              2-Min Assessment
             </a>
             <a
               href="#contact"
@@ -69,7 +69,7 @@ export default function Home() {
             href="/assess"
             className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
           >
-            Free Assessment →
+            Take Our 2-Min Assessment →
           </a>
 
         </div>
@@ -492,7 +492,7 @@ export default function Home() {
               href="/assess"
               className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
             >
-              Take the Free Assessment &rarr;
+              Take Our 2-Min Assessment &rarr;
             </a>
           </div>
         </div>
