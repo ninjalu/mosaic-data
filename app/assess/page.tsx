@@ -327,7 +327,7 @@ function ScoreCircle({ score }: { score: number }) {
 
 // --- Main Component ---
 
-type Phase = "landing" | "capture" | "context" | "questions" | "results";
+type Phase = "landing" | "context" | "questions" | "results";
 
 export default function AssessPage() {
   const [phase, setPhase] = useState<Phase>("landing");
@@ -415,12 +415,13 @@ export default function AssessPage() {
   async function handleLeadCapture(e: React.FormEvent) {
     e.preventDefault();
     setSubmitting(true);
-    // Small delay to feel intentional
     await new Promise((r) => setTimeout(r, 300));
     setSubmitting(false);
     setPhase("context");
     window.scrollTo(0, 0);
   }
+
+  const leadValid = leadInfo.firstName.trim() !== "" && leadInfo.email.trim() !== "" && leadInfo.email.includes("@");
 
   const dimScores = calculateScores();
   const overallScore = getOverallScore(dimScores);
@@ -446,7 +447,7 @@ export default function AssessPage() {
       {/* ========== LANDING PHASE ========== */}
       {phase === "landing" && (
         <>
-          {/* Hero */}
+          {/* Hero + Lead Capture */}
           <section className="pt-32 pb-16 px-6 relative overflow-hidden">
             <div className="absolute top-28 left-[5%] w-6 h-6 bg-[#D4705A]/30 rounded-sm animate-float1" />
             <div className="absolute top-44 left-[12%] w-6 h-6 bg-[#D4705A]/25 rounded-sm animate-float2" />
@@ -455,35 +456,79 @@ export default function AssessPage() {
             <div className="absolute bottom-12 left-[8%] w-6 h-6 bg-[#D4705A]/30 rounded-sm animate-float3" />
             <div className="absolute bottom-24 right-[10%] w-6 h-6 bg-[#D4705A]/25 rounded-sm animate-float2" />
 
-            <div className="max-w-3xl mx-auto text-center relative z-10">
-              <div className="flex items-center justify-center gap-3 mb-8">
-                <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
-                  Instant results
-                </span>
-                <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
-                  Personalised insights
-                </span>
-                <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
-                  2 minutes
-                </span>
+            <div className="max-w-3xl mx-auto relative z-10">
+              <div className="text-center">
+                <div className="flex items-center justify-center gap-3 mb-8">
+                  <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
+                    Instant results
+                  </span>
+                  <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
+                    Personalised insights
+                  </span>
+                  <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
+                    2 minutes
+                  </span>
+                </div>
+
+                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-slate-900 leading-[1.1] mb-6">
+                  Do you know where your business is{" "}
+                  <span className="text-coral">leaking profit?</span>
+                </h1>
+
+                <p className="text-xl text-slate-600 max-w-xl mx-auto mb-10 leading-relaxed">
+                  Most growing companies are bleeding money in places they don&apos;t even know
+                  to look. This scorecard shows you exactly where.
+                </p>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-slate-900 leading-[1.1] mb-6">
-                Do you know where your business is{" "}
-                <span className="text-coral">leaking profit?</span>
-              </h1>
+              {/* Inline Lead Capture */}
+              <form onSubmit={handleLeadCapture} className="max-w-md mx-auto bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-5">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
+                    First name
+                  </label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    required
+                    value={leadInfo.firstName}
+                    onChange={(e) => setLeadInfo((prev) => ({ ...prev, firstName: e.target.value }))}
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
+                    placeholder="Your first name"
+                  />
+                </div>
 
-              <p className="text-xl text-slate-600 max-w-xl mx-auto mb-10 leading-relaxed">
-                Most growing companies are bleeding money in places they don&apos;t even know
-                to look. This scorecard shows you exactly where.
-              </p>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={leadInfo.email}
+                    onChange={(e) => setLeadInfo((prev) => ({ ...prev, email: e.target.value }))}
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
+                    placeholder="you@company.com"
+                  />
+                </div>
 
-              <button
-                onClick={() => { setPhase("capture"); window.scrollTo(0, 0); }}
-                className="inline-block px-10 py-5 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
-              >
-                Discover your score &rarr;
-              </button>
+                <button
+                  type="submit"
+                  disabled={submitting || !leadValid}
+                  className={`w-full py-4 rounded-lg font-semibold transition-colors text-lg ${
+                    leadValid
+                      ? "bg-coral text-white hover:bg-coral-light"
+                      : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                  }`}
+                >
+                  {submitting ? "Starting..." : "Discover your score \u2192"}
+                </button>
+
+                <p className="text-xs text-slate-500 text-center">
+                  Your results will be emailed to you along with relevant tips. No spam, ever.
+                </p>
+              </form>
             </div>
           </section>
 
@@ -572,7 +617,7 @@ export default function AssessPage() {
                 Takes 2 minutes. No sales call. Just clarity on where to focus.
               </p>
               <button
-                onClick={() => { setPhase("capture"); window.scrollTo(0, 0); }}
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                 className="inline-block px-10 py-5 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
               >
                 Discover your score &rarr;
@@ -580,66 +625,6 @@ export default function AssessPage() {
             </div>
           </section>
         </>
-      )}
-
-      {/* ========== LEAD CAPTURE PHASE ========== */}
-      {phase === "capture" && (
-        <main className="pt-28 pb-20 px-6">
-          <div className="max-w-md mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-slate-900 mb-3">
-                Where should we send your results?
-              </h1>
-              <p className="text-slate-600">
-                Your personalised scorecard and recommendations will be ready instantly.
-              </p>
-            </div>
-
-            <form onSubmit={handleLeadCapture} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-5">
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
-                  First name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  required
-                  value={leadInfo.firstName}
-                  onChange={(e) => setLeadInfo((prev) => ({ ...prev, firstName: e.target.value }))}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
-                  placeholder="Your first name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  value={leadInfo.email}
-                  onChange={(e) => setLeadInfo((prev) => ({ ...prev, email: e.target.value }))}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
-                  placeholder="you@company.com"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
-              >
-                {submitting ? "Starting..." : "Start the assessment"}
-              </button>
-
-              <p className="text-xs text-slate-500 text-center">
-                Your results will be emailed to you along with relevant tips. No spam, ever.
-              </p>
-            </form>
-          </div>
-        </main>
       )}
 
       {/* ========== CONTEXT PHASE ========== */}
