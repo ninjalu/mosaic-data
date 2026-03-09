@@ -18,6 +18,12 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <a
+              href="/methodology"
+              className="px-5 py-2 text-slate-600 font-medium hover:text-slate-900 transition-colors hidden md:block"
+            >
+              Methodology
+            </a>
+            <a
               href="/assess"
               className="px-5 py-2 border border-coral text-coral rounded-lg font-semibold hover:bg-coral/5 transition-colors"
             >
@@ -211,6 +217,15 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href="/methodology"
+              className="text-coral font-semibold hover:text-coral-light transition-colors"
+            >
+              Learn about our Profit Machine Method &rarr;
+            </a>
           </div>
         </div>
       </section>
