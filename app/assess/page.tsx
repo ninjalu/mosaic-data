@@ -327,7 +327,7 @@ function ScoreCircle({ score }: { score: number }) {
 
 // --- Main Component ---
 
-type Phase = "landing" | "context" | "questions" | "results";
+type Phase = "landing" | "context" | "questions" | "capture" | "results";
 
 export default function AssessPage() {
   const [phase, setPhase] = useState<Phase>("landing");
@@ -370,42 +370,9 @@ export default function AssessPage() {
     if (currentQ < allQuestions.length - 1) {
       setCurrentQ(currentQ + 1);
     } else {
-      // Submit lead + scores to Formspree, then show results
-      const dimScores = calculateScoresFromAnswers({ ...answers, [key]: score });
-      const overall = getOverallScore(dimScores);
-      const band = getScoreBand(overall);
-      const costEst = estimateCost(overall, contextAnswers.revenue || "$5M - $20M");
-
-      const formData = new FormData();
-      formData.append("_subject", `Financial Visibility Score: ${leadInfo.firstName} (${overall}/100)`);
-      formData.append("first_name", leadInfo.firstName);
-      formData.append("email", leadInfo.email);
-      formData.append("overall_score", String(overall));
-      formData.append("score_band", band.label);
-      formData.append("revenue_range", contextAnswers.revenue || "");
-      formData.append("business_type", contextAnswers.type || "");
-      formData.append("role", contextAnswers.role || "");
-      formData.append("dimension_scores", DIMENSIONS.map((d) => `${d.name}: ${dimScores[d.key]}/100`).join(", "));
-      formData.append("estimated_cost", `${formatCurrency(costEst.low)} - ${formatCurrency(costEst.high)}`);
-
-      fetch("https://formspree.io/f/mwvvkjnb", {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-
-      setPhase("results");
+      setPhase("capture");
+      window.scrollTo(0, 0);
     }
-  }
-
-  function calculateScoresFromAnswers(ans: Record<string, number>) {
-    const dimScores: Record<string, number> = {};
-    for (const dim of DIMENSIONS) {
-      const qScores = dim.questions.map((_, qi) => ans[`${dim.key}_${qi}`] || 0);
-      const avg = qScores.reduce((a, b) => a + b, 0) / qScores.length;
-      dimScores[dim.key] = Math.round((avg / 4) * 100);
-    }
-    return dimScores;
   }
 
   function handleBack() {
@@ -415,9 +382,32 @@ export default function AssessPage() {
   async function handleLeadCapture(e: React.FormEvent) {
     e.preventDefault();
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 300));
+
+    const dimScores = calculateScores();
+    const overall = getOverallScore(dimScores);
+    const scoreBand = getScoreBand(overall);
+    const costEst = estimateCost(overall, contextAnswers.revenue || "$5M - $20M");
+
+    const formData = new FormData();
+    formData.append("_subject", `Financial Visibility Score: ${leadInfo.firstName} (${overall}/100)`);
+    formData.append("first_name", leadInfo.firstName);
+    formData.append("email", leadInfo.email);
+    formData.append("overall_score", String(overall));
+    formData.append("score_band", scoreBand.label);
+    formData.append("revenue_range", contextAnswers.revenue || "");
+    formData.append("business_type", contextAnswers.type || "");
+    formData.append("role", contextAnswers.role || "");
+    formData.append("dimension_scores", DIMENSIONS.map((d) => `${d.name}: ${dimScores[d.key]}/100`).join(", "));
+    formData.append("estimated_cost", `${formatCurrency(costEst.low)} - ${formatCurrency(costEst.high)}`);
+
+    await fetch("https://formspree.io/f/mwvvkjnb", {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
+
     setSubmitting(false);
-    setPhase("context");
+    setPhase("results");
     window.scrollTo(0, 0);
   }
 
@@ -481,54 +471,14 @@ export default function AssessPage() {
                 </p>
               </div>
 
-              {/* Inline Lead Capture */}
-              <form onSubmit={handleLeadCapture} className="max-w-md mx-auto bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-5">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
-                    First name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    required
-                    value={leadInfo.firstName}
-                    onChange={(e) => setLeadInfo((prev) => ({ ...prev, firstName: e.target.value }))}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
-                    placeholder="Your first name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={leadInfo.email}
-                    onChange={(e) => setLeadInfo((prev) => ({ ...prev, email: e.target.value }))}
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
-                    placeholder="you@company.com"
-                  />
-                </div>
-
+              <div className="text-center">
                 <button
-                  type="submit"
-                  disabled={submitting || !leadValid}
-                  className={`w-full py-4 rounded-lg font-semibold transition-colors text-lg ${
-                    leadValid
-                      ? "bg-coral text-white hover:bg-coral-light"
-                      : "bg-slate-200 text-slate-400 cursor-not-allowed"
-                  }`}
+                  onClick={() => { setPhase("context"); window.scrollTo(0, 0); }}
+                  className="inline-block px-10 py-5 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
                 >
-                  {submitting ? "Starting..." : "Discover your score \u2192"}
+                  Start the assessment &rarr;
                 </button>
-
-                <p className="text-xs text-slate-500 text-center">
-                  Your results will be emailed to you along with relevant tips. No spam, ever.
-                </p>
-              </form>
+              </div>
             </div>
           </section>
 
@@ -617,10 +567,10 @@ export default function AssessPage() {
                 Takes 2 minutes. No sales call. Just clarity on where to focus.
               </p>
               <button
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={() => { setPhase("context"); window.scrollTo(0, 0); }}
                 className="inline-block px-10 py-5 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
               >
-                Discover your score &rarr;
+                Start the assessment &rarr;
               </button>
             </div>
           </section>
@@ -636,7 +586,7 @@ export default function AssessPage() {
                 A few things about your business
               </h1>
               <p className="text-slate-600">
-                This helps us tailor your results, {leadInfo.firstName}.
+                This helps us tailor your results.
               </p>
             </div>
 
@@ -732,6 +682,75 @@ export default function AssessPage() {
                 </button>
               )}
             </div>
+          </div>
+        </main>
+      )}
+
+      {/* ========== CAPTURE PHASE ========== */}
+      {phase === "capture" && (
+        <main className="pt-28 pb-20 px-6">
+          <div className="max-w-md mx-auto">
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 bg-coral/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg className="w-8 h-8 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+                Your score is ready
+              </h1>
+              <p className="text-slate-600">
+                Where should we send your personalised results and recommendations?
+              </p>
+            </div>
+
+            <form onSubmit={handleLeadCapture} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-5">
+              <div>
+                <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
+                  First name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  required
+                  value={leadInfo.firstName}
+                  onChange={(e) => setLeadInfo((prev) => ({ ...prev, firstName: e.target.value }))}
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
+                  placeholder="Your first name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  value={leadInfo.email}
+                  onChange={(e) => setLeadInfo((prev) => ({ ...prev, email: e.target.value }))}
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
+                  placeholder="you@company.com"
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={submitting || !leadValid}
+                className={`w-full py-4 rounded-lg font-semibold transition-colors text-lg ${
+                  leadValid
+                    ? "bg-coral text-white hover:bg-coral-light"
+                    : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                }`}
+              >
+                {submitting ? "Generating your report..." : "See my results \u2192"}
+              </button>
+
+              <p className="text-xs text-slate-500 text-center">
+                We&apos;ll also email you a copy of your results. No spam, ever.
+              </p>
+            </form>
           </div>
         </main>
       )}
