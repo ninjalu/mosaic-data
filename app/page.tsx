@@ -342,94 +342,73 @@ export default function Home() {
             foundation powers the deeper profit work&mdash;so every engagement compounds.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                tag: "Start here",
-                title: "Free up trapped cash",
-                desc: "Working capital locked in stock, overdue invoices, and supplier terms paid too early—released back into your account.",
-                highlight: true,
-              },
-              {
-                tag: "Go deeper",
-                title: "Money-losing customers & products",
-                desc: "True cost-to-serve and margin by SKU and account. Some of your biggest customers cost you money to keep.",
-                highlight: false,
-              },
-              {
-                tag: "Go deeper",
-                title: "Pricing & discount optimisation",
-                desc: "Where discounting quietly erodes margin—and where there's headroom to price for the value you deliver.",
-                highlight: false,
-              },
-              {
-                tag: "Go deeper",
-                title: "Supplier terms & procurement",
-                desc: "Negotiated terms vs what you actually pay—and where DPO and procurement are leaving cash on the table.",
-                highlight: false,
-              },
-              {
-                tag: "Go deeper",
-                title: "Quote-to-cash velocity",
-                desc: "Find where orders stall between quote, delivery, invoice, and cash—and shorten the whole cycle.",
-                highlight: false,
-              },
-              {
-                tag: "Go deeper",
-                title: "EBITDA & margin bridge",
-                desc: "Decompose what moved your margin period to period—volume, price, mix, cost—so changes stop being a mystery.",
-                highlight: false,
-              },
-              {
-                tag: "Go deeper",
-                title: "Customer concentration & retention",
-                desc: "Who your cash depends on, who's quietly slipping away, and what it means for risk and valuation.",
-                highlight: false,
-              },
-              {
-                tag: "Plan ahead",
-                title: "Stock & demand planning",
-                desc: "Right-size inventory: data-driven reorder points, safety stock, and slow-mover and obsolescence control.",
-                highlight: false,
-              },
-              {
-                tag: "Plan ahead",
-                title: "Cash forecasting",
-                desc: "A rolling 13-week forecast you can actually steer, with early warning before cash gets tight.",
-                highlight: false,
-              },
-              {
-                tag: "Plan ahead",
-                title: "Scenario & what-if modelling",
-                desc: "Run a thousand scenarios, not three. Answer “what if we lose our top customer?” in minutes, not a week.",
-                highlight: false,
-              },
-              {
-                tag: "Prove it",
-                title: "Investor-grade reporting",
-                desc: "One source of truth, automated. No more 60-tab spreadsheet nobody trusts—numbers your board and lenders rely on.",
-                highlight: false,
-              },
-              {
-                tag: "Prove it",
-                title: "Exit & QoE readiness",
-                desc: "Prove the multiple before you go to market—cohort quality, concentration, and clean numbers that survive diligence.",
-                highlight: false,
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className={`rounded-xl p-6 shadow-sm border transition-all ${
-                  item.highlight
-                    ? "bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border-coral/30"
-                    : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-md"
-                }`}
-              >
-                <div className="text-coral text-xs font-medium uppercase tracking-wider mb-3">{item.tag}</div>
-                <h3 className="font-semibold text-slate-900 text-lg mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+          <div className="relative">
+            {/* Connecting track (desktop) */}
+            <div className="hidden lg:block absolute top-2 left-[12.5%] right-[12.5%] h-0.5 bg-coral/20" />
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 items-start">
+              {[
+                {
+                  tag: "Start here",
+                  headline: "Free up the cash",
+                  items: [
+                    { title: "Free up trapped cash", desc: "Working capital locked in stock, overdue invoices, and supplier terms paid too early—released back into your account.", highlight: true },
+                  ],
+                },
+                {
+                  tag: "Go deeper",
+                  headline: "Find the profit",
+                  items: [
+                    { title: "Money-losing customers & products", desc: "True cost-to-serve and margin by SKU and account. Some of your biggest customers cost you money to keep.", highlight: false },
+                    { title: "Pricing & discount optimisation", desc: "Where discounting quietly erodes margin—and where there's headroom to price for the value you deliver.", highlight: false },
+                    { title: "Supplier terms & procurement", desc: "Negotiated terms vs what you actually pay—and where DPO and procurement are leaving cash on the table.", highlight: false },
+                    { title: "Quote-to-cash velocity", desc: "Find where orders stall between quote, delivery, invoice, and cash—and shorten the whole cycle.", highlight: false },
+                    { title: "EBITDA & margin bridge", desc: "Decompose what moved your margin period to period—volume, price, mix, cost—so changes stop being a mystery.", highlight: false },
+                    { title: "Customer concentration & retention", desc: "Who your cash depends on, who's quietly slipping away, and what it means for risk and valuation.", highlight: false },
+                  ],
+                },
+                {
+                  tag: "Plan ahead",
+                  headline: "Plan the future",
+                  items: [
+                    { title: "Stock & demand planning", desc: "Right-size inventory: data-driven reorder points, safety stock, and slow-mover and obsolescence control.", highlight: false },
+                    { title: "Cash forecasting", desc: "A rolling 13-week forecast you can actually steer, with early warning before cash gets tight.", highlight: false },
+                    { title: "Scenario & what-if modelling", desc: "Run a thousand scenarios, not three. Answer “what if we lose our top customer?” in minutes, not a week.", highlight: false },
+                  ],
+                },
+                {
+                  tag: "Prove it",
+                  headline: "Prove the numbers",
+                  items: [
+                    { title: "Investor-grade reporting", desc: "One source of truth, automated. No more 60-tab spreadsheet nobody trusts—numbers your board and lenders rely on.", highlight: false },
+                    { title: "Exit & QoE readiness", desc: "Prove the multiple before you go to market—cohort quality, concentration, and clean numbers that survive diligence.", highlight: false },
+                  ],
+                },
+              ].map((stop, si) => (
+                <div key={si} className="relative">
+                  <div className="flex flex-col items-center text-center mb-6">
+                    <div className="w-4 h-4 rounded-full bg-coral ring-4 ring-[#EDEDED] relative z-10" />
+                    <div className="mt-4 text-coral text-xs font-semibold uppercase tracking-wider">{stop.tag}</div>
+                    <div className="text-slate-900 font-semibold text-lg">{stop.headline}</div>
+                  </div>
+                  <div className="space-y-4">
+                    {stop.items.map((item, i) => (
+                      <div
+                        key={i}
+                        className={`rounded-xl p-5 shadow-sm border transition-all ${
+                          item.highlight
+                            ? "bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border-coral/30"
+                            : "bg-white border-slate-200 hover:border-slate-300 hover:shadow-md"
+                        }`}
+                      >
+                        <h3 className="font-semibold text-slate-900 mb-2">{item.title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
