@@ -384,10 +384,10 @@ export default function Home() {
             foundation powers the deeper profit work&mdash;so every engagement compounds.
           </p>
 
-          {/* Desktop: ascending value graph */}
+          {/* Desktop: ascending value staircase — each box top sits higher */}
           <div className="hidden lg:flex gap-4">
             {/* Y-axis: value rises upward */}
-            <div className="flex flex-col items-center justify-end pb-10">
+            <div className="flex flex-col items-center justify-end pb-4">
               <span className="text-coral text-lg leading-none">&#8593;</span>
               <span className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-slate-400 [writing-mode:vertical-rl] rotate-180">
                 Value to you
@@ -395,9 +395,13 @@ export default function Home() {
             </div>
 
             <div className="flex-1">
-              <div className="flex items-end gap-6">
+              <div className="flex items-start gap-6">
                 {valueLadder.map((stage, si) => (
-                  <div key={si} className="flex-1 flex flex-col">
+                  <div
+                    key={si}
+                    className="flex-1"
+                    style={{ marginTop: `${(valueLadder.length - 1 - si) * 64}px` }}
+                  >
                     <div
                       className={`relative rounded-2xl p-5 border shadow-sm ${
                         stage.highlight
@@ -433,17 +437,10 @@ export default function Home() {
                         ))}
                       </div>
                     </div>
-                    {/* Riser leg — taller each step, so the cards climb */}
-                    <div
-                      className="mx-auto w-2.5 rounded-t-md bg-gradient-to-b from-coral/50 to-coral/5"
-                      style={{ height: `${24 + si * 60}px` }}
-                    />
                   </div>
                 ))}
               </div>
-              {/* X-axis */}
-              <div className="h-0.5 bg-coral/25 rounded-full" />
-              <p className="text-right text-xs font-medium text-slate-400 mt-2">As we dig deeper, each stage is worth more &#8594;</p>
+              <p className="text-right text-xs font-medium text-slate-400 mt-4">As we dig deeper, each stage is worth more &#8594;</p>
             </div>
           </div>
 
