@@ -385,49 +385,76 @@ export default function Home() {
           </p>
 
           {/* Desktop: ascending value graph */}
-          <div className="hidden lg:block">
-            <div className="flex items-end gap-5">
-              {valueLadder.map((stage, si) => (
-                <div key={si} className="flex-1 flex flex-col">
-                  <div
-                    className={`rounded-2xl p-5 border shadow-sm ${
-                      stage.highlight
-                        ? "bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border-coral/30"
-                        : "bg-white border-slate-200"
-                    }`}
-                  >
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-coral text-white text-xs font-bold flex items-center justify-center">{si + 1}</span>
-                      <span className="text-coral text-xs font-semibold uppercase tracking-wider">{stage.tag}</span>
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-3">{stage.headline}</h3>
-                    <div className="flex flex-wrap gap-1.5">
-                      {stage.items.map((it, i) => (
-                        <span
-                          key={i}
-                          className="inline-flex items-center px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium"
-                        >
-                          {it}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  {/* Riser leg — taller each step, so the cards climb */}
-                  <div
-                    className="mx-auto w-2.5 rounded-t-md bg-gradient-to-b from-coral/40 to-coral/5"
-                    style={{ height: `${16 + si * 52}px` }}
-                  />
-                </div>
-              ))}
+          <div className="hidden lg:flex gap-4">
+            {/* Y-axis: value rises upward */}
+            <div className="flex flex-col items-center justify-end pb-10">
+              <span className="text-coral text-lg leading-none">&#8593;</span>
+              <span className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-slate-400 [writing-mode:vertical-rl] rotate-180">
+                Value to you
+              </span>
             </div>
-            <div className="h-0.5 bg-coral/25 rounded-full" />
-            <p className="text-right text-xs text-slate-400 mt-2">Each stage builds on the last &mdash; and is worth more &#8599;</p>
+
+            <div className="flex-1">
+              <div className="flex items-end gap-6">
+                {valueLadder.map((stage, si) => (
+                  <div key={si} className="flex-1 flex flex-col">
+                    <div
+                      className={`relative rounded-2xl p-5 border shadow-sm ${
+                        stage.highlight
+                          ? "bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border-coral/30"
+                          : "bg-white border-slate-200"
+                      }`}
+                    >
+                      {/* Connector arrow climbing to the next step */}
+                      {si < valueLadder.length - 1 && (
+                        <div className="absolute top-1/2 -translate-y-1/2 -right-[23px] z-20 text-coral text-2xl font-bold leading-none">
+                          &#8599;
+                        </div>
+                      )}
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-coral text-white text-sm font-bold flex items-center justify-center">{si + 1}</span>
+                        <span className="text-coral text-xs font-semibold uppercase tracking-wider">{stage.tag}</span>
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-2">{stage.headline}</h3>
+                      {/* Value meter — fills further each step */}
+                      <div className="flex items-center gap-1 mb-3">
+                        {[0, 1, 2, 3].map((n) => (
+                          <span key={n} className={`h-1.5 w-5 rounded-full ${n <= si ? "bg-coral" : "bg-slate-200"}`} />
+                        ))}
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {stage.items.map((it, i) => (
+                          <span
+                            key={i}
+                            className="inline-flex items-center px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium"
+                          >
+                            {it}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    {/* Riser leg — taller each step, so the cards climb */}
+                    <div
+                      className="mx-auto w-2.5 rounded-t-md bg-gradient-to-b from-coral/50 to-coral/5"
+                      style={{ height: `${24 + si * 60}px` }}
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* X-axis */}
+              <div className="h-0.5 bg-coral/25 rounded-full" />
+              <p className="text-right text-xs font-medium text-slate-400 mt-2">As we dig deeper, each stage is worth more &#8594;</p>
+            </div>
           </div>
 
-          {/* Mobile / tablet: numbered stack */}
-          <div className="lg:hidden max-w-2xl mx-auto space-y-5">
-            {valueLadder.map((stage, si) => (
-              <div key={si} className="flex gap-4">
+          {/* Mobile / tablet: numbered ascending stack */}
+          <div className="lg:hidden max-w-2xl mx-auto">
+            {valueLadder.map((stage, si, arr) => (
+              <div key={si} className="relative flex gap-4 pb-5 last:pb-0">
+                {/* Connecting spine */}
+                {si < arr.length - 1 && (
+                  <div className="absolute left-5 top-12 -bottom-1 w-0.5 bg-coral/25" />
+                )}
                 <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-coral text-white flex items-center justify-center font-bold ring-4 ring-[#EDEDED]">
                   {si + 1}
                 </div>
@@ -438,7 +465,14 @@ export default function Home() {
                       : "bg-white border-slate-200"
                   }`}
                 >
-                  <div className="text-coral text-xs font-semibold uppercase tracking-wider mb-1">{stage.tag}</div>
+                  <div className="flex items-center justify-between gap-3 mb-1">
+                    <span className="text-coral text-xs font-semibold uppercase tracking-wider">{stage.tag}</span>
+                    <div className="flex items-center gap-1 flex-shrink-0">
+                      {[0, 1, 2, 3].map((n) => (
+                        <span key={n} className={`h-1.5 w-4 rounded-full ${n <= si ? "bg-coral" : "bg-slate-200"}`} />
+                      ))}
+                    </div>
+                  </div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{stage.headline}</h3>
                   <p className="text-slate-600 text-sm mb-3 leading-relaxed">{stage.lead}</p>
                   <div className="flex flex-wrap gap-1.5">
