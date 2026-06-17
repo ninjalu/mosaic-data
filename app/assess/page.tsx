@@ -12,14 +12,19 @@ const CONTEXT_QUESTIONS = [
     options: ["Under $5M", "$5M - $20M", "$20M - $50M", "$50M - $100M", "$100M+"],
   },
   {
-    id: "type",
+    id: "sector",
     label: "What best describes your business?",
-    options: ["PE-backed", "VC-backed", "Bootstrapped", "Public", "Other"],
+    options: ["Manufacturing", "Distribution / Wholesale", "DTC", "Retail", "Other"],
+  },
+  {
+    id: "scale",
+    label: "Roughly how many SKUs or customers do you manage?",
+    options: ["Under 100", "100 - 1,000", "1,000 - 10,000", "10,000+"],
   },
   {
     id: "role",
     label: "What's your role?",
-    options: ["CFO / Finance", "CEO / Founder", "COO / Ops", "Data / Analytics", "Other"],
+    options: ["CFO / Finance", "CEO / Founder", "COO / Ops", "Other"],
   },
 ];
 
@@ -33,206 +38,206 @@ type Dimension = {
 
 const DIMENSIONS: Dimension[] = [
   {
-    key: "revenue_clarity",
-    name: "Revenue Clarity",
-    shortName: "Revenue",
+    key: "inventory_health",
+    name: "Inventory Health",
+    shortName: "Inventory",
     questions: [
       {
-        text: "Can you show revenue broken down by customer segment or product line on demand?",
+        text: "Do you know which SKUs are slow-moving or dead stock right now?",
         options: [
-          { label: "Yes, automated and updated daily/weekly", score: 4 },
-          { label: "Yes, but someone pulls it manually - takes a few hours", score: 3 },
-          { label: "Sort of - we have the data but it takes days to assemble", score: 2 },
-          { label: "No - we only see total revenue, not by segment", score: 1 },
+          { label: "Yes - we track stock ageing and rate-of-sale by SKU continuously", score: 4 },
+          { label: "We review it periodically, but it's a manual exercise", score: 3 },
+          { label: "Only when we do a stock-take or a clear-out", score: 2 },
+          { label: "No - we don't have a clear view of slow movers", score: 1 },
         ],
       },
       {
-        text: "Do you know which customers or segments are actually profitable (revenue minus cost to serve)?",
+        text: "Can you see your days inventory outstanding (DIO) and how it's trending?",
         options: [
-          { label: "Yes, we track unit economics by segment regularly", score: 4 },
-          { label: "We have a rough idea but it's not precise or regular", score: 3 },
-          { label: "We know revenue by customer but not cost to serve", score: 2 },
-          { label: "No - we've never calculated this", score: 1 },
+          { label: "Yes - by product line and over time", score: 4 },
+          { label: "At a total company level only", score: 3 },
+          { label: "We could calculate it but don't track it", score: 2 },
+          { label: "We don't measure DIO", score: 1 },
         ],
       },
       {
-        text: "Can you see how pricing and discounting affects your realised revenue vs list price?",
+        text: "How are your stock and safety-stock levels set?",
         options: [
-          { label: "Yes, we track discount rates and realised price by rep/segment", score: 4 },
-          { label: "We track some discounting but not systematically", score: 3 },
-          { label: "We know discounts happen but don't measure the impact", score: 2 },
-          { label: "We don't track this at all", score: 1 },
+          { label: "Data-driven reorder points per SKU, based on demand and lead time", score: 4 },
+          { label: "A mix of rules and judgement", score: 3 },
+          { label: "Mostly experience and gut feel", score: 2 },
+          { label: "We order when we notice we're running low", score: 1 },
         ],
       },
     ],
     recommendation:
-      "You're likely making pricing and growth decisions without seeing the full picture. Start with: pull revenue by your top 10 customers and calculate cost to serve for each.",
+      "Cash is likely sitting on your shelves. Start with: rank SKUs by value × days-in-stock and look hard at the slowest-moving 20%.",
   },
   {
-    key: "cash_visibility",
-    name: "Cash Visibility",
-    shortName: "Cash",
+    key: "receivables",
+    name: "Receivables & Collections",
+    shortName: "Receivables",
+    questions: [
+      {
+        text: "Do you know your days sales outstanding (DSO) - and by customer?",
+        options: [
+          { label: "Yes - DSO by customer and segment, monitored regularly", score: 4 },
+          { label: "Total company DSO only", score: 3 },
+          { label: "A rough sense, but not measured", score: 2 },
+          { label: "No - we don't track DSO", score: 1 },
+        ],
+      },
+      {
+        text: "How do you manage collections on overdue invoices?",
+        options: [
+          { label: "A systematic, prioritised chase process with clear ownership", score: 4 },
+          { label: "We chase, but it's reactive and ad hoc", score: 3 },
+          { label: "Only when cash gets tight", score: 2 },
+          { label: "We rarely chase proactively", score: 1 },
+        ],
+      },
+      {
+        text: "Do you know which customers consistently pay late - and what it costs you?",
+        options: [
+          { label: "Yes - named accounts, the day-impact, and the cost of the delay", score: 4 },
+          { label: "We know the worst offenders informally", score: 3 },
+          { label: "Not really", score: 2 },
+          { label: "No idea", score: 1 },
+        ],
+      },
+    ],
+    recommendation:
+      "Slow-paying customers are funding their business with your cash. Start with: pull an AR ageing by customer and quantify the cash tied up beyond terms.",
+  },
+  {
+    key: "payables",
+    name: "Payables & Terms",
+    shortName: "Payables",
+    questions: [
+      {
+        text: "Do you track days payable outstanding (DPO) against the terms you've actually negotiated?",
+        options: [
+          { label: "Yes - DPO vs agreed terms, by supplier", score: 4 },
+          { label: "Total DPO only", score: 3 },
+          { label: "We don't measure it", score: 2 },
+          { label: "No", score: 1 },
+        ],
+      },
+      {
+        text: "Are you paying suppliers earlier than you need to?",
+        options: [
+          { label: "No - payment timing is deliberate and optimised", score: 4 },
+          { label: "Sometimes; we haven't looked closely", score: 3 },
+          { label: "Probably - we mostly pay on receipt or early", score: 2 },
+          { label: "We don't know", score: 1 },
+        ],
+      },
+    ],
+    recommendation:
+      "You may be funding the whole cycle out of your own pocket. Start with: compare actual payment dates to agreed terms across your top 20 suppliers.",
+  },
+  {
+    key: "cash_conversion",
+    name: "Cash Conversion Cycle",
+    shortName: "Cash Cycle",
+    questions: [
+      {
+        text: "Do you know your cash conversion cycle (DSO + DIO − DPO)?",
+        options: [
+          { label: "Yes - tracked and understood by segment", score: 4 },
+          { label: "We've calculated it once, or at a high level", score: 3 },
+          { label: "We know the pieces but not the cycle", score: 2 },
+          { label: "No", score: 1 },
+        ],
+      },
+      {
+        text: "When the business grows, what happens to cash?",
+        options: [
+          { label: "We model the working-capital need ahead of growth", score: 4 },
+          { label: "It gets tighter, but we manage it", score: 3 },
+          { label: "It surprises us - growth eats cash unexpectedly", score: 2 },
+          { label: "We don't connect growth to cash", score: 1 },
+        ],
+      },
+    ],
+    recommendation:
+      "If growth tightens cash, your working capital is scaling against you. Start with: calculate your cash conversion cycle and model it at next year's revenue.",
+  },
+  {
+    key: "cash_forecasting",
+    name: "Cash Forecasting",
+    shortName: "Forecast",
     questions: [
       {
         text: "How far ahead can you see your cash position with confidence?",
         options: [
-          { label: "12+ weeks with scenario modelling", score: 4 },
+          { label: "13+ weeks, with scenario modelling", score: 4 },
           { label: "4-8 weeks with reasonable accuracy", score: 3 },
-          { label: "2-4 weeks, mostly based on current AR/AP", score: 2 },
+          { label: "2-4 weeks, mostly from current AR/AP", score: 2 },
           { label: "We check the bank balance", score: 1 },
         ],
       },
       {
-        text: "Can your team produce a cash flow forecast without manually assembling it from multiple sources?",
+        text: "Can your team produce a cash forecast without manually assembling it each time?",
         options: [
-          { label: "Yes, it's automated or near-automated", score: 4 },
+          { label: "Yes - it's automated or near-automated", score: 4 },
           { label: "Mostly - some manual steps but manageable", score: 3 },
           { label: "It's a significant manual effort every time", score: 2 },
           { label: "We don't produce one regularly", score: 1 },
         ],
       },
       {
-        text: "Do you know your cash conversion cycle by customer or segment?",
+        text: "When cash gets tight, what's the usual first move?",
         options: [
-          { label: "Yes, tracked and monitored regularly", score: 4 },
-          { label: "We know DSO at a company level but not by segment", score: 3 },
-          { label: "We have a general sense but no precise data", score: 2 },
-          { label: "No idea", score: 1 },
+          { label: "We saw it coming and planned for it", score: 4 },
+          { label: "We manage within existing headroom", score: 3 },
+          { label: "We call the bank for more facility", score: 2 },
+          { label: "We firefight", score: 1 },
         ],
       },
     ],
     recommendation:
-      "Your cash position is less visible than it needs to be. Start with: build a simple 8-week forward view from AR ageing and AP schedule.",
+      "You're steering cash by the rear-view mirror. Start with: build a rolling 13-week cash forecast from your AR ageing and AP schedule.",
   },
   {
-    key: "reporting_speed",
-    name: "Reporting Speed",
-    shortName: "Reporting",
+    key: "data_granularity",
+    name: "Data Granularity",
+    shortName: "Detail",
     questions: [
       {
-        text: "How many working days does your month-end close take?",
+        text: "Can you analyse margin and cash by SKU and by customer - not just totals?",
         options: [
-          { label: "5 or fewer", score: 4 },
-          { label: "6-8 days", score: 3 },
-          { label: "9-12 days", score: 2 },
-          { label: "13+ days", score: 1 },
+          { label: "Yes - down to line level, on demand", score: 4 },
+          { label: "Some cuts, with manual effort", score: 3 },
+          { label: "Only high-level categories", score: 2 },
+          { label: "Totals only", score: 1 },
         ],
       },
       {
-        text: 'If your board asked "why did margins change last quarter" - how fast could you get the answer?',
+        text: "When the numbers live across stock, sales, and finance systems, can you join them up?",
         options: [
-          { label: "Same day - the data is there, just need to look", score: 4 },
-          { label: "Within a few days - need to pull and analyse", score: 3 },
-          { label: "A week or more - requires significant digging", score: 2 },
-          { label: "We couldn't answer confidently", score: 1 },
-        ],
-      },
-      {
-        text: "What percentage of your finance/data team's time is spent producing reports vs analysing them?",
-        options: [
-          { label: "Mostly analysing - reports are largely automated", score: 4 },
-          { label: "About 50/50", score: 3 },
-          { label: "Mostly producing - very little time for analysis", score: 2 },
-          { label: "Almost all production - no time for analysis", score: 1 },
+          { label: "Yes - we can get one clean view across systems", score: 4 },
+          { label: "With effort - someone reconciles it by hand", score: 3 },
+          { label: "Rarely - the systems don't really talk", score: 2 },
+          { label: "No", score: 1 },
         ],
       },
     ],
     recommendation:
-      "Your team is spending too much time producing numbers and not enough analysing them. Start with: identify the single most time-consuming manual step in your close and automate it.",
-  },
-  {
-    key: "system_connection",
-    name: "System Connection",
-    shortName: "Systems",
-    questions: [
-      {
-        text: "How many separate systems hold data that feeds into your financial or operational reporting?",
-        options: [
-          { label: "1-2 well-integrated systems", score: 4 },
-          { label: "3-5 with some integration", score: 3 },
-          { label: "3-5 with manual joining required", score: 2 },
-          { label: "6+ and mostly disconnected", score: 1 },
-        ],
-      },
-      {
-        text: "When two systems show different numbers for the same metric, what happens?",
-        options: [
-          { label: "Rarely happens - we have a defined source of truth per metric", score: 4 },
-          { label: "It happens occasionally and we have a process to resolve it", score: 3 },
-          { label: "It happens regularly and someone makes a judgement call", score: 2 },
-          { label: "It happens constantly and different people use different numbers", score: 1 },
-        ],
-      },
-    ],
-    recommendation:
-      "Your data lives in silos that don't talk to each other. Start with: pick the one metric that matters most and trace it from source to board pack. Fix that join first.",
-  },
-  {
-    key: "decision_confidence",
-    name: "Decision Confidence",
-    shortName: "Confidence",
-    questions: [
-      {
-        text: "When you see a number in a report, what's your first instinct?",
-        options: [
-          { label: "Trust it - our data is reliable and validated", score: 4 },
-          { label: "Mostly trust it but occasionally spot-check", score: 3 },
-          { label: "Check it against another source before acting on it", score: 2 },
-          { label: "Rebuild it myself or ask someone to verify", score: 1 },
-        ],
-      },
-      {
-        text: "In the last 12 months, has a business decision been made on data that turned out to be materially wrong?",
-        options: [
-          { label: "No", score: 4 },
-          { label: "Possibly, but nothing major", score: 3 },
-          { label: "Yes, at least once", score: 2 },
-          { label: "Yes, multiple times or we wouldn't know", score: 1 },
-        ],
-      },
-    ],
-    recommendation:
-      "Your team doesn't fully trust the numbers. Start with: pick 3-5 metrics that actually drive decisions, get those right, and ignore the rest.",
-  },
-  {
-    key: "scalability",
-    name: "Scalability",
-    shortName: "Scale",
-    questions: [
-      {
-        text: "If your finance lead left tomorrow, could someone else produce a trustworthy board pack within one week?",
-        options: [
-          { label: "Yes - processes are documented and systematised", score: 4 },
-          { label: "Probably, with some difficulty", score: 3 },
-          { label: "It would take weeks to figure out", score: 2 },
-          { label: "No - critical knowledge would leave with them", score: 1 },
-        ],
-      },
-      {
-        text: "Are the rules for your key financial metrics (revenue recognition, cost allocation, margin calculations) documented?",
-        options: [
-          { label: "Yes, fully documented and version-controlled", score: 4 },
-          { label: "Mostly documented but some gaps", score: 3 },
-          { label: "Partially - key person knows the rest", score: 2 },
-          { label: "It's mostly in people's heads", score: 1 },
-        ],
-      },
-    ],
-    recommendation:
-      "Your finance function is built around people, not processes. Start with: document the revenue recognition and cost allocation logic that lives in someone's head.",
+      "With hundreds of SKUs and customers, the average hides the answer. Start with: join one month of sales, stock, and AR at transaction level and look for the outliers.",
   },
 ];
 
 // --- Helpers ---
 
 function getScoreBand(score: number) {
-  if (score >= 80) return { label: "Strong", color: "#22c55e", description: "You're ahead of most. Focus on optimisation." };
-  if (score >= 60) return { label: "Functional", color: "#eab308", description: "The basics work but gaps are costing you money." };
-  if (score >= 40) return { label: "At Risk", color: "#f97316", description: "Significant blind spots likely costing you $200K-$500K+ annually." };
-  return { label: "Critical", color: "#ef4444", description: "You're making major decisions without the data to support them." };
+  if (score >= 80) return { label: "Tight", color: "#22c55e", description: "Your cash cycle is in good shape. Focus on holding the discipline." };
+  if (score >= 60) return { label: "Functional", color: "#eab308", description: "The basics work, but cash is still trapped in the gaps." };
+  if (score >= 40) return { label: "At Risk", color: "#f97316", description: "Significant cash is likely trapped in stock, receivables, and terms." };
+  return { label: "Critical", color: "#ef4444", description: "Cash is almost certainly stuck across your operations - and largely invisible." };
 }
 
-function estimateCost(score: number, revenueRange: string) {
+function estimateCashTrapped(score: number, revenueRange: string) {
   const revMidpoints: Record<string, number> = {
     "Under $5M": 3_000_000,
     "$5M - $20M": 12_500_000,
@@ -242,10 +247,10 @@ function estimateCost(score: number, revenueRange: string) {
   };
   const rev = revMidpoints[revenueRange] || 12_500_000;
   const gapPercent = (100 - score) / 100;
-  const factor = gapPercent * 0.008;
-  const cost = rev * factor;
-  const low = Math.round(cost * 0.7 / 10000) * 10000;
-  const high = Math.round(cost * 1.3 / 10000) * 10000;
+  // Trapped working capital scales with revenue; the score gap proxies how much is recoverable.
+  const trapped = rev * 0.12 * gapPercent;
+  const low = Math.round(trapped * 0.7 / 10000) * 10000;
+  const high = Math.round(trapped * 1.3 / 10000) * 10000;
   return { low: Math.max(low, 50000), high: Math.max(high, 100000) };
 }
 
@@ -386,19 +391,20 @@ export default function AssessPage() {
     const dimScores = calculateScores();
     const overall = getOverallScore(dimScores);
     const scoreBand = getScoreBand(overall);
-    const costEst = estimateCost(overall, contextAnswers.revenue || "$5M - $20M");
+    const cashEst = estimateCashTrapped(overall, contextAnswers.revenue || "$5M - $20M");
 
     const formData = new FormData();
-    formData.append("_subject", `Financial Visibility Score: ${leadInfo.firstName} (${overall}/100)`);
+    formData.append("_subject", `Cash Health Score: ${leadInfo.firstName} (${overall}/100)`);
     formData.append("first_name", leadInfo.firstName);
     formData.append("email", leadInfo.email);
     formData.append("overall_score", String(overall));
     formData.append("score_band", scoreBand.label);
     formData.append("revenue_range", contextAnswers.revenue || "");
-    formData.append("business_type", contextAnswers.type || "");
+    formData.append("sector", contextAnswers.sector || "");
+    formData.append("scale", contextAnswers.scale || "");
     formData.append("role", contextAnswers.role || "");
     formData.append("dimension_scores", DIMENSIONS.map((d) => `${d.name}: ${dimScores[d.key]}/100`).join(", "));
-    formData.append("estimated_cost", `${formatCurrency(costEst.low)} - ${formatCurrency(costEst.high)}`);
+    formData.append("estimated_cash_trapped", `${formatCurrency(cashEst.low)} - ${formatCurrency(cashEst.high)}`);
 
     await fetch("https://formspree.io/f/mwvvkjnb", {
       method: "POST",
@@ -416,7 +422,7 @@ export default function AssessPage() {
   const dimScores = calculateScores();
   const overallScore = getOverallScore(dimScores);
   const band = getScoreBand(overallScore);
-  const costEstimate = estimateCost(overallScore, contextAnswers.revenue || "$5M - $20M");
+  const cashTrapped = estimateCashTrapped(overallScore, contextAnswers.revenue || "$5M - $20M");
   const weakest = [...DIMENSIONS].sort((a, b) => (dimScores[a.key] || 0) - (dimScores[b.key] || 0)).slice(0, 3);
 
   return (
@@ -461,13 +467,14 @@ export default function AssessPage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-slate-900 leading-[1.1] mb-6">
-                  Do you know where your business is{" "}
-                  <span className="text-coral">leaking profit?</span>
+                  How much cash is{" "}
+                  <span className="text-coral">trapped in your business?</span>
                 </h1>
 
                 <p className="text-xl text-slate-600 max-w-xl mx-auto mb-10 leading-relaxed">
-                  Most growing companies are bleeding money in places they don&apos;t even know
-                  to look. This scorecard shows you exactly where.
+                  Most growing manufacturers, distributors, and retailers are sitting on cash
+                  they can&apos;t see&mdash;stuck in stock, slow invoices, and terms paid too early.
+                  This scorecard shows you where.
                 </p>
               </div>
 
@@ -489,7 +496,7 @@ export default function AssessPage() {
                 How it works
               </h2>
               <p className="text-slate-600 text-center mb-14 max-w-lg mx-auto">
-                Answer 15 research-backed questions across 6 critical dimensions of financial visibility.
+                Answer 15 questions across 6 dimensions of your cash cycle&mdash;stock, receivables, payables, and forecasting.
               </p>
 
               <div className="grid md:grid-cols-3 gap-10">
@@ -501,7 +508,7 @@ export default function AssessPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-2">Answer honestly</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    15 multiple-choice questions about how your business tracks revenue, cash, and decisions. No preparation needed.
+                    15 multiple-choice questions about how cash moves through your business&mdash;stock, receivables, payables. No preparation needed.
                   </p>
                 </div>
 
@@ -513,7 +520,7 @@ export default function AssessPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-2">Get your scores</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    See your overall Financial Visibility Score plus a breakdown across 6 dimensions with a visual radar chart.
+                    See your overall Cash Health Score plus a breakdown across 6 dimensions with a visual radar chart.
                   </p>
                 </div>
 
@@ -525,7 +532,7 @@ export default function AssessPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-2">Know where to focus</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Get personalised recommendations for your 3 biggest opportunities, plus an estimate of what blind spots are costing you.
+                    Get personalised recommendations for your 3 biggest opportunities to free up cash, plus an estimate of how much is trapped.
                   </p>
                 </div>
               </div>
@@ -536,7 +543,7 @@ export default function AssessPage() {
           <section className="py-20 px-6">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-14">
-                Your score covers 6 critical dimensions
+                Your score covers 6 dimensions of cash
               </h2>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -544,12 +551,12 @@ export default function AssessPage() {
                   <div key={d.key} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
                     <h3 className="font-semibold text-slate-900 mb-2">{d.name}</h3>
                     <p className="text-slate-500 text-sm leading-relaxed">
-                      {d.key === "revenue_clarity" && "Do you know where the money comes from - and which segments actually make you money?"}
-                      {d.key === "cash_visibility" && "Can you see your cash position with confidence, or are you checking the bank balance?"}
-                      {d.key === "reporting_speed" && "How fast can you answer a hard question from the board?"}
-                      {d.key === "system_connection" && "Do your systems talk to each other, or does someone reconcile by hand?"}
-                      {d.key === "decision_confidence" && "When you see a number in a report, do you trust it?"}
-                      {d.key === "scalability" && "If your finance lead left tomorrow, would the knowledge leave with them?"}
+                      {d.key === "inventory_health" && "Is cash sitting on your shelves in slow movers and dead stock?"}
+                      {d.key === "receivables" && "Are slow-paying customers funding their business with your cash?"}
+                      {d.key === "payables" && "Are you paying suppliers earlier than your terms require?"}
+                      {d.key === "cash_conversion" && "Does growth generate cash for you - or quietly eat it?"}
+                      {d.key === "cash_forecasting" && "Can you see your cash 13 weeks out, or just the bank balance?"}
+                      {d.key === "data_granularity" && "Can you see cash by SKU and customer, or only in totals?"}
                     </p>
                   </div>
                 ))}
@@ -764,7 +771,7 @@ export default function AssessPage() {
                 {leadInfo.firstName ? `${leadInfo.firstName}, here are your results` : "Here are your results"}
               </p>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-                Your Financial Visibility Score
+                Your Cash Health Score
               </h1>
             </div>
 
@@ -787,16 +794,16 @@ export default function AssessPage() {
               </div>
             </div>
 
-            {/* Cost Estimate */}
+            {/* Cash Trapped Estimate */}
             <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-red-200 rounded-2xl p-8 md:p-10 text-center">
               <p className="text-sm text-slate-500 uppercase tracking-wider font-medium mb-3">
-                Estimated annual cost of blind spots
+                Estimated cash trapped in your operations
               </p>
               <p className="text-4xl md:text-5xl font-bold text-slate-900">
-                {formatCurrency(costEstimate.low)} &ndash; {formatCurrency(costEstimate.high)}
+                {formatCurrency(cashTrapped.low)} &ndash; {formatCurrency(cashTrapped.high)}
               </p>
               <p className="text-sm text-slate-500 mt-3">
-                Based on companies your size with similar scores
+                A rough estimate based on businesses your size with similar scores
               </p>
             </div>
 

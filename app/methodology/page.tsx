@@ -264,7 +264,7 @@ export default function MethodologyPage() {
                   <p className="text-slate-600 leading-relaxed mb-4">
                     Disaggregate every average, test inherited beliefs with data, and size each gap in pounds.
                     Not &ldquo;you have a pricing problem&rdquo; &mdash; but &ldquo;your bottom-quartile deals are 22 points
-                    below median margin, representing &pound;1.8M in annual EBITDA.&rdquo;
+                    below median margin, representing $1.8M in annual EBITDA.&rdquo;
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-3 py-1 bg-slate-100 rounded-full text-xs font-medium text-slate-600">Every gap sized in pounds</span>
