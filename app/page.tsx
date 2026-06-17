@@ -58,62 +58,101 @@ export default function Home() {
         <div className="absolute bottom-56 right-[4%] w-6 h-6 bg-[#D4705A]/30 rounded-sm animate-float1" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
+          <p className="text-coral text-sm font-medium uppercase tracking-wider mb-5">
+            The Cash X-Ray
+          </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.1] mb-6">
-            Stop Losing Profit
+            Find the Cash
             <br />
             <span className="text-coral">
-              You Can&apos;t See.
+              Trapped in Your Business.
             </span>
           </h1>
 
           <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Take our 2-minute assessment and find out if your company is leaking
-            money in places you don&apos;t even know to look.
+            It&apos;s stuck in inventory you don&apos;t need, invoices you&apos;re not chasing,
+            and supplier terms you&apos;re paying too early. We read your actual ledgers&mdash;line
+            by line, not category averages&mdash;and show you exactly where your cash is and
+            what it&apos;s worth. In one week.
           </p>
 
-          <a
-            href="/assess"
-            className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
-          >
-            Take the 2-min assessment →
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#contact"
+              className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
+            >
+              Book a Cash X-Ray &rarr;
+            </a>
+            <a
+              href="/assess"
+              className="inline-block px-8 py-4 border border-slate-400 text-slate-700 rounded-lg font-semibold hover:border-slate-500 hover:text-slate-900 transition-colors text-lg"
+            >
+              Take the 2-min assessment
+            </a>
+          </div>
+        </div>
+      </section>
 
+      {/* Who It's For */}
+      <section className="py-12 px-6 bg-white/50 border-y border-slate-200">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-slate-500 text-sm uppercase tracking-wider mb-6">
+            Built for inventory-heavy mid-market businesses &mdash; &pound;15&ndash;40M revenue
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-slate-700 font-semibold text-lg">
+            <span>Manufacturing</span>
+            <span className="text-coral/40">&#9642;</span>
+            <span>Distribution &amp; Wholesale</span>
+            <span className="text-coral/40">&#9642;</span>
+            <span>DTC</span>
+            <span className="text-coral/40">&#9642;</span>
+            <span>Retail</span>
+          </div>
+          <p className="text-slate-500 text-sm mt-6 max-w-2xl mx-auto">
+            The kind of business with thousands of SKUs and thousands of customers&mdash;where
+            the average hides the answer and the cash is buried in the detail.
+          </p>
         </div>
       </section>
 
       {/* Pain Section */}
-      <section className="py-20 px-6 bg-white/50">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            The Revenue You Can&apos;t See Is Costing You
+            Four Ways Your Cash Gets Trapped
           </h2>
           <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
-            Most growing companies are bleeding money in places they don&apos;t even know to look.
+            The bank balance looks fine, so no one looks closer. Meanwhile your own money is
+            sitting still in four places you can&apos;t see.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-              <div className="text-3xl font-bold text-red-500 mb-2">Silent churn</div>
+              <div className="text-2xl font-bold text-red-500 mb-2">Stuck in stock</div>
               <div className="text-slate-600 text-sm">
-                Customers leaving before anyone notices. No early warning. No intervention. Just lost revenue.
+                Slow movers, phantom lines, and safety stock no one sized. Cash sitting
+                on a shelf instead of in your account.
               </div>
             </div>
             <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-              <div className="text-3xl font-bold text-red-500 mb-2">Wrong prices</div>
+              <div className="text-2xl font-bold text-red-500 mb-2">Slow receivables</div>
               <div className="text-slate-600 text-sm">
-                Leaving margin on the table—or pricing yourself out of deals. No system to find the sweet spot.
+                Invoices drifting past terms. Every extra day is your cash funding your
+                customer&apos;s business instead of yours.
               </div>
             </div>
             <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-              <div className="text-3xl font-bold text-red-500 mb-2">Bad forecasts</div>
+              <div className="text-2xl font-bold text-red-500 mb-2">Paying too early</div>
               <div className="text-slate-600 text-sm">
-                Too much inventory. Too little. Stockouts and write-offs. Cash tied up in the wrong places.
+                Settling suppliers faster than your customers pay you&mdash;funding the
+                whole cycle out of your own pocket.
               </div>
             </div>
             <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-              <div className="text-3xl font-bold text-red-500 mb-2">Gut decisions</div>
+              <div className="text-2xl font-bold text-red-500 mb-2">Growth that eats cash</div>
               <div className="text-slate-600 text-sm">
-                Important calls made on instinct because no one knows what the data actually says.
+                Overtrading: the faster you grow, the tighter cash gets&mdash;and no one
+                can explain why the profit isn&apos;t in the bank.
               </div>
             </div>
           </div>
@@ -121,22 +160,22 @@ export default function Home() {
       </section>
 
       {/* Solution Comparison */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 bg-white/50">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white/70 border border-slate-200 rounded-2xl p-8 shadow-sm">
               <div className="text-red-500 text-sm font-medium uppercase tracking-wider mb-4">Today</div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Flying Blind</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Flying Blind on Cash</h3>
               <ul className="space-y-4">
                 {[
-                  "Dashboards that describe the past, not predict the future",
-                  "No early warning when customers are about to leave",
-                  "Pricing based on competitors, not customer value",
-                  "Forecasts that miss by 30%+ every quarter",
-                  "Data exists, but no one knows what it's saying",
+                  "The bank balance is the only cash number anyone trusts",
+                  "\"Where's our cash tied up?\" takes a week to answer",
+                  "The forecast is a spreadsheet someone updates on Fridays",
+                  "When cash gets tight, the reflex is to call the bank for a bigger facility",
+                  "Everyone manages the average; the answer lives below it",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-600">
-                    <span className="text-red-500 mt-0.5">✕</span>
+                    <span className="text-red-500 mt-0.5">&#10005;</span>
                     {item}
                   </li>
                 ))}
@@ -145,17 +184,17 @@ export default function Home() {
 
             <div className="bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border border-coral/30 rounded-2xl p-8">
               <div className="text-coral text-sm font-medium uppercase tracking-wider mb-4">With Mosaic</div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">See What You&apos;ve Been Missing</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">See Where Every Pound Is</h3>
               <ul className="space-y-4">
                 {[
-                  "Know which customers will churn—60 days before they do",
-                  "Find the pricing headroom you didn't know existed",
-                  "Forecast demand accurately enough to act on",
-                  "Turn gut decisions into data-backed confidence",
-                  "Systems that keep capturing value, not one-off reports",
+                  "Your cash conversion cycle, broken down by product line and customer",
+                  "The exact SKUs and customers eating your cash—named and sized",
+                  "DSO by customer: who's slow, by how much, what it costs",
+                  "A 13-week cash forecast you can actually steer",
+                  "The cheapest capital you have—the cash you've already earned—freed",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-700">
-                    <span className="text-coral mt-0.5">✓</span>
+                    <span className="text-coral mt-0.5">&#10003;</span>
                     {item}
                   </li>
                 ))}
@@ -166,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 px-6 bg-white/50 relative overflow-hidden">
+      <section id="how-it-works" className="py-20 px-6 relative overflow-hidden">
         {/* Decorative mosaic squares */}
         <div className="absolute top-12 right-[5%] w-6 h-6 bg-[#D4705A]/25 rounded-sm animate-float1" />
         <div className="absolute top-32 right-[12%] w-6 h-6 bg-[#D4705A]/30 rounded-sm animate-float3" />
@@ -178,20 +217,21 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            Find the Levers. Build the Systems.
+            Find the Cash. Free It. Keep It Visible.
           </h2>
           <p className="text-slate-600 text-center mb-16 max-w-2xl mx-auto">
-            We diagnose where you&apos;re losing money, build systems to capture it, and make sure your team actually uses them.
+            We start with a one-week diagnostic, fix the specific leaks it finds, then keep
+            your cash visible on an ongoing rhythm.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="relative">
               <div className="absolute -left-4 top-0 w-8 h-8 bg-coral rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
               <div className="pl-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Diagnose</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Cash X-Ray</h3>
                 <p className="text-slate-600">
-                  We dig into your business and data to find where you&apos;re bleeding money.
-                  Not what&apos;s technically interesting—what actually moves the needle.
+                  One week. We connect your finance and ERP systems and trace cash from sale to
+                  bank&mdash;finding where it&apos;s trapped and sizing each gap in pounds.
                 </p>
               </div>
             </div>
@@ -199,10 +239,10 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -left-4 top-0 w-8 h-8 bg-coral rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
               <div className="pl-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Build</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Release</h3>
                 <p className="text-slate-600">
-                  We create systems that surface opportunities and risks automatically.
-                  Integrated into your workflow—not reports that sit in someone&apos;s inbox.
+                  We fix the specific leaks&mdash;inventory discipline, collection priorities,
+                  supplier terms&mdash;and turn the findings into cash back in your account.
                 </p>
               </div>
             </div>
@@ -210,10 +250,10 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -left-4 top-0 w-8 h-8 bg-coral rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
               <div className="pl-8">
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Drive Adoption</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Cashflow Operating System</h3>
                 <p className="text-slate-600">
-                  Technology only works if people use it. We work with your team to make
-                  sure insights turn into action—and action turns into results.
+                  An ongoing layer that keeps cash visible: a live 13-week forecast, early-warning
+                  alerts, and a cadence that makes cash a business habit&mdash;not a fire drill.
                 </p>
               </div>
             </div>
@@ -224,14 +264,14 @@ export default function Home() {
               href="/methodology"
               className="text-coral font-semibold hover:text-coral-light transition-colors"
             >
-              Learn about our Profit Machine Method &rarr;
+              See the full methodology &rarr;
             </a>
           </div>
         </div>
       </section>
 
-      {/* Use Cases */}
-      <section className="py-20 px-6 relative overflow-hidden">
+      {/* Where the cash hides */}
+      <section className="py-20 px-6 bg-white/50 relative overflow-hidden">
         {/* Decorative mosaic squares */}
         <div className="absolute top-16 left-[3%] w-6 h-6 bg-[#D4705A]/25 rounded-sm animate-float2" />
         <div className="absolute top-40 left-[8%] w-6 h-6 bg-[#D4705A]/30 rounded-sm animate-float1" />
@@ -243,40 +283,41 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            Where Companies Find Hidden Revenue
+            Where the Cash Hides
           </h2>
           <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
-            These are the levers that move the needle. The question is: which ones are you missing?
+            With thousands of SKUs and customers, the cash story never matches the P&amp;L.
+            These are the cuts owners almost never see&mdash;because they only show up at the line level.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Customers About to Leave",
-                result: "Know who's at risk 60 days before they churn",
-                lever: "Intervene early. Save the relationship. Protect recurring revenue."
+                title: "The Aristocrat",
+                result: "High margin that flatters the P&L—and quietly suffocates cash",
+                lever: "Bloated inventory and long terms hide behind a great margin. We find them."
               },
               {
-                title: "Cash Trapped in Inventory",
-                result: "See what you'll actually need, 90 days out",
-                lever: "Less capital tied up. Fewer stockouts. Better cash flow."
+                title: "The Workhorse",
+                result: "Low margin, unloved—and the product actually funding your business",
+                lever: "Negative working capital, paid fast. Kill it for 'low margin' and you lose your funding."
               },
               {
-                title: "Margin Left on the Table",
-                result: "Find what customers are actually willing to pay",
-                lever: "Price based on value, not competitors. Capture what you're worth."
+                title: "Trapped Inventory",
+                result: "The 200 SKUs eating your cash, three levels below the category view",
+                lever: "Disciplined SKU-level analysis typically frees 15–30% of inventory value."
               },
               {
-                title: "Sales Effort Wasted on Bad Leads",
-                result: "Know which deals will close before you invest the time",
-                lever: "Focus on winners. Stop chasing deals that were never going to happen."
+                title: "Receivables Drift",
+                result: "Which customers are slow, by how many days, and what it costs you",
+                lever: "Not 'DSO is up.' The named accounts, the exact day-impact, the cash to recover."
               },
             ].map((item, i) => (
               <div key={i} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-slate-300 hover:shadow-md transition-all shadow-sm">
                 <h3 className="font-semibold text-slate-900 text-lg mb-2">{item.title}</h3>
                 <p className="text-slate-600 mb-4">{item.result}</p>
                 <div className="text-sm text-coral font-medium">
-                  ↳ {item.lever}
+                  &#8627; {item.lever}
                 </div>
               </div>
             ))}
@@ -285,17 +326,18 @@ export default function Home() {
       </section>
 
       {/* Why Us - Team Background */}
-      <section className="py-20 px-6 bg-white/50">
+      <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">
-            Business Judgment First. Technology Second.
+            Accounting Brain. Data-Science Hands.
           </h2>
           <p className="text-slate-600 text-center mb-4 max-w-2xl mx-auto">
-            AI can write code. It can&apos;t diagnose your business problems, earn your team&apos;s trust, or
-            make sure insights actually change behavior. That&apos;s what we do.
+            Most data consultants can build the model but can&apos;t read the P&amp;L. Most accountants
+            can read the P&amp;L but can&apos;t build the model. We do both&mdash;which is why we know
+            where to look and how to actually go and get it.
           </p>
           <p className="text-coral/70 text-center text-sm mb-12">
-            Working with companies in B2B SaaS, distribution, and professional services.
+            Working with manufacturers, distributors, DTC brands, and retailers across the UK.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -305,23 +347,24 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-slate-900 font-semibold text-lg mb-2">We Think Like Operators</h3>
+              <h3 className="text-slate-900 font-semibold text-lg mb-2">We Think in Cash</h3>
               <p className="text-slate-600 text-sm">
-                Finance and accounting background means we understand P&L impact, working capital,
-                and what actually matters to your board—not just model accuracy.
+                Finance and accounting background means we understand working capital, the cash
+                conversion cycle, and what actually frees money&mdash;not just a tidy dashboard.
               </p>
             </div>
 
             <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
               <div className="w-12 h-12 bg-[#D4705A]/10 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z M4 9h16 M9 4v16" />
                 </svg>
               </div>
-              <h3 className="text-slate-900 font-semibold text-lg mb-2">We Find the Problems</h3>
+              <h3 className="text-slate-900 font-semibold text-lg mb-2">We Work at Line Level</h3>
               <p className="text-slate-600 text-sm">
-                You don&apos;t need to know what to ask for. We dig into your business,
-                find where you&apos;re losing money, and bring opportunities to you.
+                Excel chokes around a million rows. Your business has tens of millions of
+                transaction lines once you join stock, sales, returns, and terms. We work where
+                the cash actually is.
               </p>
             </div>
 
@@ -331,23 +374,23 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-slate-900 font-semibold text-lg mb-2">We Build Systems</h3>
+              <h3 className="text-slate-900 font-semibold text-lg mb-2">Every Finding Sized in Pounds</h3>
               <p className="text-slate-600 text-sm">
-                Not one-off analyses. We build systems that keep capturing value—automatically
-                surfacing risks and opportunities so nothing slips through.
+                Not &ldquo;your inventory is high.&rdquo; We tell you how much cash is trapped, in which
+                lines, and what it&apos;s worth to free it. If we can&apos;t find it, we say so.
               </p>
             </div>
 
             <div className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
               <div className="w-12 h-12 bg-[#D4705A]/10 rounded-lg flex items-center justify-center mb-4">
                 <svg className="w-6 h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-slate-900 font-semibold text-lg mb-2">We Drive Adoption</h3>
+              <h3 className="text-slate-900 font-semibold text-lg mb-2">One Week, Not One Quarter</h3>
               <p className="text-slate-600 text-sm">
-                Insights that sit in dashboards don&apos;t create value. We work with your team to make
-                sure what we build actually gets used.
+                Bias for action. A sharp answer in days beats a perfect answer delivered after
+                the cash crunch has already happened.
               </p>
             </div>
           </div>
@@ -375,19 +418,20 @@ export default function Home() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">Why I Started Mosaic</h2>
                 <div className="space-y-4 text-slate-600 leading-relaxed">
                   <p>
-                    I&apos;m Lu—I started in accounting and corporate finance before moving into data science.
-                    That path taught me something important: the hard part isn&apos;t the technology.
-                    It&apos;s knowing what questions to ask.
+                    I&apos;m Lu&mdash;I started in accounting and corporate finance before moving into
+                    data science. Cash is where those two worlds meet, and it&apos;s where most
+                    businesses are quietly losing.
                   </p>
                   <p>
-                    Most companies have the data. What they don&apos;t have is someone who can diagnose
-                    where they&apos;re bleeding money, design the right systems to capture it, and actually
-                    get their teams to use them. That&apos;s what I do.
+                    Owner-led companies with thousands of SKUs and customers are sitting on cash
+                    they can&apos;t see&mdash;trapped in stock, in slow invoices, in terms paid too early.
+                    The answer is in their own ledgers. They just don&apos;t have anyone who can read
+                    the P&amp;L <em>and</em> get into the data to find it.
                   </p>
                   <p className="text-slate-700">
-                    AI is getting better at the technical work every day. But it can&apos;t understand your
-                    board pressures, your team dynamics, or what will actually change behavior in your organization.
-                    That&apos;s a human judgment problem—and that&apos;s where the real value is.
+                    The cheapest capital any business has is the cash it&apos;s already earned. Before you
+                    call the bank for a bigger facility, it&apos;s worth knowing how much of your own
+                    money is just sitting still. That&apos;s what I find.
                   </p>
                 </div>
               </div>
@@ -400,50 +444,56 @@ export default function Home() {
       <section className="py-20 px-6 bg-white/50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Revenue Intelligence Partnership
+            Start With a Cash X-Ray
           </h2>
           <p className="text-slate-600 mb-12">
-            We find the money. You keep it.
+            Priced as an investment, not an hourly bill. If we find &pound;200K stuck in your
+            business, the fee pays for itself many times over.
           </p>
 
-          <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 max-w-xl mx-auto shadow-sm">
-            <div className="text-coral text-sm font-medium uppercase tracking-wider mb-2">Monthly Retainer</div>
-            <div className="text-4xl font-bold text-slate-900 mb-2">
-              From £4K<span className="text-xl font-normal text-slate-500">/month</span>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto text-left">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+              <div className="text-coral text-sm font-medium uppercase tracking-wider mb-2">Stage 1 &middot; Discovery</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">The Data Map</h3>
+              <p className="text-slate-500 text-sm mb-6">2&ndash;3 days &middot; fixed fee</p>
+              <p className="text-slate-600 text-sm">
+                We map what&apos;s actually in your finance and ERP systems&mdash;what&apos;s accessible,
+                what&apos;s clean, what&apos;s missing&mdash;and scope the X-Ray precisely. Useful on its
+                own, even if you go no further.
+              </p>
             </div>
-            <p className="text-slate-500 mb-8">Flat fee. No hourly billing. No surprises.</p>
 
-            <ul className="text-left space-y-4 mb-8">
-              {[
-                "Ongoing diagnosis: we keep finding new opportunities",
-                "Systems that capture value automatically",
-                "Adoption support: making sure your team actually uses it",
-                "Monthly strategy briefing with leadership",
-                "Direct access for questions and priorities",
-                "AI-accelerated delivery—results in weeks, not months",
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="text-coral mt-1">✓</span>
-                  <span className="text-slate-700">{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href="#contact"
-              className="block w-full py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-center"
-            >
-              Let&apos;s Talk
-            </a>
-            <p className="text-slate-500 text-sm mt-4">
-              No commitment. We&apos;ll tell you honestly if we can help.
-            </p>
+            <div className="bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border border-coral/30 rounded-2xl p-8">
+              <div className="text-coral text-sm font-medium uppercase tracking-wider mb-2">Stage 2 &middot; The Cash X-Ray</div>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">The Diagnostic</h3>
+              <p className="text-slate-500 text-sm mb-6">2&ndash;3 weeks &middot; fixed fee</p>
+              <p className="text-slate-700 text-sm">
+                A clear findings document: where your cash is trapped, sized in pounds, ranked by
+                impact and speed&mdash;with the specific moves to free it. Every number traced back
+                to your own data.
+              </p>
+            </div>
           </div>
+
+          <p className="text-slate-500 text-sm mt-8 max-w-xl mx-auto">
+            What it earns into: an ongoing <span className="font-medium text-slate-700">Cashflow Operating System</span> retainer&mdash;a
+            live forecast and a cadence that keeps cash visible for good.
+          </p>
+
+          <a
+            href="#contact"
+            className="inline-block mt-8 px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors"
+          >
+            Let&apos;s Talk
+          </a>
+          <p className="text-slate-500 text-sm mt-4">
+            No commitment. We&apos;ll tell you honestly if we can help.
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-6 bg-white/50">
+      <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
             Questions We Get Asked
@@ -452,28 +502,28 @@ export default function Home() {
           <div className="space-y-6">
             {[
               {
-                q: "How do you find opportunities we haven't seen?",
-                a: "We've done this before. We know the patterns—where companies typically bleed money without realizing it. Churn signals hiding in usage data. Pricing headroom no one's tested. Forecasting errors that compound every quarter. We dig into your business looking for these specific patterns."
+                q: "Couldn't our finance team do this themselves?",
+                a: "In theory, yes—and most CFOs ask exactly that. In practice, three things stop them. Bandwidth: the team is running close and board reporting, with no slack for a three-week deep-dive. Tooling: Excel chokes at SKU-level, 24-month, cross-system data—you need a real database. And the data engineering: joining ERP, billing, and inventory into one clean transaction layer is where most internal projects die. We show up, do all three, and get to an answer in weeks."
+              },
+              {
+                q: "Isn't a strong fractional CFO already doing this?",
+                a: "For ongoing operations, often yes—and we're not a replacement for that relationship. But when the answer lives below the averages—which 20 customers drove last quarter's margin move, including freight, returns, and the cost of slow payment—most fractional CFOs hit a tooling wall. We're the answer engine for the moments the question gets too granular for a spreadsheet."
+              },
+              {
+                q: "Isn't the answer just a bigger bank facility?",
+                a: "Sometimes you do need more headroom. But borrowing to cover cash that's trapped in your own operations is the expensive way—you're paying interest to a lender for money you've already earned. We find that cash first. Often it's enough that the facility conversation changes entirely."
               },
               {
                 q: "What if our data is a mess?",
-                a: "Most is. We start by finding what's usable today. You'd be surprised—basic CRM and billing data often has enough signal to identify at-risk customers or pricing opportunities. We work with what you have, not what you wish you had."
+                a: "Most is. That's exactly why Stage 1 exists—we map what's actually usable before committing to scope. You'd be surprised: basic finance and inventory data usually has more than enough signal to find trapped cash. We work with what you have, not what you wish you had."
               },
               {
-                q: "How is this different from hiring a data scientist?",
-                a: "A data scientist writes code. We diagnose business problems, design what to measure, and make sure your team actually uses the insights. The technical work is increasingly AI-assisted—the strategic work requires human judgment. That's what we focus on."
-              },
-              {
-                q: "Won't AI replace what you do?",
-                a: "It's replacing the technical work—and we embrace that. AI helps us move faster. But it can't sit in a room with your leadership team, understand your board dynamics, or figure out why your sales team ignores the CRM. That's the hard part, and that's what we do."
-              },
-              {
-                q: "Do you replace our existing BI tools?",
-                a: "No. We plug into whatever you're using—Tableau, Looker, Metabase. We make your existing investment more valuable by adding the predictive layer on top."
+                q: "Do you replace our ERP or BI tools?",
+                a: "No. We plug into whatever you're running—Sage, NetSuite, Xero, QuickBooks, your warehouse system—and read it. We make your existing investment more valuable; we don't rip it out."
               },
               {
                 q: "How do you handle sensitive financial data?",
-                a: "SOC 2 Type II compliant. Data stays in your cloud (AWS, GCP, Azure). We work via secure access, not data transfers. Happy to walk through our security posture on a call."
+                a: "Data stays in your environment—we work via secure, read-only access, not data transfers. Happy to walk through our security posture on a call before anything is connected."
               },
             ].map((item, i) => (
               <div key={i} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
@@ -495,13 +545,14 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center relative z-10">
           <div className="bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border border-coral/30 rounded-2xl p-10 md:p-14">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              How Visible Is Your Financial Data?
+              How Much Cash Is Trapped in Your Business?
             </h2>
             <p className="text-lg text-slate-600 mb-3 max-w-xl mx-auto">
-              Take our 2-minute Financial Visibility Score and find out where your blind spots are costing you money.
+              Take our 2-minute assessment and find out where your working capital is leaking&mdash;and
+              roughly what it&apos;s costing you.
             </p>
             <p className="text-slate-500 mb-8">
-              15 questions. Instant results. No sales call required.
+              A few questions. Instant results. No sales call required.
             </p>
             <a
               href="/assess"
@@ -531,7 +582,7 @@ export default function Home() {
           </h2>
           <p className="text-slate-600 text-center mb-8">
             30-minute call. No pitch deck. We&apos;ll ask about your business and tell you
-            honestly if we can help.
+            honestly if there&apos;s cash worth going after.
           </p>
 
           <form
@@ -569,14 +620,14 @@ export default function Home() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
-                Where do you think you might be leaving money on the table?
+                Where do you suspect your cash is getting stuck?
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
                 className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
-                placeholder="e.g., Customers churning and we don't know why until it's too late..."
+                placeholder="e.g., We're growing but cash is always tight, and our inventory keeps creeping up..."
               />
             </div>
 

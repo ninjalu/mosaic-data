@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mosaic Data | Find the Revenue You're Missing",
-  description: "We find the money you're leaving on the table—and build systems so you never miss it again. Strategic revenue intelligence for growing companies.",
-  keywords: ["revenue optimization", "churn prediction", "pricing optimization", "demand forecasting", "business intelligence", "revenue intelligence", "data strategy"],
+  title: "Mosaic Data | Find the Cash Trapped in Your Operations",
+  description: "We read your ledgers line by line and show you exactly where your cash is stuck—inventory you don't need, invoices you're not chasing, terms you pay too early. One week. Every pound sized.",
+  keywords: ["working capital", "cash flow", "cash conversion cycle", "inventory optimization", "DSO", "days inventory outstanding", "working capital release", "mid-market", "manufacturing", "distribution", "DTC", "retail"],
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Mosaic Data | Find the Revenue You're Missing",
-    description: "We find the money you're leaving on the table—and build systems so you never miss it again.",
+    title: "Mosaic Data | Find the Cash Trapped in Your Operations",
+    description: "We read your ledgers line by line and show you exactly where your cash is stuck. One week. Every pound sized.",
     type: "website",
   },
 };
