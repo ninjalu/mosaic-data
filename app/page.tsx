@@ -1,6 +1,48 @@
 import Image from "next/image";
 
 export default function Home() {
+  const valueLadder = [
+    {
+      tag: "Start here",
+      headline: "Free up the cash",
+      lead: "We start by freeing the cash trapped in your operations—often enough to fund everything that follows.",
+      items: ["Working capital release — stock, receivables, supplier terms"],
+      highlight: true,
+    },
+    {
+      tag: "Then go deeper",
+      headline: "Find the profit",
+      lead: "Now the data is clean and connected, the same foundation exposes where profit quietly leaks.",
+      items: [
+        "Money-losing customers & products",
+        "Pricing & discount optimisation",
+        "Supplier terms & procurement",
+        "Quote-to-cash velocity",
+        "EBITDA & margin bridge",
+        "Customer concentration & retention",
+      ],
+      highlight: false,
+    },
+    {
+      tag: "Then plan ahead",
+      headline: "Plan the future",
+      lead: "Then we point it forward, so cash and stock stop catching you out.",
+      items: [
+        "Stock & demand planning",
+        "Cash forecasting (rolling 13-week)",
+        "Scenario & what-if modelling",
+      ],
+      highlight: false,
+    },
+    {
+      tag: "And prove it",
+      headline: "Prove the numbers",
+      lead: "Until your numbers are clean enough to put in front of a board, a lender, or a buyer.",
+      items: ["Investor-grade reporting", "Exit & QoE readiness"],
+      highlight: false,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#EDEDED] text-slate-800">
       {/* Header */}
@@ -342,76 +384,68 @@ export default function Home() {
             foundation powers the deeper profit work&mdash;so every engagement compounds.
           </p>
 
-          <div className="max-w-3xl mx-auto">
-            {[
-              {
-                tag: "Start here",
-                headline: "Free up the cash",
-                lead: "We start by freeing the cash trapped in your operations—often enough to fund everything that follows.",
-                items: ["Working capital release — stock, receivables, supplier terms"],
-                highlight: true,
-              },
-              {
-                tag: "Then go deeper",
-                headline: "Find the profit",
-                lead: "Now the data is clean and connected, the same foundation exposes where profit quietly leaks:",
-                items: [
-                  "Money-losing customers & products",
-                  "Pricing & discount optimisation",
-                  "Supplier terms & procurement",
-                  "Quote-to-cash velocity",
-                  "EBITDA & margin bridge",
-                  "Customer concentration & retention",
-                ],
-                highlight: false,
-              },
-              {
-                tag: "Then plan ahead",
-                headline: "Plan the future",
-                lead: "Then we point it forward, so cash and stock stop catching you out:",
-                items: [
-                  "Stock & demand planning",
-                  "Cash forecasting (rolling 13-week)",
-                  "Scenario & what-if modelling",
-                ],
-                highlight: false,
-              },
-              {
-                tag: "And prove it",
-                headline: "Prove the numbers",
-                lead: "Until your numbers are clean enough to put in front of a board, a lender, or a buyer:",
-                items: [
-                  "Investor-grade reporting",
-                  "Exit & QoE readiness",
-                ],
-                highlight: false,
-              },
-            ].map((stage, si, arr) => (
-              <div key={si} className="relative flex gap-5 sm:gap-6 pb-10 last:pb-0">
-                {/* Progress spine */}
-                {si < arr.length - 1 && (
-                  <div className="absolute left-[19px] top-12 -bottom-2 w-0.5 bg-coral/25" />
-                )}
-                {/* Step node */}
+          {/* Desktop: ascending value graph */}
+          <div className="hidden lg:block">
+            <div className="flex items-end gap-5">
+              {valueLadder.map((stage, si) => (
+                <div key={si} className="flex-1 flex flex-col">
+                  <div
+                    className={`rounded-2xl p-5 border shadow-sm ${
+                      stage.highlight
+                        ? "bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border-coral/30"
+                        : "bg-white border-slate-200"
+                    }`}
+                  >
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-coral text-white text-xs font-bold flex items-center justify-center">{si + 1}</span>
+                      <span className="text-coral text-xs font-semibold uppercase tracking-wider">{stage.tag}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-3">{stage.headline}</h3>
+                    <div className="flex flex-wrap gap-1.5">
+                      {stage.items.map((it, i) => (
+                        <span
+                          key={i}
+                          className="inline-flex items-center px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium"
+                        >
+                          {it}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Riser leg — taller each step, so the cards climb */}
+                  <div
+                    className="mx-auto w-2.5 rounded-t-md bg-gradient-to-b from-coral/40 to-coral/5"
+                    style={{ height: `${16 + si * 52}px` }}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="h-0.5 bg-coral/25 rounded-full" />
+            <p className="text-right text-xs text-slate-400 mt-2">Each stage builds on the last &mdash; and is worth more &#8599;</p>
+          </div>
+
+          {/* Mobile / tablet: numbered stack */}
+          <div className="lg:hidden max-w-2xl mx-auto space-y-5">
+            {valueLadder.map((stage, si) => (
+              <div key={si} className="flex gap-4">
                 <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-coral text-white flex items-center justify-center font-bold ring-4 ring-[#EDEDED]">
                   {si + 1}
                 </div>
-                {/* Step content */}
                 <div
-                  className={`flex-1 rounded-2xl p-6 border shadow-sm ${
+                  className={`flex-1 rounded-2xl p-5 border shadow-sm ${
                     stage.highlight
                       ? "bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border-coral/30"
                       : "bg-white border-slate-200"
                   }`}
                 >
                   <div className="text-coral text-xs font-semibold uppercase tracking-wider mb-1">{stage.tag}</div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{stage.headline}</h3>
-                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">{stage.lead}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">{stage.headline}</h3>
+                  <p className="text-slate-600 text-sm mb-3 leading-relaxed">{stage.lead}</p>
+                  <div className="flex flex-wrap gap-1.5">
                     {stage.items.map((it, i) => (
                       <span
                         key={i}
-                        className="inline-flex items-center px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium"
+                        className="inline-flex items-center px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium"
                       >
                         {it}
                       </span>
