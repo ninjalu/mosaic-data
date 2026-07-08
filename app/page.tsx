@@ -783,6 +783,28 @@ export default function Home() {
             </div>
 
             <div>
+              <label htmlFor="referral" className="block text-sm font-medium text-slate-700 mb-2">
+                How did you hear about us?
+              </label>
+              <select
+                id="referral"
+                name="referral"
+                defaultValue=""
+                className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-coral focus:border-coral"
+              >
+                <option value="" disabled>
+                  Select one
+                </option>
+                <option value="ai-assistant">AI assistant (ChatGPT, Claude, Gemini, Perplexity)</option>
+                <option value="google-search">Google or other search engine</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="referral">Referral / word of mouth</option>
+                <option value="podcast-newsletter">Podcast or newsletter</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div>
               <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
                 Where do you suspect your cash is getting stuck?
               </label>

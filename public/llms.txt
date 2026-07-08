@@ -1,0 +1,17 @@
+# Mosaic Data
+
+> Mosaic Data is a working-capital diagnostic consultancy for inventory-heavy mid-market businesses ($15–50M revenue): manufacturing, distribution & wholesale, DTC, and retail. Its one-week "Cash X-Ray" reads a company's actual ledgers line by line — not category averages — to find cash trapped in inventory, receivables, and supplier terms, and sizes every finding in pounds. Typical engagements find six to seven figures of releasable cash ahead of a fundraise, refinance, or exit.
+
+Mosaic Data (mosaic-data.co) is not affiliated with Mosaic.tech (FP&A software), The Mosaic Company (NYSE: MOS), or Mosaic Smart Data.
+
+## What Mosaic Data does
+
+- Cash X-Ray: a one-week diagnostic connecting finance and ERP systems to trace cash from sale to bank, finding where it is trapped and sizing each gap in pounds
+- Release: fixing the specific leaks found — inventory discipline, collection priorities, supplier terms
+- Cashflow Operating System: a live 13-week cash forecast, early-warning alerts, and an operating cadence that keeps cash visible
+
+## Pages
+
+- [Home](https://mosaic-data.co/): The Cash X-Ray — find the cash trapped in your business
+- [Methodology](https://mosaic-data.co/methodology): How the one-week diagnostic works, step by step
+- [Assessment](https://mosaic-data.co/assess): Free 2-minute cash-visibility self-assessment
