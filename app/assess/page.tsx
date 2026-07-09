@@ -500,21 +500,36 @@ export default function AssessPage() {
 
               <div className="grid md:grid-cols-3 gap-10">
                 <div className="text-center">
-                  <h3 className="flex items-center justify-center gap-3 text-lg font-semibold text-[#4d141e] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Answer honestly</h3>
+                  <div className="w-14 h-14 bg-[#ff3d7e]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                    <svg className="w-7 h-7 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#4d141e] mb-2">Answer honestly</h3>
                   <p className="text-[#8a6b74] text-sm leading-relaxed">
                     15 multiple-choice questions about how cash moves through your business - stock, receivables, payables. No preparation needed.
                   </p>
                 </div>
 
                 <div className="text-center">
-                  <h3 className="flex items-center justify-center gap-3 text-lg font-semibold text-[#4d141e] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Get your scores</h3>
+                  <div className="w-14 h-14 bg-[#ff3d7e]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                    <svg className="w-7 h-7 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#4d141e] mb-2">Get your scores</h3>
                   <p className="text-[#8a6b74] text-sm leading-relaxed">
                     See your overall Cash Health Score plus a breakdown across 6 dimensions with a visual radar chart.
                   </p>
                 </div>
 
                 <div className="text-center">
-                  <h3 className="flex items-center justify-center gap-3 text-lg font-semibold text-[#4d141e] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Know where to focus</h3>
+                  <div className="w-14 h-14 bg-[#ff3d7e]/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                    <svg className="w-7 h-7 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#4d141e] mb-2">Know where to focus</h3>
                   <p className="text-[#8a6b74] text-sm leading-relaxed">
                     Get personalised recommendations for your 3 biggest opportunities to free up cash, plus an estimate of how much is trapped.
                   </p>

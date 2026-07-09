@@ -62,7 +62,12 @@ export default function MethodologyPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
-              <h3 className="flex items-center gap-3 text-xl font-semibold text-[#4d141e] mb-3"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Unit economics</h3>
+              <div className="w-12 h-12 bg-[#ff3d7e]/10 rounded-xl flex items-center justify-center mb-5">
+                <svg className="w-6 h-6 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-[#4d141e] mb-3">Unit economics</h3>
               <p className="text-[#8a6b74] leading-relaxed mb-4">
                 Do you make money on every unit you sell? Revenue growth with declining unit economics
                 is a leaky bucket - you&apos;re feeding the machine faster, but profit is falling out the bottom.
@@ -75,7 +80,12 @@ export default function MethodologyPage() {
             </div>
 
             <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
-              <h3 className="flex items-center gap-3 text-xl font-semibold text-[#4d141e] mb-3"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Capital efficiency</h3>
+              <div className="w-12 h-12 bg-[#ff3d7e]/10 rounded-xl flex items-center justify-center mb-5">
+                <svg className="w-6 h-6 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-[#4d141e] mb-3">Capital efficiency</h3>
               <p className="text-[#8a6b74] leading-relaxed mb-4">
                 Does capital flow through the machine or get stuck? Strong earnings don&apos;t matter
                 if working capital is invisible across five systems.
@@ -88,7 +98,12 @@ export default function MethodologyPage() {
             </div>
 
             <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
-              <h3 className="flex items-center gap-3 text-xl font-semibold text-[#4d141e] mb-3"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Margin consistency</h3>
+              <div className="w-12 h-12 bg-[#ff3d7e]/10 rounded-xl flex items-center justify-center mb-5">
+                <svg className="w-6 h-6 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-[#4d141e] mb-3">Margin consistency</h3>
               <p className="text-[#8a6b74] leading-relaxed mb-4">
                 Can you predict your output from your input? When margin varies 30+ points within the same
                 business, you don&apos;t have an industry ceiling - you have a consistency problem.

@@ -511,7 +511,12 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
-              <h3 className="flex items-center gap-3 text-[#4d141e] font-semibold text-lg mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />We Think in Cash</h3>
+              <div className="w-12 h-12 bg-[#ff3d7e]/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-[#4d141e] font-semibold text-lg mb-2">We Think in Cash</h3>
               <p className="text-[#8a6b74] text-sm">
                 Finance and accounting background means we understand working capital, the cash
                 conversion cycle, and what actually frees money - not just a tidy dashboard.
@@ -519,7 +524,12 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
-              <h3 className="flex items-center gap-3 text-[#4d141e] font-semibold text-lg mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />We Work at Line Level</h3>
+              <div className="w-12 h-12 bg-[#ff3d7e]/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z M4 9h16 M9 4v16" />
+                </svg>
+              </div>
+              <h3 className="text-[#4d141e] font-semibold text-lg mb-2">We Work at Line Level</h3>
               <p className="text-[#8a6b74] text-sm">
                 Excel chokes around a million rows. Your business has tens of millions of
                 transaction lines once you join stock, sales, returns, and terms. We work where
@@ -528,7 +538,12 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
-              <h3 className="flex items-center gap-3 text-[#4d141e] font-semibold text-lg mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Every Finding Sized in Pounds</h3>
+              <div className="w-12 h-12 bg-[#ff3d7e]/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 className="text-[#4d141e] font-semibold text-lg mb-2">Every Finding Sized in Pounds</h3>
               <p className="text-[#8a6b74] text-sm">
                 Not &ldquo;your inventory is high.&rdquo; We tell you how much cash is trapped, in which
                 lines, and what it&apos;s worth to free it. If we can&apos;t find it, we say so.
@@ -536,7 +551,12 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
-              <h3 className="flex items-center gap-3 text-[#4d141e] font-semibold text-lg mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />One Week, Not One Quarter</h3>
+              <div className="w-12 h-12 bg-[#ff3d7e]/10 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-[#ff3d7e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-[#4d141e] font-semibold text-lg mb-2">One Week, Not One Quarter</h3>
               <p className="text-[#8a6b74] text-sm">
                 Bias for action. A sharp answer in days beats a perfect answer delivered after
                 the cash crunch has already happened.
