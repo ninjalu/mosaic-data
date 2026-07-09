@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf4f2;
-  --foreground: #3a2028;
+  --background: #f4f7f3;
+  --foreground: #1e352b;
 }
 
 @theme {
   /* Brightmere palette */
-  --color-pink: #ff3d7e;
-  --color-pink-deep: #e83e73;
-  --color-pink-light: #ff9dbf;
-  --color-oxblood: #4d141e;
-  --color-oxblood-deep: #330d14;
-  --color-offwhite: #f8edef;
-  --color-rosemuted: #c9a2ab;
+  --color-gold: #e3b23c;
+  --color-gold-deep: #c9992e;
+  --color-sage: #8fc0a9;
+  --color-green: #123b2d;
+  --color-green-deep: #0d2b21;
+  --color-offwhite: #eef6f1;
+  --color-greenmuted: #9dbcab;
 }
 
 @theme inline {
@@ -36,7 +36,7 @@ html {
 
 /* Custom selection color */
 ::selection {
-  background-color: rgba(255, 61, 126, 0.3);
+  background-color: rgba(227, 178, 60, 0.26);
 }
 
 /* Form focus states */
