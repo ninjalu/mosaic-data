@@ -61,6 +61,18 @@ export default function Home() {
               Methodology
             </a>
             <a
+              href="/faq"
+              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
+            >
+              FAQ
+            </a>
+            <a
+              href="/pricing"
+              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
+            >
+              Pricing
+            </a>
+            <a
               href="/assess"
               className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden sm:block"
             >
