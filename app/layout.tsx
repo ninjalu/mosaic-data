@@ -14,16 +14,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mosaic-data.co"),
-  title: "Mosaic Data | Find the Cash Trapped in Your Operations",
-  description: "We read your ledgers line by line and show you exactly where your cash is stuck—inventory you don't need, invoices you're not chasing, terms you pay too early. One week. Every pound sized.",
+  metadataBase: new URL("https://brightmerehq.com"),
+  title: "Brightmere | Find the Cash Trapped in Your Operations",
+  description: "We read your ledgers line by line and show you exactly where your cash is stuck - inventory you don't need, invoices you're not chasing, terms you pay too early. One week. Every pound sized.",
   keywords: ["working capital", "cash flow", "cash conversion cycle", "inventory optimization", "DSO", "days inventory outstanding", "working capital release", "mid-market", "manufacturing", "distribution", "DTC", "retail"],
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Mosaic Data | Find the Cash Trapped in Your Operations",
+    title: "Brightmere | Find the Cash Trapped in Your Operations",
     description: "We read your ledgers line by line and show you exactly where your cash is stuck. One week. Every pound sized.",
     type: "website",
   },

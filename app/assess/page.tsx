@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Wordmark from "../components/Wordmark";
 
 // --- Data ---
 
@@ -281,22 +281,22 @@ function RadarChart({ dimensions, scores }: { dimensions: Dimension[]; scores: R
       {levels.map((level) => {
         const pts = dimensions.map((_, i) => getPoint(i, level));
         const path = pts.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ") + " Z";
-        return <path key={level} d={path} fill="none" stroke="#e2e8f0" strokeWidth="1" />;
+        return <path key={level} d={path} fill="none" stroke="#eaddda" strokeWidth="1" />;
       })}
       {dimensions.map((_, i) => {
         const p = getPoint(i, 100);
-        return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#e2e8f0" strokeWidth="1" />;
+        return <line key={i} x1={cx} y1={cy} x2={p.x} y2={p.y} stroke="#eaddda" strokeWidth="1" />;
       })}
-      <path d={dataPath} fill="rgba(212, 112, 90, 0.2)" stroke="#D4705A" strokeWidth="2.5" />
+      <path d={dataPath} fill="rgba(255, 61, 126, 0.2)" stroke="#ff3d7e" strokeWidth="2.5" />
       {dataPoints.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r="4" fill="#D4705A" />
+        <circle key={i} cx={p.x} cy={p.y} r="4" fill="#ff3d7e" />
       ))}
       {dimensions.map((d, i) => {
         const p = getPoint(i, 125);
         const angle = angleStep * i - Math.PI / 2;
         const textAnchor = Math.abs(Math.cos(angle)) < 0.1 ? "middle" : Math.cos(angle) > 0 ? "start" : "end";
         return (
-          <text key={i} x={p.x} y={p.y} textAnchor={textAnchor} dominantBaseline="middle" className="text-[11px] fill-slate-600 font-medium">
+          <text key={i} x={p.x} y={p.y} textAnchor={textAnchor} dominantBaseline="middle" className="text-[11px] fill-[#8a6b74] font-medium">
             {d.shortName}
           </text>
         );
@@ -315,7 +315,7 @@ function ScoreCircle({ score }: { score: number }) {
   return (
     <div className="relative w-44 h-44 mx-auto">
       <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
-        <circle cx="60" cy="60" r="54" fill="none" stroke="#e2e8f0" strokeWidth="8" />
+        <circle cx="60" cy="60" r="54" fill="none" stroke="#eaddda" strokeWidth="8" />
         <circle
           cx="60" cy="60" r="54" fill="none" stroke={band.color} strokeWidth="8"
           strokeLinecap="round" strokeDasharray={circumference} strokeDashoffset={offset}
@@ -323,8 +323,8 @@ function ScoreCircle({ score }: { score: number }) {
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-5xl font-bold text-slate-900">{score}</span>
-        <span className="text-sm text-slate-500">/100</span>
+        <span className="font-mono text-5xl font-bold text-[#4d141e]">{score}</span>
+        <span className="text-sm text-[#8a6b74]">/100</span>
       </div>
     </div>
   );
@@ -426,15 +426,14 @@ export default function AssessPage() {
   const weakest = [...DIMENSIONS].sort((a, b) => (dimScores[a.key] || 0) - (dimScores[b.key] || 0)).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#EDEDED] text-slate-800">
+    <div className="min-h-screen bg-[#faf4f2] text-[#3a2028]">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-[#EDEDED]/90 backdrop-blur-md z-50 border-b border-slate-300">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3">
-            <Image src="/logo-icon.png" alt="Mosaic Data" width={48} height={31} className="rounded" />
-            <span className="text-xl font-semibold text-slate-800">Mosaic Data</span>
+      <header className="fixed top-0 w-full bg-[#2c0a11]/90 backdrop-blur-md z-50">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+          <a href="/" className="flex items-center">
+            <Wordmark dark />
           </a>
-          <a href="/#contact" className="px-5 py-2 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors">
+          <a href="/#contact" className="px-5 py-2.5 bg-pink text-white rounded-full font-semibold text-[15px] hover:bg-pink-deep transition-colors">
             Book a call
           </a>
         </div>
@@ -444,36 +443,36 @@ export default function AssessPage() {
       {phase === "landing" && (
         <>
           {/* Hero + Lead Capture */}
-          <section className="pt-32 pb-16 px-6 relative overflow-hidden">
-            <div className="absolute top-28 left-[5%] w-6 h-6 bg-[#D4705A]/30 rounded-sm animate-float1" />
-            <div className="absolute top-44 left-[12%] w-6 h-6 bg-[#D4705A]/25 rounded-sm animate-float2" />
-            <div className="absolute top-36 right-[6%] w-6 h-6 bg-[#D4705A]/35 rounded-sm animate-float3" />
-            <div className="absolute top-52 right-[14%] w-6 h-6 bg-[#D4705A]/25 rounded-sm animate-float1" />
-            <div className="absolute bottom-12 left-[8%] w-6 h-6 bg-[#D4705A]/30 rounded-sm animate-float3" />
-            <div className="absolute bottom-24 right-[10%] w-6 h-6 bg-[#D4705A]/25 rounded-sm animate-float2" />
+          <section className="pt-36 pb-20 px-6 relative overflow-hidden bg-[linear-gradient(110deg,#2c0a11_0%,#330d14_55%,#43101a_100%)]">
+            <div className="absolute top-28 left-[5%] w-6 h-6 bg-[#ff3d7e]/30 rounded-full animate-float1" />
+            <div className="absolute top-44 left-[12%] w-6 h-6 bg-[#ff3d7e]/25 rounded-full animate-float2" />
+            <div className="absolute top-36 right-[6%] w-6 h-6 bg-[#ff3d7e]/35 rounded-full animate-float3" />
+            <div className="absolute top-52 right-[14%] w-6 h-6 bg-[#ff3d7e]/25 rounded-full animate-float1" />
+            <div className="absolute bottom-12 left-[8%] w-6 h-6 bg-[#ff3d7e]/30 rounded-full animate-float3" />
+            <div className="absolute bottom-24 right-[10%] w-6 h-6 bg-[#ff3d7e]/25 rounded-full animate-float2" />
 
             <div className="max-w-3xl mx-auto relative z-10">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-3 mb-8">
-                  <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
+                  <span className="px-3 py-1 bg-white/10 border border-white/15 rounded-full text-xs font-medium text-offwhite">
                     Instant results
                   </span>
-                  <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
+                  <span className="px-3 py-1 bg-white/10 border border-white/15 rounded-full text-xs font-medium text-offwhite">
                     Personalised insights
                   </span>
-                  <span className="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-medium text-slate-600">
+                  <span className="px-3 py-1 bg-white/10 border border-white/15 rounded-full text-xs font-medium text-offwhite">
                     2 minutes
                   </span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-slate-900 leading-[1.1] mb-6">
-                  How much cash is{" "}
-                  <span className="text-coral">trapped in your business?</span>
+                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-offwhite leading-[1.1] tracking-[-1px] mb-6">
+                  How much <span className="text-pink [text-shadow:0_0_28px_rgba(255,61,126,0.4)]">cash</span> is{" "}
+                  trapped in your business?
                 </h1>
 
-                <p className="text-xl text-slate-600 max-w-xl mx-auto mb-10 leading-relaxed">
+                <p className="text-xl text-rosemuted max-w-xl mx-auto mb-10 leading-relaxed">
                   Most growing manufacturers, distributors, and retailers are sitting on cash
-                  they can&apos;t see&mdash;stuck in stock, slow invoices, and terms paid too early.
+                  they can&apos;t see - stuck in stock, slow invoices, and terms paid too early.
                   This scorecard shows you where.
                 </p>
               </div>
@@ -481,7 +480,7 @@ export default function AssessPage() {
               <div className="text-center">
                 <button
                   onClick={() => { setPhase("context"); window.scrollTo(0, 0); }}
-                  className="inline-block px-10 py-5 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
+                  className="inline-block px-10 py-5 bg-pink text-white rounded-full font-semibold shadow-[0_6px_30px_rgba(255,61,126,0.35)] hover:bg-pink-deep transition-colors text-lg"
                 >
                   Start the assessment &rarr;
                 </button>
@@ -490,48 +489,33 @@ export default function AssessPage() {
           </section>
 
           {/* How It Works */}
-          <section className="py-20 px-6 bg-white/50">
+          <section className="py-20 px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#3a2028] mb-4 pb-4 border-b-2 border-[#eaddda]">
                 How it works
               </h2>
-              <p className="text-slate-600 text-center mb-14 max-w-lg mx-auto">
-                Answer 15 questions across 6 dimensions of your cash cycle&mdash;stock, receivables, payables, and forecasting.
+              <p className="text-[#8a6b74] mb-14 max-w-lg">
+                Answer 15 questions across 6 dimensions of your cash cycle - stock, receivables, payables, and forecasting.
               </p>
 
               <div className="grid md:grid-cols-3 gap-10">
                 <div className="text-center">
-                  <div className="w-14 h-14 bg-coral/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                    <svg className="w-7 h-7 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">Answer honestly</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    15 multiple-choice questions about how cash moves through your business&mdash;stock, receivables, payables. No preparation needed.
+                  <h3 className="flex items-center justify-center gap-3 text-lg font-semibold text-[#4d141e] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Answer honestly</h3>
+                  <p className="text-[#8a6b74] text-sm leading-relaxed">
+                    15 multiple-choice questions about how cash moves through your business - stock, receivables, payables. No preparation needed.
                   </p>
                 </div>
 
                 <div className="text-center">
-                  <div className="w-14 h-14 bg-coral/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                    <svg className="w-7 h-7 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">Get your scores</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <h3 className="flex items-center justify-center gap-3 text-lg font-semibold text-[#4d141e] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Get your scores</h3>
+                  <p className="text-[#8a6b74] text-sm leading-relaxed">
                     See your overall Cash Health Score plus a breakdown across 6 dimensions with a visual radar chart.
                   </p>
                 </div>
 
                 <div className="text-center">
-                  <div className="w-14 h-14 bg-coral/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
-                    <svg className="w-7 h-7 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">Know where to focus</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <h3 className="flex items-center justify-center gap-3 text-lg font-semibold text-[#4d141e] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Know where to focus</h3>
+                  <p className="text-[#8a6b74] text-sm leading-relaxed">
                     Get personalised recommendations for your 3 biggest opportunities to free up cash, plus an estimate of how much is trapped.
                   </p>
                 </div>
@@ -542,15 +526,15 @@ export default function AssessPage() {
           {/* What You'll Discover */}
           <section className="py-20 px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-14">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#3a2028] mb-14 pb-4 border-b-2 border-[#eaddda]">
                 Your score covers 6 dimensions of cash
               </h2>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {DIMENSIONS.map((d) => (
-                  <div key={d.key} className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
-                    <h3 className="font-semibold text-slate-900 mb-2">{d.name}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">
+                  <div key={d.key} className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
+                    <h3 className="flex items-center gap-3 font-semibold text-[#4d141e] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />{d.name}</h3>
+                    <p className="text-[#8a6b74] text-sm leading-relaxed">
                       {d.key === "inventory_health" && "Is cash sitting on your shelves in slow movers and dead stock?"}
                       {d.key === "receivables" && "Are slow-paying customers funding their business with your cash?"}
                       {d.key === "payables" && "Are you paying suppliers earlier than your terms require?"}
@@ -565,17 +549,17 @@ export default function AssessPage() {
           </section>
 
           {/* Bottom CTA */}
-          <section className="py-20 px-6 bg-white/50">
+          <section className="py-20 px-6">
             <div className="max-w-xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#3a2028] mb-4">
                 Ready to find out?
               </h2>
-              <p className="text-slate-600 mb-8">
+              <p className="text-[#8a6b74] mb-8">
                 Takes 2 minutes. No sales call. Just clarity on where to focus.
               </p>
               <button
                 onClick={() => { setPhase("context"); window.scrollTo(0, 0); }}
-                className="inline-block px-10 py-5 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
+                className="inline-block px-10 py-5 bg-pink text-white rounded-full font-semibold shadow-[0_6px_30px_rgba(255,61,126,0.35)] hover:bg-pink-deep transition-colors text-lg"
               >
                 Start the assessment &rarr;
               </button>
@@ -589,18 +573,18 @@ export default function AssessPage() {
         <main className="pt-28 pb-20 px-6">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#3a2028] mb-3">
                 A few things about your business
               </h1>
-              <p className="text-slate-600">
+              <p className="text-[#8a6b74]">
                 This helps us tailor your results.
               </p>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-8">
+            <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)] space-y-8">
               {CONTEXT_QUESTIONS.map((q) => (
                 <div key={q.id}>
-                  <label className="block text-slate-900 font-medium mb-3">{q.label}</label>
+                  <label className="block text-[#3a2028] font-medium mb-3">{q.label}</label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                     {q.options.map((opt) => (
                       <button
@@ -608,8 +592,8 @@ export default function AssessPage() {
                         onClick={() => handleContextSelect(q.id, opt)}
                         className={`px-4 py-3 rounded-lg border text-sm font-medium transition-all ${
                           contextAnswers[q.id] === opt
-                            ? "border-coral bg-[#D4705A]/10 text-coral"
-                            : "border-slate-200 text-slate-600 hover:border-slate-300"
+                            ? "border-pink bg-[#ff3d7e]/10 text-pink"
+                            : "border-[#eaddda] text-[#8a6b74] hover:border-[#eaddda]"
                         }`}
                       >
                         {opt}
@@ -622,10 +606,10 @@ export default function AssessPage() {
               <button
                 onClick={() => { if (contextComplete) { setPhase("questions"); window.scrollTo(0, 0); } }}
                 disabled={!contextComplete}
-                className={`w-full py-4 rounded-lg font-semibold transition-colors text-lg ${
+                className={`w-full py-4 rounded-full font-semibold transition-colors text-lg ${
                   contextComplete
-                    ? "bg-coral text-white hover:bg-coral-light"
-                    : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                    ? "bg-pink text-white hover:bg-pink-deep"
+                    : "bg-[#eaddda] text-[#8a6b74] cursor-not-allowed"
                 }`}
               >
                 Start the questions &rarr;
@@ -641,22 +625,22 @@ export default function AssessPage() {
           <div className="max-w-2xl mx-auto">
             {/* Progress */}
             <div className="mb-8">
-              <div className="flex items-center justify-between text-sm text-slate-500 mb-2">
-                <span className="font-medium text-slate-700">{allQuestions[currentQ].dimensionName}</span>
+              <div className="flex items-center justify-between text-sm text-[#8a6b74] mb-2">
+                <span className="font-medium text-[#3a2028]">{allQuestions[currentQ].dimensionName}</span>
                 <span>
                   {currentQ + 1} of {allQuestions.length}
                 </span>
               </div>
-              <div className="w-full h-2.5 bg-slate-200 rounded-full overflow-hidden">
+              <div className="w-full h-2.5 bg-[#eaddda] rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-coral rounded-full transition-all duration-300"
+                  className="h-full bg-pink rounded-full transition-all duration-300"
                   style={{ width: `${((currentQ + 1) / allQuestions.length) * 100}%` }}
                 />
               </div>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
-              <h2 className="text-xl font-semibold text-slate-900 mb-8 leading-snug">
+            <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
+              <h2 className="text-xl font-semibold text-[#3a2028] mb-8 leading-snug">
                 {allQuestions[currentQ].text}
               </h2>
 
@@ -668,10 +652,10 @@ export default function AssessPage() {
                     <button
                       key={i}
                       onClick={() => handleAnswer(opt.score)}
-                      className={`w-full text-left px-5 py-4 rounded-xl border transition-all ${
+                      className={`w-full text-left px-5 py-4 rounded-[14px] border transition-all ${
                         isSelected
-                          ? "border-coral bg-[#D4705A]/10 text-slate-900"
-                          : "border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50"
+                          ? "border-pink bg-[#ff3d7e]/10 text-[#3a2028]"
+                          : "border-[#eaddda] text-[#3a2028] hover:border-[#eaddda] hover:bg-[#faf4f2]"
                       }`}
                     >
                       {opt.label}
@@ -683,7 +667,7 @@ export default function AssessPage() {
               {currentQ > 0 && (
                 <button
                   onClick={handleBack}
-                  className="mt-6 text-sm text-slate-500 hover:text-slate-700 transition-colors"
+                  className="mt-6 text-sm text-[#8a6b74] hover:text-[#3a2028] transition-colors"
                 >
                   &larr; Previous question
                 </button>
@@ -698,22 +682,22 @@ export default function AssessPage() {
         <main className="pt-28 pb-20 px-6">
           <div className="max-w-md mx-auto">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-coral/10 rounded-full flex items-center justify-center mx-auto mb-5">
-                <svg className="w-8 h-8 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-pink/10 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg className="w-8 h-8 text-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h1 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
+              <h1 className="text-2xl md:text-3xl font-bold text-[#3a2028] mb-3">
                 Your score is ready
               </h1>
-              <p className="text-slate-600">
+              <p className="text-[#8a6b74]">
                 Where should we send your personalised results and recommendations?
               </p>
             </div>
 
-            <form onSubmit={handleLeadCapture} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-5">
+            <form onSubmit={handleLeadCapture} className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)] space-y-5">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="firstName" className="block text-sm font-medium text-[#3a2028] mb-2">
                   First name
                 </label>
                 <input
@@ -722,13 +706,13 @@ export default function AssessPage() {
                   required
                   value={leadInfo.firstName}
                   onChange={(e) => setLeadInfo((prev) => ({ ...prev, firstName: e.target.value }))}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
+                  className="w-full px-4 py-3 bg-white border border-[#eaddda] rounded-lg text-[#3a2028] placeholder-[#c4a9b1] focus:ring-2 focus:ring-pink focus:border-pink"
                   placeholder="Your first name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-[#3a2028] mb-2">
                   Email
                 </label>
                 <input
@@ -737,7 +721,7 @@ export default function AssessPage() {
                   required
                   value={leadInfo.email}
                   onChange={(e) => setLeadInfo((prev) => ({ ...prev, email: e.target.value }))}
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-coral focus:border-coral"
+                  className="w-full px-4 py-3 bg-white border border-[#eaddda] rounded-lg text-[#3a2028] placeholder-[#c4a9b1] focus:ring-2 focus:ring-pink focus:border-pink"
                   placeholder="you@company.com"
                 />
               </div>
@@ -745,16 +729,16 @@ export default function AssessPage() {
               <button
                 type="submit"
                 disabled={submitting || !leadValid}
-                className={`w-full py-4 rounded-lg font-semibold transition-colors text-lg ${
+                className={`w-full py-4 rounded-full font-semibold transition-colors text-lg ${
                   leadValid
-                    ? "bg-coral text-white hover:bg-coral-light"
-                    : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                    ? "bg-pink text-white hover:bg-pink-deep"
+                    : "bg-[#eaddda] text-[#8a6b74] cursor-not-allowed"
                 }`}
               >
                 {submitting ? "Generating your report..." : "See my results \u2192"}
               </button>
 
-              <p className="text-xs text-slate-500 text-center">
+              <p className="text-xs text-[#8a6b74] text-center">
                 We&apos;ll also email you a copy of your results. No spam, ever.
               </p>
             </form>
@@ -767,16 +751,16 @@ export default function AssessPage() {
         <main className="pt-28 pb-20 px-6">
           <div className="max-w-2xl mx-auto space-y-8">
             <div className="text-center">
-              <p className="text-sm text-slate-500 mb-2">
+              <p className="text-sm text-[#8a6b74] mb-2">
                 {leadInfo.firstName ? `${leadInfo.firstName}, here are your results` : "Here are your results"}
               </p>
-              <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+              <h1 className="text-3xl md:text-4xl font-bold text-[#3a2028] mb-2">
                 Your Cash Health Score
               </h1>
             </div>
 
             {/* Score + Radar */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+            <div className="bg-white rounded-[14px] p-8 md:p-10 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="text-center">
                   <ScoreCircle score={overallScore} />
@@ -788,28 +772,28 @@ export default function AssessPage() {
                       {band.label}
                     </span>
                   </div>
-                  <p className="text-slate-600 mt-3 text-sm max-w-[240px] mx-auto">{band.description}</p>
+                  <p className="text-[#8a6b74] mt-3 text-sm max-w-[240px] mx-auto">{band.description}</p>
                 </div>
                 <RadarChart dimensions={DIMENSIONS} scores={dimScores} />
               </div>
             </div>
 
             {/* Cash Trapped Estimate */}
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 border border-red-200 rounded-2xl p-8 md:p-10 text-center">
-              <p className="text-sm text-slate-500 uppercase tracking-wider font-medium mb-3">
+            <div className="bg-gradient-to-br from-[#ff3d7e]/10 to-[#ff9dbf]/20 border border-pink/30 rounded-[14px] p-8 md:p-10 text-center">
+              <p className="text-sm text-[#8a6b74] uppercase tracking-wider font-medium mb-3">
                 Estimated cash trapped in your operations
               </p>
-              <p className="text-4xl md:text-5xl font-bold text-slate-900">
+              <p className="font-mono text-4xl md:text-5xl font-bold text-[#4d141e]">
                 {formatCurrency(cashTrapped.low)} &ndash; {formatCurrency(cashTrapped.high)}
               </p>
-              <p className="text-sm text-slate-500 mt-3">
+              <p className="text-sm text-[#8a6b74] mt-3">
                 A rough estimate based on businesses your size with similar scores
               </p>
             </div>
 
             {/* Dimension Breakdown */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-900 mb-6">Score breakdown</h3>
+            <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
+              <h3 className="flex items-center gap-3 text-lg font-semibold text-[#4d141e] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Score breakdown</h3>
               <div className="space-y-4">
                 {DIMENSIONS.map((d) => {
                   const score = dimScores[d.key] || 0;
@@ -817,12 +801,12 @@ export default function AssessPage() {
                   return (
                     <div key={d.key}>
                       <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-sm font-medium text-slate-700">{d.name}</span>
+                        <span className="text-sm font-medium text-[#3a2028]">{d.name}</span>
                         <span className="text-sm font-semibold" style={{ color: scoreBand.color }}>
                           {score}/100
                         </span>
                       </div>
-                      <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="w-full h-3 bg-[#f3e7e4] rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all duration-700"
                           style={{ width: `${score}%`, backgroundColor: scoreBand.color }}
@@ -835,19 +819,17 @@ export default function AssessPage() {
             </div>
 
             {/* Top 3 Recommendations */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
-              <h3 className="text-lg font-semibold text-slate-900 mb-6">
-                Your top 3 opportunities
-              </h3>
+            <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(77,20,30,0.06)]">
+              <h3 className="flex items-center gap-3 text-lg font-semibold text-[#4d141e] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-pink flex-shrink-0" />Your top 3 opportunities</h3>
               <div className="space-y-6">
                 {weakest.map((d, i) => (
                   <div key={d.key} className="flex gap-4">
-                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-coral/10 flex items-center justify-center">
-                      <span className="text-coral font-bold text-sm">{i + 1}</span>
+                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-pink/10 flex items-center justify-center">
+                      <span className="text-pink font-bold text-sm">{i + 1}</span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900">{d.name}</h4>
-                      <p className="text-slate-600 text-sm mt-1 leading-relaxed">{d.recommendation}</p>
+                      <h4 className="font-semibold text-[#3a2028]">{d.name}</h4>
+                      <p className="text-[#8a6b74] text-sm mt-1 leading-relaxed">{d.recommendation}</p>
                     </div>
                   </div>
                 ))}
@@ -855,21 +837,21 @@ export default function AssessPage() {
             </div>
 
             {/* CTA */}
-            <div className="bg-gradient-to-br from-[#D4705A]/10 to-[#E8A090]/20 border border-coral/30 rounded-2xl p-8 md:p-10 text-center">
-              <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">
+            <div className="bg-gradient-to-br from-[#ff3d7e]/10 to-[#ff9dbf]/20 border border-pink/30 rounded-[14px] p-8 md:p-10 text-center">
+              <h3 className="text-xl md:text-2xl font-bold text-[#3a2028] mb-3">
                 Want to talk through your results?
               </h3>
-              <p className="text-slate-600 mb-6 max-w-md mx-auto">
+              <p className="text-[#8a6b74] mb-6 max-w-md mx-auto">
                 Book a free 30-minute call. We&apos;ll walk through your scores, answer questions,
                 and tell you honestly if we can help.
               </p>
               <a
                 href="/#contact"
-                className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors text-lg"
+                className="inline-block px-8 py-4 bg-pink text-white rounded-full font-semibold shadow-[0_6px_30px_rgba(255,61,126,0.35)] hover:bg-pink-deep transition-colors text-lg"
               >
                 Book a free call &rarr;
               </a>
-              <p className="text-slate-500 text-sm mt-3">
+              <p className="text-[#8a6b74] text-sm mt-3">
                 No pitch. No obligation.
               </p>
             </div>
@@ -885,7 +867,7 @@ export default function AssessPage() {
                   setCurrentQ(0);
                   window.scrollTo(0, 0);
                 }}
-                className="text-sm text-slate-500 hover:text-slate-700 underline transition-colors"
+                className="text-sm text-[#4d141e] underline hover:text-pink transition-colors"
               >
                 Retake assessment
               </button>
@@ -895,20 +877,23 @@ export default function AssessPage() {
       )}
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-slate-300 bg-white/30">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Image src="/logo-icon.png" alt="Mosaic Data" width={40} height={26} className="rounded" />
-            <span className="font-semibold text-slate-800">Mosaic Data</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <span className="text-slate-500 text-sm">London, UK</span>
-            <a href="mailto:info@mosaic-data.co" className="text-slate-600 hover:text-coral text-sm transition-colors">
-              info@mosaic-data.co
-            </a>
-            <p className="text-slate-500 text-sm">&copy; 2026 Mosaic Data</p>
-          </div>
-        </div>
+      <footer className="py-24 px-6 text-center bg-[linear-gradient(110deg,#2c0a11_0%,#330d14_60%,#3f1019_100%)]">
+        <a href="/" className="inline-block">
+          <Wordmark dark big />
+        </a>
+        <p className="mt-4 text-sm tracking-[5px] uppercase text-rosemuted">London, UK</p>
+        <a
+          href="/#contact"
+          className="inline-block mt-9 px-9 py-4 bg-pink text-white rounded-full font-bold shadow-[0_6px_30px_rgba(255,61,126,0.35)] hover:bg-pink-deep transition-colors"
+        >
+          Book a call
+        </a>
+        <p className="mt-11 text-[13px] text-[#8a6b74]">
+          <a href="mailto:lu@brightmerehq.com" className="hover:text-pink transition-colors">
+            lu@brightmerehq.com
+          </a>
+          {" "}&middot; &copy; 2026 Brightmere
+        </p>
       </footer>
     </div>
   );

@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #EDEDED;
-  --foreground: #1e293b;
+  --background: #faf4f2;
+  --foreground: #3a2028;
 }
 
-/* Custom coral color to match logo */
-.text-coral { color: #D4705A; }
-.bg-coral { background-color: #D4705A; }
-.bg-coral-light { background-color: #E8A090; }
-.border-coral { border-color: #D4705A; }
+@theme {
+  /* Brightmere palette */
+  --color-pink: #ff3d7e;
+  --color-pink-deep: #e83e73;
+  --color-pink-light: #ff9dbf;
+  --color-oxblood: #4d141e;
+  --color-oxblood-deep: #330d14;
+  --color-offwhite: #f8edef;
+  --color-rosemuted: #c9a2ab;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -31,7 +36,7 @@ html {
 
 /* Custom selection color */
 ::selection {
-  background-color: rgba(249, 115, 22, 0.3);
+  background-color: rgba(255, 61, 126, 0.3);
 }
 
 /* Form focus states */
@@ -55,7 +60,7 @@ select:focus {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Floating mosaic animations */
+/* Floating dot animations */
 @keyframes float1 {
   0%, 100% {
     transform: translate(0, 0);
