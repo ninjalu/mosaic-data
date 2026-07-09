@@ -7,7 +7,7 @@ export default function Emblem({
   height?: number;
   light?: boolean;
 }) {
-  const bars = light ? "#4e8c6f" : "#8fc0a9";
+  const bars = light ? "#e85d47" : "#ff9a82";
   return (
     <svg width={width} height={height} viewBox="0 0 130 120" aria-hidden="true">
       <path d="M20,62 A45,45 0 0 1 110,62 Z" fill="#e3b23c" />
