@@ -57,7 +57,7 @@ preview-methodology.png
 ... (truncated)
 ```
 
-**Git:** branch: `main` | last commit: 2026-08-06 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
+**Git:** branch: `main` | last commit: 2026-08-07 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
 
 ## AI-agent bridge (Codex / open-source)
 
