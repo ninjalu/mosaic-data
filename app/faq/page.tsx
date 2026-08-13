@@ -95,7 +95,7 @@ const SECTIONS: Section[] = [
       {
         q: "Is hiring a cash flow consultant worth it for a business my size?",
         a: [
-          "It’s worth it when three things are true: you’re roughly $15–50M revenue, you manage hundreds or thousands of SKUs or customers (too many to track by hand), and cash feels tighter than your profit says it should. In that zone there’s almost always six or seven figures sitting in the cycle, and a fixed-fee week that names it pays for itself quickly.",
+          "It’s worth it when three things are true: you manage hundreds or thousands of SKUs, customers or jobs (too many to track by hand), cash feels tighter than your profit says it should, and the numbers you steer by don’t fully agree with each other. In that zone there’s almost always six or seven figures sitting in the cycle, and a fixed-fee week that names it pays for itself quickly.",
           "It’s honestly not worth it if you’re much smaller (the absolute pounds get thin), if you’re cash-rich with clean visibility already, or if your ledgers are too incomplete to read in a week. We tell people that on the first call - a diagnostic that finds nothing helps nobody.",
         ],
       },
@@ -208,7 +208,7 @@ const SECTIONS: Section[] = [
         q: "Does a business my size actually need one, or is that just for companies in trouble?",
         a: [
           "The restructuring stigma is out of date - well-run businesses use the 13-week as a steering wheel, not a life raft. You need one if any of these are true: seasonal stock builds, tight headroom on your facility, a growth spurt underway, a refinance or sale on the horizon, or one customer worth more than 20% of revenue.",
-          "If you’re genuinely cash-rich with boring, predictable flows, a monthly view may be enough. But most $15–50M businesses that think they’re in that category are looking at averages that say fine while the weeks underneath say otherwise.",
+          "If you’re genuinely cash-rich with boring, predictable flows, a monthly view may be enough. But most operationally complex businesses that think they’re in that category are looking at averages that say fine while the weeks underneath say otherwise.",
         ],
       },
       {
@@ -342,12 +342,6 @@ export default function FAQPage() {
               Pricing
             </a>
             <a
-              href="/assess"
-              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden sm:block"
-            >
-              2-min assessment
-            </a>
-            <a
               href="/#contact"
               className="px-5 py-2.5 bg-gold text-[#2b1209] rounded-full font-bold text-[15px] hover:bg-gold-deep transition-colors"
             >
@@ -376,11 +370,10 @@ export default function FAQPage() {
             </span>
           </h1>
           <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
-            Brightmere runs one-week working capital diagnostics for inventory-heavy
-            mid-market businesses - $15–50M revenue, in manufacturing, distribution,
-            DTC, and retail. These are the questions owners and finance leaders ask us
-            most, answered the way we&apos;d answer them on a call: plainly, in pounds,
-            including the parts that don&apos;t favour us.
+            Brightmere brings operational and financial clarity to operationally complex
+            businesses - reading the numbers line by line, not category averages. These are the
+            questions owners and finance leaders ask us most, answered the way we&apos;d answer
+            them on a call: plainly, in pounds, including the parts that don&apos;t favour us.
           </p>
         </div>
       </section>
@@ -441,9 +434,8 @@ export default function FAQPage() {
               Have a question that isn&apos;t here?
             </h2>
             <p className="text-lg text-[#75706c] mb-8 max-w-xl mx-auto">
-              Ask it on a 30-minute call - no pitch deck, no obligation. Or take the
-              2-minute assessment and see which parts of your cash cycle deserve a
-              closer look.
+              Ask it on a 30-minute call - no pitch deck, no obligation. We&apos;ll tell you
+              honestly where to start, and whether we can help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -451,12 +443,6 @@ export default function FAQPage() {
                 className="px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
               >
                 Book a call &rarr;
-              </a>
-              <a
-                href="/assess"
-                className="px-8 py-4 border-2 border-gold/55 text-green rounded-full font-semibold hover:border-gold transition-colors text-lg"
-              >
-                Take the 2-min assessment
               </a>
             </div>
           </div>

@@ -32,12 +32,6 @@ export default function BlogPost() {
               Insights
             </a>
             <a
-              href="/assess"
-              className="px-5 py-2 border border-coral text-coral rounded-lg font-semibold hover:bg-coral/5 transition-colors"
-            >
-              2-min assessment
-            </a>
-            <a
               href="/#contact"
               className="px-5 py-2 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors"
             >
@@ -280,14 +274,14 @@ export default function BlogPost() {
               How visible is your financial data?
             </h3>
             <p className="text-slate-600 mb-6">
-              Take our 2-minute assessment and find out where your blind spots
-              are costing you money.
+              If your numbers don&apos;t agree with each other, that&apos;s where we start.
+              Book a 30-minute call and we&apos;ll tell you honestly where to look.
             </p>
             <a
-              href="/assess"
+              href="/#contact"
               className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors"
             >
-              Take the 2-min assessment &rarr;
+              Book a call &rarr;
             </a>
           </div>
         </div>

@@ -98,12 +98,6 @@ export default function PricingPage() {
               FAQ
             </a>
             <a
-              href="/assess"
-              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden sm:block"
-            >
-              2-min assessment
-            </a>
-            <a
               href="/#contact"
               className="px-5 py-2.5 bg-gold text-[#2b1209] rounded-full font-bold text-[15px] hover:bg-gold-deep transition-colors"
             >

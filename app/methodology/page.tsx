@@ -25,12 +25,6 @@ export default function MethodologyPage() {
               Pricing
             </a>
             <a
-              href="/assess"
-              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden sm:block"
-            >
-              2-min assessment
-            </a>
-            <a
               href="/#contact"
               className="px-5 py-2.5 bg-gold text-[#2b1209] rounded-full font-bold text-[15px] hover:bg-gold-deep transition-colors"
             >
@@ -62,10 +56,43 @@ export default function MethodologyPage() {
         </div>
       </section>
 
-      {/* Three Cornerstones */}
+      {/* Three Lenses overview */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Layer 1</p>
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The shape of it</p>
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            One business, read three ways
+          </h2>
+          <p className="text-[#75706c] mb-14 max-w-2xl">
+            A business only tells the whole truth when you read it through all three lenses at once.
+            Each is run at full resolution - on the actual data, not category averages or a single
+            interview. The operator names the question; data science answers it properly.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Financial clarity</h3>
+              <p className="text-[#c24a36] text-sm font-medium mb-3">Is the profit real, repeatable and cash-backed?</p>
+              <p className="text-[#75706c] text-sm">The Profit Machine, below - unit economics, capital efficiency and margin consistency, read line by line.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Operational clarity</h3>
+              <p className="text-[#c24a36] text-sm font-medium mb-3">Can the operation physically deliver the plan?</p>
+              <p className="text-[#75706c] text-sm">Capacity and the true constraint, computed from the operational log - the question a growth plan is really asking.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Leadership clarity</h3>
+              <p className="text-[#c24a36] text-sm font-medium mb-3">How much walks out if the owner does?</p>
+              <p className="text-[#75706c] text-sm">Founder and key-person dependency, measured from system exhaust - not the org chart or a self-report.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Financial lens: the Profit Machine */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The financial lens</p>
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
             Three cornerstones of a healthy business
           </h2>
@@ -339,6 +366,66 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* Operator lens */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The operator lens</p>
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            Can the operation deliver the plan?
+          </h2>
+          <p className="text-[#75706c] mb-14 max-w-2xl">
+            A deal - or a growth plan - is priced on volumes the business hasn&apos;t hit yet.
+            Financial diligence verifies the past that produced the plan; almost nobody checks whether
+            the operation can physically produce the future. We read capacity from the operational log,
+            not a day&apos;s walk of the floor.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">The three capacity numbers</h3>
+              <p className="text-[#75706c] text-sm">Nameplate (fiction), effective (the real ceiling), and demonstrated (the most it has ever actually done). The gap between demonstrated and what the plan needs is the risk being underwritten.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">The one true bottleneck</h3>
+              <p className="text-[#75706c] text-sm">A business &ldquo;at 70%&rdquo; can have a single cell at 96% that caps the whole operation. Pour sales in above it and you buy queue and overtime, not output. Finding the real constraint is most of the job.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Peaks are free stress tests</h3>
+              <p className="text-[#75706c] text-sm">The last seasonal or promo peak already showed where the business bends under load. A plan that assumes 1.6x of a peak that broke at 1.0x is a re-price, not a growth story.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership lens */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The leadership lens</p>
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            How much of it depends on one person?
+          </h2>
+          <p className="text-[#75706c] mb-14 max-w-2xl">
+            Owner-dependent businesses look stable right up until the founder steps back - then the
+            relationships walk out with them. You can&apos;t find it by asking the owner; they&apos;re
+            the most conflicted witness in the room. So we don&apos;t ask. We reconstruct it from the
+            fingerprints they left in the systems while running the business.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Who the money is attached to</h3>
+              <p className="text-[#75706c] text-sm">The revenue and margin on accounts the owner personally sources, prices or signs - read from quote authorship and account-owner fields, not from a claim.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Who actually decides</h3>
+              <p className="text-[#75706c] text-sm">The real org chart is the approval graph. It tells you whether the &ldquo;#2 who handles pricing&rdquo; approves anything, or just holds the title.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">The experiments already run</h3>
+              <p className="text-[#75706c] text-sm">What happened to new quotes and collections the last three times the owner was away. You&apos;re not modelling the cliff - you&apos;re reading one that already happened at small scale.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 px-6 relative overflow-hidden">
         <div className="absolute top-12 left-[6%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float2" />
@@ -349,24 +436,19 @@ export default function MethodologyPage() {
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-10 md:p-14 text-center">
             <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-              Where is your machine leaking?
+              Which lens does your business need first?
             </h2>
             <p className="text-lg text-[#75706c] mb-8 max-w-xl mx-auto">
-              Take our 2-minute assessment and find out which cornerstones need attention
-              and where your blind spots are costing you money.
+              A 30-minute call. Tell us what&apos;s keeping you up - tight cash, a growth plan you&apos;re
+              not sure is deliverable, a business that leans too hard on one person - and we&apos;ll
+              tell you honestly where to start, and whether we can help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/assess"
+                href="/#contact"
                 className="px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
               >
-                Take the 2-min assessment &rarr;
-              </a>
-              <a
-                href="/#contact"
-                className="px-8 py-4 border-2 border-gold/55 text-green rounded-full font-semibold hover:border-gold transition-colors text-lg"
-              >
-                Book a call
+                Book a call &rarr;
               </a>
             </div>
           </div>

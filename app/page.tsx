@@ -73,12 +73,6 @@ export default function Home() {
               Pricing
             </a>
             <a
-              href="/assess"
-              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden sm:block"
-            >
-              2-min assessment
-            </a>
-            <a
               href="#contact"
               className="px-5 py-2.5 bg-gold text-[#2b1209] rounded-full font-bold text-[15px] hover:bg-gold-deep transition-colors"
             >
@@ -123,18 +117,19 @@ export default function Home() {
         </svg>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The Cash X-Ray</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-offwhite leading-[1.1] tracking-[-1px] mb-6">
-            Find the <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">Cash</span>
+          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Operational + financial clarity</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.15] tracking-[-1px] mb-6">
+            Profitable on paper. Short of cash.
             <br />
-            Trapped in Your Business.
+            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">Flying half-blind</span> on the decisions that matter.
           </h1>
 
           <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-10 leading-relaxed">
-            It&apos;s stuck in inventory you don&apos;t need, invoices you&apos;re not chasing,
-            and supplier terms you&apos;re paying too early. We read your actual ledgers - line
-            by line, not category averages - and show you exactly where your cash is and
-            what it&apos;s worth. In one week.
+            When your operations and your finances don&apos;t speak the same language, the cost
+            shows up everywhere it hurts: cash that&apos;s tight even when you&apos;re profitable,
+            growth that makes things harder instead of easier, and big decisions made on averages
+            instead of evidence. That gap - between what your operation does and what your finance
+            records - is where the money and the clarity hide. We close it.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -142,37 +137,63 @@ export default function Home() {
               href="#contact"
               className="inline-block px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
             >
-              Book a Cash X-Ray &rarr;
+              Book a call &rarr;
             </a>
             <a
-              href="/assess"
+              href="/methodology"
               className="inline-block px-8 py-4 border-2 border-gold/55 text-offwhite rounded-full font-semibold hover:border-gold transition-colors text-lg"
             >
-              Take the 2-min assessment
+              See the methodology
             </a>
           </div>
         </div>
       </section>
 
-      {/* Who It's For */}
-      <section className="py-12 px-6 border-y border-[#eae5e1]">
-        <div className="max-w-5xl mx-auto text-center">
-          <p className="text-[#75706c] text-sm uppercase tracking-[1.5px] mb-6">
-            Built for inventory-heavy mid-market businesses - <span className="font-mono font-semibold text-[#c24a36] normal-case">$15&ndash;50M</span> revenue
+      {/* Sound familiar? - the symptoms */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            Sound familiar?
+          </h2>
+          <p className="text-[#75706c] mb-12 max-w-2xl">
+            These rarely show up one at a time. They&apos;re usually the same root cause wearing
+            different clothes.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[#1e2126] font-semibold text-lg">
-            <span>Manufacturing</span>
-            <span className="inline-block w-2 h-2 rounded-full bg-gold/40" />
-            <span>Distribution &amp; Wholesale</span>
-            <span className="inline-block w-2 h-2 rounded-full bg-gold/40" />
-            <span>DTC</span>
-            <span className="inline-block w-2 h-2 rounded-full bg-gold/40" />
-            <span>Retail</span>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              "Profitable on paper, but cash is always tight.",
+              "The board pack, the sales report and the finance number never quite agree.",
+              "You find out what happened at month-end - weeks too late to do anything about it.",
+              "You can’t say which customers or products actually make money.",
+              "Growth is making it harder, not easier - and you’re not sure the plan is even deliverable.",
+              "Too much still runs through you, or one or two key people.",
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3 bg-white rounded-[14px] p-5 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+                <span className="mt-[7px] w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />
+                <span className="text-[#1e2126]">{item}</span>
+              </div>
+            ))}
           </div>
-          <p className="text-[#75706c] text-sm mt-6 max-w-2xl mx-auto">
-            The kind of business with hundreds or thousands of SKUs or customers - more than
-            anyone can track by hand, where the average hides the answer and the cash is buried
-            in the detail.
+
+          <p className="text-[#1e2126] text-lg mt-12 max-w-2xl">
+            These aren&apos;t six problems. They&apos;re one: your operations and your finances
+            aren&apos;t connected. Brightmere connects them - clarity you can run the business on,
+            and numbers that survive a buyer&apos;s scrutiny.
+          </p>
+        </div>
+      </section>
+
+      {/* Who it's for */}
+      <section className="py-12 px-6 border-y border-[#eae5e1]">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[#75706c] text-sm uppercase tracking-[1.5px] mb-4">
+            Built for operationally complex businesses
+          </p>
+          <p className="text-[#75706c] text-base max-w-2xl mx-auto">
+            Hundreds or thousands of SKUs, customers, jobs or transactions - more than anyone can
+            track by hand, where the average hides the answer and the money is buried in the detail.
+            Owner-led or PE-backed. Whichever side of a deal you&apos;re on.
           </p>
         </div>
       </section>
@@ -278,50 +299,53 @@ export default function Home() {
         <div className="absolute top-20 left-[3%] w-6 h-6 bg-[#e85d47]/20 rounded-full animate-float3" />
 
         <div className="max-w-5xl mx-auto relative z-10">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The method</p>
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Find the Cash. Free It. Keep It Visible.
+            One business, three lenses
           </h2>
           <p className="text-[#75706c] mb-16 max-w-2xl">
-            We start with a one-week diagnostic, fix the specific leaks it finds, then keep
-            your cash visible on an ongoing rhythm.
+            We read the same business three ways - and each lens is run at a resolution a
+            spreadsheet can&apos;t reach: on your actual data, line by line, not category averages.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative">
-              <div className="absolute -left-4 top-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-[#2b1209] font-bold text-sm">1</div>
-              <div className="pl-8">
-                <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Cash X-Ray</h3>
-                <p className="text-[#75706c]">
-                  One week. We connect your finance and ERP systems and trace cash from sale to
-                  bank - finding where it&apos;s trapped and sizing each gap in pounds.
-                </p>
-              </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Lens 1</p>
+              <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Financial clarity</h3>
+              <p className="text-[#75706c] mb-3">
+                Are the numbers real, and where&apos;s the money? Unit economics, working capital,
+                margin durability and cash - the profit machine, read line by line.
+              </p>
+              <p className="text-[#c24a36] text-sm font-medium">Usually where we start: the Cash X-Ray.</p>
             </div>
 
-            <div className="relative">
-              <div className="absolute -left-4 top-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-[#2b1209] font-bold text-sm">2</div>
-              <div className="pl-8">
-                <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Release</h3>
-                <p className="text-[#75706c]">
-                  We fix the specific leaks - inventory discipline, collection priorities,
-                  supplier terms - and turn the findings into cash back in your account.
-                </p>
-              </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Lens 2</p>
+              <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Operational clarity</h3>
+              <p className="text-[#75706c] mb-3">
+                Can the operation actually deliver the plan? Capacity, the one true bottleneck,
+                and where it breaks under load - read from the operational log, not a site visit.
+              </p>
+              <p className="text-[#c24a36] text-sm font-medium">The question growth is really asking.</p>
             </div>
 
-            <div className="relative">
-              <div className="absolute -left-4 top-0 w-8 h-8 bg-gold rounded-full flex items-center justify-center text-[#2b1209] font-bold text-sm">3</div>
-              <div className="pl-8">
-                <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Cashflow Operating System</h3>
-                <p className="text-[#75706c]">
-                  An ongoing layer that keeps cash visible: a live 13-week forecast, early-warning
-                  alerts, and a cadence that makes cash a business habit - not a fire drill.
-                </p>
-              </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Lens 3</p>
+              <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Leadership clarity</h3>
+              <p className="text-[#75706c] mb-3">
+                How much of the business depends on you, or a handful of key people? Founder and
+                key-person dependency, measured from what the systems reveal - not the org chart.
+              </p>
+              <p className="text-[#c24a36] text-sm font-medium">What walks out the door if they do.</p>
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          <p className="text-[#1e2126] text-center mt-12 max-w-3xl mx-auto">
+            Read the plan like a finance person, name the constraint like an operator, compute it
+            like a data scientist. That bridge is the whole point.
+          </p>
+
+          <div className="text-center mt-8">
             <a
               href="/methodology"
               className="text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
@@ -514,13 +538,10 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
             Accounting Brain. Data-Science Hands.
           </h2>
-          <p className="text-[#75706c] mb-4 max-w-2xl">
+          <p className="text-[#75706c] mb-12 max-w-2xl">
             Most data consultants can build the model but can&apos;t read the P&amp;L. Most accountants
             can read the P&amp;L but can&apos;t build the model. We do both - which is why we know
             where to look and how to actually go and get it.
-          </p>
-          <p className="text-[#75706c] text-center text-sm mb-12">
-            Working with manufacturers, distributors, DTC brands, and retailers.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -601,20 +622,20 @@ export default function Home() {
                 <h2 className="text-2xl font-bold text-[#1e2126] mb-4">Why I Started Brightmere</h2>
                 <div className="space-y-4 text-[#75706c] leading-relaxed">
                   <p>
-                    I&apos;m Lu - I started in accounting and corporate finance before moving into
-                    data science. Cash is where those two worlds meet, and it&apos;s where most
-                    businesses are quietly losing.
+                    I&apos;m Lu. I started in accounting and corporate finance before moving into
+                    data and engineering. The gap between those two worlds - what a business does,
+                    and what its numbers record - is where I&apos;ve spent my career, because that
+                    gap is where the money and the clarity hide.
                   </p>
                   <p>
-                    Owner-led companies with hundreds or thousands of SKUs or customers are sitting
-                    on cash they can&apos;t see - trapped in stock, in slow invoices, in terms paid too early.
-                    The answer is in their own ledgers. They just don&apos;t have anyone who can read
-                    the P&amp;L <em>and</em> get into the data to find it.
+                    Operationally complex companies are sitting on answers they can&apos;t see: cash
+                    trapped in the detail, growth that&apos;s harder than it should be, decisions made
+                    on averages. The answer is usually already in their own systems. They just
+                    don&apos;t have anyone who can read the P&amp;L <em>and</em> get into the data to find it.
                   </p>
                   <p className="text-[#1e2126]">
-                    The cheapest capital any business has is the cash it&apos;s already earned. Before you
-                    call the bank for a bigger facility, it&apos;s worth knowing how much of your own
-                    money is just sitting still. That&apos;s what I find.
+                    So I built Brightmere to do both - and to hand owners something rare: numbers they
+                    can actually run the business on, and trust in front of a board, a lender, or a buyer.
                   </p>
                 </div>
               </div>
@@ -714,35 +735,6 @@ export default function Home() {
                 <p className="text-[#75706c] leading-relaxed">{item.a}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Assessment CTA */}
-      <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute top-16 left-[6%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float1" />
-        <div className="absolute top-32 right-[8%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float2" />
-        <div className="absolute bottom-20 left-[10%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float3" />
-        <div className="absolute bottom-32 right-[5%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float1" />
-
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-10 md:p-14">
-            <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-              How Much Cash Is Trapped in Your Business?
-            </h2>
-            <p className="text-lg text-[#75706c] mb-3 max-w-xl mx-auto">
-              Take our 2-minute assessment and find out where your working capital is leaking - and
-              roughly what it&apos;s costing you.
-            </p>
-            <p className="text-[#75706c] mb-8">
-              A few questions. Instant results. No sales call required.
-            </p>
-            <a
-              href="/assess"
-              className="inline-block px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
-            >
-              Take the 2-min assessment &rarr;
-            </a>
           </div>
         </div>
       </section>

@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
         destination: "https://brightmerehq.com/:path*",
         permanent: true,
       },
+      // Retired self-assessment -> home
+      {
+        source: "/assess",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };

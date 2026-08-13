@@ -1,15 +1,17 @@
 # Brightmere
 
-> Brightmere is a working-capital diagnostic consultancy for inventory-heavy mid-market businesses ($15–50M revenue): manufacturing, distribution & wholesale, DTC, and retail. Its one-week "Cash X-Ray" reads a company's actual ledgers line by line - not category averages - to find cash trapped in inventory, receivables, and supplier terms, and sizes every finding in pounds. Typical engagements find six to seven figures of releasable cash ahead of a fundraise, refinance, or exit.
+> Brightmere gives operationally complex businesses operational and financial clarity - run at a resolution a spreadsheet can't reach. We read the same business through three lenses: financial clarity (is the profit real, repeatable and cash-backed - unit economics, working capital, margin, cash), operational clarity (can the operation physically deliver the plan - capacity and the true bottleneck, read from the operational log), and leadership clarity (how much depends on the founder or a few key people, measured from what the systems reveal). Every finding is computed from a company's actual data, line by line, and sized in pounds. Owner-led or PE-backed, and on either side of a deal.
 
 ## What Brightmere does
 
-- Cash X-Ray: a one-week diagnostic connecting finance and ERP systems to trace cash from sale to bank, finding where it is trapped and sizing each gap in pounds
-- Release: fixing the specific leaks found - inventory discipline, collection priorities, supplier terms
-- Cashflow Operating System: a live 13-week cash forecast, early-warning alerts, and an operating cadence that keeps cash visible
+- Financial clarity (the Cash X-Ray): a diagnostic connecting finance and ERP systems to trace cash and profit line by line, finding where money is trapped or leaking and sizing each gap in pounds
+- Operational clarity (the operator lens): computing real capacity and the binding constraint from the operational log, to test whether a growth or deal plan is physically deliverable
+- Leadership clarity (the dependency lens): reconstructing founder and key-person dependency from system exhaust - who the revenue is attached to, who actually decides, and what happens when they step back
+- Ongoing: a live operating cadence and reporting that keeps the numbers clear, and trustworthy in front of a board, a lender, or a buyer
 
 ## Pages
 
-- [Home](https://brightmerehq.com/): The Cash X-Ray - find the cash trapped in your business
-- [Methodology](https://brightmerehq.com/methodology): How the one-week diagnostic works, step by step
-- [Assessment](https://brightmerehq.com/assess): Free 2-minute cash-visibility self-assessment
+- [Home](https://brightmerehq.com/): Operational and financial clarity - close the gap between what your operation does and what your finance records
+- [Methodology](https://brightmerehq.com/methodology): The three lenses - financial, operational, and leadership clarity - explained
+- [FAQ](https://brightmerehq.com/faq): Straight answers to the questions owners and finance leaders ask us
+- [Pricing](https://brightmerehq.com/pricing): How engagements are scoped and priced
