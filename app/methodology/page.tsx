@@ -89,6 +89,61 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      {/* The first step: the data foundation */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The first step</p>
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            None of it works until the data does
+          </h2>
+          <p className="text-[#75706c] mb-14 max-w-2xl">
+            Every lens runs on your actual data, line by line - so the first job is always the same,
+            and it&apos;s the one most projects skip: make the data readable. Messy, scattered data is
+            the norm, not the exception, and it&apos;s exactly what we&apos;re built to handle.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold text-[#2b1209] text-sm font-bold flex items-center justify-center">1</span>
+                <h3 className="text-lg font-semibold text-[#1e2126]">Data work</h3>
+              </div>
+              <p className="text-[#75706c] text-sm leading-relaxed">
+                Connect the systems - finance, ERP, billing, inventory, CRM - and pull the raw
+                transaction data out. AI has made structuring messy, real-world data cheap: what used
+                to need an analyst army now needs good architecture.
+              </p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold text-[#2b1209] text-sm font-bold flex items-center justify-center">2</span>
+                <h3 className="text-lg font-semibold text-[#1e2126]">Data model</h3>
+              </div>
+              <p className="text-[#75706c] text-sm leading-relaxed">
+                Join it into one clean transaction layer where every operational event carries its
+                financial meaning - revenue, margin, cash-timing. This is where operations and finance
+                stop being two separate records and become the same event, viewed two ways.
+              </p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold text-[#2b1209] text-sm font-bold flex items-center justify-center">3</span>
+                <h3 className="text-lg font-semibold text-[#1e2126]">Reconciliation</h3>
+              </div>
+              <p className="text-[#75706c] text-sm leading-relaxed">
+                Tie the model back to the accounts, to the pound, and pressure-test it against the
+                owner&apos;s own knowledge of the business - so the numbers are trustworthy before a
+                single conclusion is drawn. A finding is only as honest as the baseline beneath it.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-[#1e2126] mt-12 max-w-2xl">
+            Only once this foundation holds do we read the three lenses. Everything else sits on top of it.
+          </p>
+        </div>
+      </section>
+
       {/* Financial lens: the Profit Machine */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">

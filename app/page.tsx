@@ -119,17 +119,36 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Operational + financial clarity</p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.15] tracking-[-1px] mb-6">
-            Profitable on paper. Short of cash.
+            Profitable on paper. Short of cash. Buried in messy data.
             <br />
             <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">Flying half-blind</span> on the decisions that matter.
           </h1>
 
-          <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
             When your operations and your finances don&apos;t speak the same language, the cost
-            shows up everywhere it hurts: cash that&apos;s tight even when you&apos;re profitable,
-            growth that makes things harder instead of easier, and big decisions made on averages
-            instead of evidence. That gap - between what your operation does and what your finance
-            records - is where the money and the clarity hide. We close it.
+            shows up everywhere it hurts:
+          </p>
+          <ul className="inline-block text-left mx-auto mb-8 space-y-2.5">
+            {[
+              "Cash that’s tight even when you’re profitable",
+              "Growth that makes things harder, not easier",
+              "Data scattered and messy, so nobody fully trusts the numbers",
+              "Big decisions made on averages instead of evidence",
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-3 text-greenmuted text-lg">
+                <span className="mt-[9px] w-2 h-2 rounded-full bg-gold flex-shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-lg text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
+            That gap - between what your operation does and what your finance records - is where
+            the money and the clarity hide. We close it.
+          </p>
+          <p className="text-base text-greenmuted max-w-2xl mx-auto mb-10 leading-relaxed">
+            Thinking about AI? It only works on data it can trust. Bolt it onto messy numbers and
+            you&apos;re <span className="text-gold font-medium">building on sand</span>. We lay the
+            foundation first, so what you build on top actually holds.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -198,45 +217,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pain Section */}
+      {/* The core idea: operations + finance, one language */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Four Ways Your Cash Gets Trapped
+            Your operations and your finances don&apos;t speak the same language
           </h2>
           <p className="text-[#75706c] mb-12 max-w-2xl">
-            The bank balance looks fine, so no one looks closer. Meanwhile your own money is
-            sitting still in four places you can&apos;t see.
+            Finance is really just a translation of operations. The real world happens - stock ships,
+            a customer takes 90 days, a job runs long - and only weeks later does it surface as a number,
+            blended into an average that buries where the money actually went. That lag, and that
+            averaging, is where the money and the clarity hide.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />Stuck in stock</div>
-              <div className="text-[#75706c] text-sm">
-                Slow movers, phantom lines, and safety stock no one sized. Cash sitting
-                on a shelf instead of in your account.
-              </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Two systems, two truths</h3>
+              <p className="text-[#75706c] text-sm">Sales counts it one way, operations runs it another, finance books a third. Same business, three numbers - and the difference falls on the floor between them.</p>
             </div>
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />Slow receivables</div>
-              <div className="text-[#75706c] text-sm">
-                Invoices drifting past terms. Every extra day is your cash funding your
-                customer&apos;s business instead of yours.
-              </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Answers arrive too late</h3>
+              <p className="text-[#75706c] text-sm">By the time a problem reaches the P&amp;L, the cash has already moved and the decision has already been made on an average. You&apos;re always explaining the past.</p>
             </div>
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />Paying too early</div>
-              <div className="text-[#75706c] text-sm">
-                Settling suppliers faster than your customers pay you - funding the
-                whole cycle out of your own pocket.
-              </div>
-            </div>
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />Growth that eats cash</div>
-              <div className="text-[#75706c] text-sm">
-                Overtrading: the faster you grow, the tighter cash gets - and no one
-                can explain why the profit isn&apos;t in the bank.
-              </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">We make them one</h3>
+              <p className="text-[#75706c] text-sm">We join operations and finance into a single view where every event carries its money - so the numbers agree, tie to source, and finally answer the questions you actually have.</p>
             </div>
           </div>
         </div>
@@ -248,14 +253,14 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
               <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">Today</div>
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold/40 flex-shrink-0" />Flying Blind on Cash</h3>
+              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold/40 flex-shrink-0" />Flying blind</h3>
               <ul className="space-y-4">
                 {[
-                  "The bank balance is the only cash number anyone trusts",
-                  "\"Where's our cash tied up?\" takes a week to answer",
-                  "The forecast is a spreadsheet someone updates on Fridays",
-                  "When cash gets tight, the reflex is to call the bank for a bigger facility",
-                  "Everyone manages the average; the answer lives below it",
+                  "The bank balance is the only number everyone trusts",
+                  "Basic questions - what makes money, can we deliver the plan - take a week to answer",
+                  "Sales, ops and finance report different numbers for the same thing",
+                  "Decisions get made on averages, weeks after the fact",
+                  "Data is scattered across systems no one has joined up",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-[#75706c]">
                     <span className="mt-[7px] w-2 h-2 rounded-full bg-gold/40 flex-shrink-0" />
@@ -267,14 +272,14 @@ export default function Home() {
 
             <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-8">
               <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">With Brightmere</div>
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />See Where Every Pound Is</h3>
+              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />One clear picture</h3>
               <ul className="space-y-4">
                 {[
-                  "Your cash conversion cycle, broken down by product line and customer",
-                  "The exact SKUs and customers eating your cash - named and sized",
-                  "DSO by customer: who's slow, by how much, what it costs",
-                  "A 13-week cash forecast you can actually steer",
-                  "The cheapest capital you have - the cash you've already earned - freed",
+                  "One reconciled view where operations and finance finally agree",
+                  "Which customers and products actually make money - named and sized",
+                  "Whether the growth plan is physically deliverable, and where it breaks first",
+                  "A clean data foundation solid enough to automate on",
+                  "Numbers you can steer by - and trust in front of a board, a lender or a buyer",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-[#1e2126]">
                     <span className="mt-[7px] w-2 h-2 rounded-full bg-gold flex-shrink-0" />
@@ -369,45 +374,34 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Where the Cash Hides
+            A foundation solid enough to automate on
           </h2>
           <p className="text-[#75706c] mb-12 max-w-2xl">
-            Once you have hundreds of SKUs or customers, the cash story stops matching the P&amp;L.
-            These are the cuts owners almost never see - because they only show up at the line level.
+            Everyone wants to point AI at their business. But AI is only as good as the data beneath it -
+            bolt it onto scattered, unreconciled numbers and you just automate the mess faster. The
+            clean, reconciled layer we build to answer your questions is the same foundation your AI,
+            forecasting and automation have to stand on. Get it right once, and what you build on top holds.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "The Aristocrat",
-                result: "High margin that flatters the P&L - and quietly suffocates cash",
-                lever: "Bloated inventory and long terms hide behind a great margin. We find them."
-              },
-              {
-                title: "The Workhorse",
-                result: "Low margin, unloved - and the product actually funding your business",
-                lever: "Negative working capital, paid fast. Kill it for 'low margin' and you lose your funding."
-              },
-              {
-                title: "Trapped Inventory",
-                result: "The 200 SKUs eating your cash, three levels below the category view",
-                lever: "Disciplined SKU-level analysis typically frees 15–30% of inventory value."
-              },
-              {
-                title: "Receivables Drift",
-                result: "Which customers are slow, by how many days, and what it costs you",
-                lever: "Not 'DSO is up.' The named accounts, the exact day-impact, the cash to recover."
-              },
-            ].map((item, i) => (
-              <div key={i} className="bg-white rounded-[14px] p-6 transition-all shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-                <h3 className="flex items-center gap-3 font-semibold text-[#1e2126] text-lg mb-2"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />{item.title}</h3>
-                <p className="text-[#75706c] mb-4">{item.result}</p>
-                <div className="font-mono text-sm text-[#c24a36] font-semibold">
-                  {item.lever}
-                </div>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">One source of truth</h3>
+              <p className="text-[#75706c] text-sm">Every number traces back to source, and the &ldquo;three teams, three numbers&rdquo; problem goes away. One definition, documented and agreed.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Reconciled to the pound</h3>
+              <p className="text-[#75706c] text-sm">Audit-grade, tied back to the accounts - so a model can trust its inputs, and you can trust its outputs enough to act on them.</p>
+            </div>
+            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Built to build on</h3>
+              <p className="text-[#75706c] text-sm">A clean transaction layer that automation, forecasting and AI can sit on top of without collapsing. Rock, not sand.</p>
+            </div>
           </div>
+
+          <p className="text-[#1e2126] mt-12 max-w-2xl">
+            This is the unglamorous work most people skip - and it&apos;s what earns the right to talk
+            about AI at all.
+          </p>
         </div>
       </section>
 
@@ -420,11 +414,12 @@ export default function Home() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            We Start With Cash. Then We Go Deeper.
+            We start where it pays back fastest. Then it compounds.
           </h2>
           <p className="text-[#75706c] mb-14 max-w-2xl">
-            The Cash X-Ray frees the quick wins. Once your data is clean and connected, the same
-            foundation powers the deeper profit work - so every engagement compounds.
+            Freeing trapped cash usually funds everything that follows. And because it all runs on the
+            same clean foundation, each step makes the next one faster - from cash, to profit, to
+            planning, to numbers that stand up to a buyer.
           </p>
 
           {/* Desktop: ascending value staircase - each box top sits higher */}
@@ -551,10 +546,10 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">We Think in Cash</h3>
+              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">We Speak Both Languages</h3>
               <p className="text-[#75706c] text-sm">
-                Finance and accounting background means we understand working capital, the cash
-                conversion cycle, and what actually frees money - not just a tidy dashboard.
+                A finance and accounting background, plus the engineering to build the system. We read
+                the P&amp;L and the operation, and translate cleanly between them - which is the whole job.
               </p>
             </div>
 
