@@ -5,7 +5,7 @@
 ## Project info (auto-detected)
 
 **Stack:** Node.js, TypeScript, Next.js, React
-**Files:** ~37
+**Files:** ~36
 
 **Entry points:**
 - `npm run start`
@@ -15,8 +15,6 @@
 **Structure:**
 ```
 app/
-  assess/
-    page.tsx
   blog/
     your-financial-model-has-60-tabs/
   components/
@@ -54,10 +52,11 @@ postcss.config.mjs
 preview-assess.png
 preview-home.png
 preview-methodology.png
-... (truncated)
+README.md
+tsconfig.json
 ```
 
-**Git:** branch: `main` | last commit: 2026-08-13 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
+**Git:** branch: `main` | last commit: 2026-08-14 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
 
 ## AI-agent bridge (Codex / open-source)
 
