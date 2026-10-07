@@ -431,8 +431,8 @@ export default function Home() {
                     The job I keep being asked to do is the same one. Someone is about to put a
                     business&apos;s numbers in front of people with money, and wants to know what
                     those people will find before they find it. At a fast-growing B2B commerce
-                    platform about to go in front of investors, the growth story was strong:
-                    sales up quarter after quarter. Nobody had run the cohorts. When I did, the customers behind that
+                    platform preparing for investment, the growth story was strong: sales up
+                    quarter after quarter. Nobody had run the cohorts. When I did, the customers behind that
                     growth were mostly new ones, and most of them didn&apos;t come back. The
                     headline was true. The business underneath it was different, and leadership
                     needed to know that before the investors&apos; analysts told them. The same
