@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Brightmere | Numbers That Survive Diligence",
-    description: "Your accountant tells you what happened. The buyer's accountants will tell you what's wrong with it. We find it first. Three fixed-fee services, prices on the page.",
+    description: "Granular due diligence on £5-50m businesses, from the transactions up. Buy side or sell side. Three fixed-fee services, prices on the page.",
     type: "website",
   },
 };

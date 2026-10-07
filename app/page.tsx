@@ -117,15 +117,15 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Numbers that survive diligence</p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.15] tracking-[-1px] mb-6">
-            Your accountant tells you what happened. The buyer&apos;s accountants will tell you what&apos;s wrong with it.
+            Numbers that survive diligence.
             <br />
-            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">We find it first.</span>
+            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">Whichever side of the deal you&apos;re on.</span>
           </h1>
 
           <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
-            Brightmere checks whether a £5-50m business&apos;s numbers hold up, transaction by
-            transaction, before the people with money look at them: a raise, a sale, a refinance,
-            a new facility, or a business you are about to buy.
+            Granular due diligence on £5-50m businesses, from the transactions up. Sell side,
+            for owners about to raise, sell or refinance. Buy side, for the people acquiring
+            them and the advisers and lenders behind them.
           </p>
           <p className="text-lg text-greenmuted max-w-2xl mx-auto mb-10 leading-relaxed">
             Three named services. Fixed fees, published below. Every finding sized in pounds and
