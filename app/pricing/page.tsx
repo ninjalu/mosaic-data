@@ -3,47 +3,38 @@ import Wordmark from "../components/Wordmark";
 import Emblem from "../components/Emblem";
 
 export const metadata: Metadata = {
-  title: "Pricing | Brightmere - Fixed Fees, Findings Sized in Pounds",
+  title: "Pricing | Brightmere - Three Services, Fixed Fees",
   description:
-    "How Brightmere prices working capital diagnostics: a short fixed-fee Discovery, a fixed-fee Cash X-Ray priced after we see your data, Release work you can structure as a share of recovered cash, and a low monthly Cashflow Operating System. No day rates, no open-ended retainers.",
+    "What Brightmere charges, in full: diligence-ready numbers (£10,000 fixed, 3 weeks), operator diligence for buyers (£15,000 fixed per target), and numbers kept true (from £1,500 a month). No day rates, no open-ended retainers.",
 };
 
 const STAGES = [
   {
     n: "1",
-    name: "Discovery",
-    tagline: "Map the data before anyone commits",
-    duration: "2-3 days",
-    fee: "Fixed fee: [CONFIRM: £1,500-£2,500]",
-    body: "Before we price the diagnostic, we look at what your systems actually hold: what data exists, what's accessible, what's missing. You get the data map either way - it's genuinely useful even if you stop here - plus a precisely scoped X-Ray proposal.",
-    chips: ["Half upfront, half on delivery", "Standalone deliverable", "No commitment beyond it"],
+    name: "Diligence-ready numbers",
+    tagline: "Before someone with money looks at your numbers",
+    duration: "3 weeks",
+    fee: "£10,000 fixed",
+    body: "For owners of £5-50m businesses about to raise, sell, refinance or take on a new facility. We rebuild the picture from your own transactions: cash proof, real margin by customer and product, working capital stripped of the flattering month, revenue concentration, and every heroic assumption named. You get a findings pack a lender's or buyer's team can test, and time to fix what they would have found. The first few days map what your data can actually support; if the honest answer is that it needs nothing, we say so and stop, and you pay for those days only.",
+    chips: ["Half upfront, half on delivery", "Every finding sized in £", "Sits before the chartered report, not instead of it"],
   },
   {
     n: "2",
-    name: "The Cash X-Ray",
-    tagline: "One week. Every finding sized in pounds.",
-    duration: "One week",
-    fee: "Fixed fee, agreed after Discovery: [CONFIRM: bracket, e.g. £7,500-£12,500]",
-    body: "We read your ledgers line by line and name every pocket of trapped cash - which SKUs, which customers, which terms - each one sized in pounds, prioritised by impact and speed. The test we hold ourselves to: the X-Ray should identify a multiple of its fee in recoverable cash. If Discovery suggests it won't, we tell you and stop there.",
-    chips: ["Fixed fee, no meter running", "Findings sized in £", "Priced to your data, not boilerplate"],
+    name: "Operator diligence for buyers",
+    tagline: "Before you rely on someone else's numbers",
+    duration: "2-3 weeks",
+    fee: "£15,000 fixed",
+    body: "For acquirers, searchers and holding companies buying a £3-20m business, and the advisers and lenders backing them. The same transaction-level read pointed at the target: is the revenue what the data room says, which customers and jobs make money, how much cash the business really needs, and whether the operation can deliver the plan you are paying for. It runs alongside the chartered firm's financial due diligence and answers the questions that report leaves open. Scoped to a deal timetable; priced for one target.",
+    chips: ["Fixed fee per target", "Capacity tested from the operational log", "Alongside the chartered FDD"],
   },
   {
     n: "3",
-    name: "Release",
-    tagline: "Fix the leaks - and share the risk if you prefer",
-    duration: "1-3 months, scoped to findings",
-    fee: "Fixed fee, or smaller cash fee + share of recovered value",
-    body: "Release is scoped against the sized findings, so you decide with the numbers in front of you. Structure it as a fixed fee, or as a smaller cash fee plus an agreed share of the cash actually recovered, measured against the baseline we set in the X-Ray. We're happy to be paid on recovery - we sized the findings, so we can stand behind them.",
-    chips: ["You choose the structure", "Recovery measured against a baseline", "Scoped only after findings exist"],
-  },
-  {
-    n: "4",
-    name: "Cashflow Operating System",
-    tagline: "Keep the cash visible, month after month",
+    name: "Numbers kept true",
+    tagline: "After the event, month after month",
     duration: "Monthly, until cancelled",
-    fee: "[CONFIRM: low monthly subscription, e.g. £X00/month]",
-    body: "A standing analytical layer that keeps what we found visible: the live 13-week forecast, early-warning alerts, and monthly written commentary on what's moving and what to do about it. Deliberately priced low, continues until you cancel - no annual lock-in, stop whenever it stops earning its keep.",
-    chips: ["Live 13-week forecast", "Early-warning alerts", "Cancel any time"],
+    fee: "From £1,500 a month",
+    body: "The rebuilt view stays live. Reconciled every month with anything that does not tie flagged, real margin and cash watched at line level, a rolling 13-week cash view, and one session a month on the numbers and the decisions in front of you. The fee is pegged to the size of the business, not to hours, and steps up only when the business does: a new entity, a new division, a second site.",
+    chips: ["Reconciled monthly, exceptions flagged", "Grows with the business, not the hours", "Cancel any time"],
   },
 ];
 
@@ -64,14 +55,6 @@ const PRINCIPLES = [
     title: "What we don't do",
     body: "No day rates. No time-and-materials. No open-ended retainers that outlive their usefulness. If what you need is ongoing senior finance leadership rather than cash found and freed, a fractional CFO is the better buy - and we'll say so.",
   },
-];
-
-const COMPARABLES = [
-  { offering: "Big 4 quality of earnings review (3-6 weeks)", range: "$20,000-$75,000" },
-  { offering: "Fractional CFO one-time assessment", range: "$5,000-$12,000" },
-  { offering: "Fractional CFO project work", range: "$10,000-$75,000" },
-  { offering: "Mid-market data analytics project (fixed scope)", range: "$50,000-$250,000" },
-  { offering: "Specialist senior consultant, hourly", range: "$175-$450 / hour" },
 ];
 
 export default function PricingPage() {
@@ -127,10 +110,9 @@ export default function PricingPage() {
           </h1>
           <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
             Most consultancies make you sit through three calls to hear a number. Here is
-            how Brightmere charges, in full: fixed fees agreed before work starts, every
-            finding sized in pounds so you can weigh the fee against it, and - if you
-            want it - a structure where part of our fee rides on the cash we actually
-            recover. No day rates. No open-ended retainers.
+            how Brightmere charges, in full: three named services, each with a fixed fee
+            agreed before work starts, and every finding sized in pounds so you can weigh
+            the fee against it. No day rates. No open-ended retainers.
           </p>
         </div>
       </section>
@@ -143,12 +125,12 @@ export default function PricingPage() {
             The structure
           </p>
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Four stages, each priced on its own
+            Three services, each priced on its own
           </h2>
           <p className="text-[#75706c] mb-14 max-w-2xl">
-            You commit to one stage at a time, and each stage ends with something worth
-            having on its own. Nobody prices a diagnostic honestly before seeing the
-            data - so we don&apos;t.
+            You buy one at a time, and each ends with something worth having on its own.
+            The first two are fixed-fee projects on a deal clock; the third is what they
+            earn into.
           </p>
 
           <div className="space-y-6">
@@ -210,40 +192,6 @@ export default function PricingPage() {
               >
                 <h3 className="text-lg font-semibold text-[#1e2126] mb-3">{p.title}</h3>
                 <p className="text-[#75706c] text-sm leading-relaxed">{p.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comparables */}
-      <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3">
-            <span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />
-            For context
-          </p>
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            What the alternatives cost
-          </h2>
-          <p className="text-[#75706c] mb-10 max-w-2xl">
-            Published market rates for adjacent work, so you can judge our fees against
-            the field rather than in a vacuum (US rates; UK typically runs 60-70% of US
-            for equivalent scope).
-          </p>
-
-          <div className="bg-white rounded-[14px] shadow-[0_2px_14px_rgba(30,33,38,0.06)] overflow-hidden">
-            {COMPARABLES.map((c, i) => (
-              <div
-                key={c.offering}
-                className={`flex items-center justify-between gap-6 px-8 py-5 ${
-                  i > 0 ? "border-t border-[#eae5e1]" : ""
-                }`}
-              >
-                <span className="text-[#1e2126] text-sm font-medium">{c.offering}</span>
-                <span className="text-[#c24a36] text-sm font-mono font-semibold whitespace-nowrap">
-                  {c.range}
-                </span>
               </div>
             ))}
           </div>

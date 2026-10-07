@@ -15,16 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brightmerehq.com"),
-  title: "Brightmere | Find the Cash Trapped in Your Operations",
-  description: "We read your ledgers line by line and show you exactly where your cash is stuck - inventory you don't need, invoices you're not chasing, terms you pay too early. One week. Every pound sized.",
-  keywords: ["working capital", "cash flow", "cash conversion cycle", "inventory optimization", "DSO", "days inventory outstanding", "working capital release", "mid-market", "manufacturing", "distribution", "DTC", "retail"],
+  title: "Brightmere | Numbers That Survive Diligence",
+  description: "We check whether a £5-50m business's numbers hold up, transaction by transaction, before the people with money look at them: a raise, a sale, a refinance, or a business you are about to buy. Three fixed-fee services. Every finding sized in pounds.",
+  keywords: ["due diligence preparation", "investor readiness", "sell-side preparation", "financial due diligence", "operator diligence", "working capital", "revenue quality", "customer concentration", "margin analysis", "mid-market", "owner-managed business", "search fund", "acquisition"],
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Brightmere | Find the Cash Trapped in Your Operations",
-    description: "We read your ledgers line by line and show you exactly where your cash is stuck. One week. Every pound sized.",
+    title: "Brightmere | Numbers That Survive Diligence",
+    description: "Your accountant tells you what happened. The buyer's accountants will tell you what's wrong with it. We find it first. Three fixed-fee services, prices on the page.",
     type: "website",
   },
 };

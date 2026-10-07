@@ -1,45 +1,43 @@
+import Image from "next/image";
 import Wordmark from "./components/Wordmark";
 import Emblem from "./components/Emblem";
 
 export default function Home() {
-  const valueLadder = [
+  // Three named services (7 Oct 2026). One skill - checking whether the numbers hold up at
+  // transaction level - sold at three moments. Prices are fixed and published on purpose:
+  // people go looking for a thing they need done, with a price on it.
+  const services = [
     {
-      tag: "Start here",
-      headline: "Free up the cash",
-      lead: "We start by freeing the cash trapped in your operations - often enough to fund everything that follows.",
-      items: ["Working capital release - stock, receivables, supplier terms"],
+      n: "1",
+      tag: "Most people start here",
+      name: "Diligence-ready numbers",
+      who: "Owners of £5-50m businesses about to raise, sell, refinance or take on a new facility.",
+      what: "We rebuild the picture from your own transactions, not the trial balance: cash proof, real margin by customer and product, working capital stripped of the flattering month, revenue concentration, and every heroic assumption named out loud. You get a findings pack a lender's or buyer's team can test, and the answers before they ask the questions.",
+      time: "3 weeks",
+      fee: "£10,000 fixed",
+      chips: ["Fixed fee, agreed before we start", "Every finding sized in pounds", "Sits before the accountant's report, not instead of it"],
       highlight: true,
     },
     {
-      tag: "Then go deeper",
-      headline: "Find the profit",
-      lead: "Now the data is clean and connected, the same foundation exposes where profit quietly leaks.",
-      items: [
-        "Money-losing customers & products",
-        "Pricing & discount optimisation",
-        "Supplier terms & procurement",
-        "Quote-to-cash velocity",
-        "EBITDA & margin bridge",
-        "Customer concentration & retention",
-      ],
+      n: "2",
+      tag: "The other side of the deal",
+      name: "Operator diligence for buyers",
+      who: "Acquirers, searchers and holding companies buying a £3-20m business, and the advisers and lenders backing them.",
+      what: "The same transaction-level read, pointed at the target: is the revenue what the data room says, which customers and jobs actually make money, how much cash the business really needs, and whether the operation can deliver the plan you are paying for. Runs alongside the chartered firm's financial due diligence and answers what it does not.",
+      time: "2-3 weeks",
+      fee: "£15,000 fixed",
+      chips: ["Alongside the chartered FDD, not in place of it", "Capacity and bottleneck tested from the operational log", "Days, not months"],
       highlight: false,
     },
     {
-      tag: "Then plan ahead",
-      headline: "Plan the future",
-      lead: "Then we point it forward, so cash and stock stop catching you out.",
-      items: [
-        "Stock & demand planning",
-        "Cash forecasting (rolling 13-week)",
-        "Scenario & what-if modelling",
-      ],
-      highlight: false,
-    },
-    {
-      tag: "And prove it",
-      headline: "Prove the numbers",
-      lead: "Until your numbers are clean enough to put in front of a board, a lender, or a buyer.",
-      items: ["Investor-grade reporting", "Exit & QoE readiness"],
+      n: "3",
+      tag: "What it earns into",
+      name: "Numbers kept true",
+      who: "Owners and finance leads who want the picture to stay reconciled after the event, month after month.",
+      what: "The rebuilt view stays live: reconciled every month with anything that does not tie flagged, real margin and cash watched at line level, a rolling 13-week cash view, and one session a month on the numbers and the decisions in front of you. No day rates, no open-ended scope.",
+      time: "Monthly",
+      fee: "From £1,500 a month",
+      chips: ["Reconciled monthly, exceptions flagged", "Cancel any time", "Grows with the business, not the hours"],
       highlight: false,
     },
   ];
@@ -117,52 +115,35 @@ export default function Home() {
         </svg>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Operational + financial clarity</p>
+          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Numbers that survive diligence</p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.15] tracking-[-1px] mb-6">
-            Profitable on paper. Short of cash. Buried in messy data.
+            Your accountant tells you what happened. The buyer&apos;s accountants will tell you what&apos;s wrong with it.
             <br />
-            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">Flying half-blind</span> on the decisions that matter.
+            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">We find it first.</span>
           </h1>
 
           <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
-            When your operations and your finances don&apos;t speak the same language, the cost
-            shows up everywhere it hurts:
+            Brightmere checks whether a £5-50m business&apos;s numbers hold up, transaction by
+            transaction, before the people with money look at them: a raise, a sale, a refinance,
+            a new facility, or a business you are about to buy.
           </p>
-          <ul className="inline-block text-left mx-auto mb-8 space-y-2.5">
-            {[
-              "Cash that’s tight even when you’re profitable",
-              "Growth that makes things harder, not easier",
-              "Data scattered and messy, so nobody fully trusts the numbers",
-              "Big decisions made on averages instead of evidence",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-greenmuted text-lg">
-                <span className="mt-[9px] w-2 h-2 rounded-full bg-gold flex-shrink-0" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-lg text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
-            That gap - between what your operation does and what your finance records - is where
-            the money and the clarity hide. We close it.
-          </p>
-          <p className="text-base text-greenmuted max-w-2xl mx-auto mb-10 leading-relaxed">
-            Thinking about AI? It only works on data it can trust. Bolt it onto messy numbers and
-            you&apos;re <span className="text-gold font-medium">building on sand</span>. We lay the
-            foundation first, so what you build on top actually holds.
+          <p className="text-lg text-greenmuted max-w-2xl mx-auto mb-10 leading-relaxed">
+            Three named services. Fixed fees, published below. Every finding sized in pounds and
+            traced to your own data.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#contact"
+              href="#services"
               className="inline-block px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
             >
-              Book a call &rarr;
+              See the three services &rarr;
             </a>
             <a
-              href="/methodology"
+              href="#contact"
               className="inline-block px-8 py-4 border-2 border-gold/55 text-offwhite rounded-full font-semibold hover:border-gold transition-colors text-lg"
             >
-              See the methodology
+              Book a call
             </a>
           </div>
         </div>
@@ -172,21 +153,21 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Sound familiar?
+            When people call us
           </h2>
           <p className="text-[#75706c] mb-12 max-w-2xl">
-            These rarely show up one at a time. They&apos;re usually the same root cause wearing
-            different clothes.
+            Someone is about to go through your numbers with a hostile eye, or you are about to
+            rely on someone else&apos;s. That is the moment.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              "Profitable on paper, but cash is always tight.",
-              "The board pack, the sales report and the finance number never quite agree.",
-              "You find out what happened at month-end - weeks too late to do anything about it.",
-              "You can’t say which customers or products actually make money.",
-              "Growth is making it harder, not easier - and you’re not sure the plan is even deliverable.",
-              "Too much still runs through you, or one or two key people.",
+              "You're raising money and the investor's first question will be whether the numbers are real.",
+              "You're going to market and a buyer's diligence team will spend three weeks trying to pick them apart.",
+              "You're refinancing or taking on a new facility and the lender wants the working capital story to hold.",
+              "You're buying a business and the data room tells a smoother story than the transactions do.",
+              "A new finance director has arrived and doesn't yet trust the number they inherited.",
+              "The board pack, the sales report and the finance number never quite agree, and a deal is coming.",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-white rounded-[14px] p-5 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
                 <span className="mt-[7px] w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />
@@ -196,9 +177,8 @@ export default function Home() {
           </div>
 
           <p className="text-[#1e2126] text-lg mt-12 max-w-2xl">
-            These aren&apos;t six problems. They&apos;re one: your operations and your finances
-            aren&apos;t connected. Brightmere connects them - clarity you can run the business on,
-            and numbers that survive a buyer&apos;s scrutiny.
+            If none of these is in your next twelve months, your accountant is probably all you
+            need, and we&apos;ll tell you so on the call.
           </p>
         </div>
       </section>
@@ -210,9 +190,9 @@ export default function Home() {
             Built for operationally complex businesses
           </p>
           <p className="text-[#75706c] text-base max-w-2xl mx-auto">
-            Hundreds or thousands of SKUs, customers, jobs or transactions - more than anyone can
-            track by hand, where the average hides the answer and the money is buried in the detail.
-            Owner-led or PE-backed. Whichever side of a deal you&apos;re on.
+            Hundreds or thousands of SKUs, customers, jobs, loads or transactions - more than anyone
+            can track by hand, where the average hides the answer and the money is buried in the
+            detail. Owner-led or PE-backed. Whichever side of the deal you&apos;re on.
           </p>
         </div>
       </section>
@@ -252,15 +232,15 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">Today</div>
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold/40 flex-shrink-0" />Flying blind</h3>
+              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">Your accountant</div>
+              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold/40 flex-shrink-0" />Records what happened</h3>
               <ul className="space-y-4">
                 {[
-                  "The bank balance is the only number everyone trusts",
-                  "Basic questions - what makes money, can we deliver the plan - take a week to answer",
-                  "Sales, ops and finance report different numbers for the same thing",
-                  "Decisions get made on averages, weeks after the fact",
-                  "Data is scattered across systems no one has joined up",
+                  "Works from the ledger: statutory accounts, management accounts, tax. Correctly.",
+                  "Never opens the order book, the job sheets, the TMS or the ERP",
+                  "Sees one or two transactions a year, so doesn't know what the other side's diligence pulls",
+                  "Prepared the numbers, so their reassurance carries little weight with a buyer or lender",
+                  "Still essential: the statutory sign-off and the chartered report a lender insists on",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-[#75706c]">
                     <span className="mt-[7px] w-2 h-2 rounded-full bg-gold/40 flex-shrink-0" />
@@ -271,15 +251,15 @@ export default function Home() {
             </div>
 
             <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-8">
-              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">With Brightmere</div>
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />One clear picture</h3>
+              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">Brightmere</div>
+              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />Tests whether it holds up</h3>
               <ul className="space-y-4">
                 {[
-                  "One reconciled view where operations and finance finally agree",
-                  "Which customers and products actually make money - named and sized",
-                  "Whether the growth plan is physically deliverable, and where it breaks first",
-                  "A clean data foundation solid enough to automate on",
-                  "Numbers you can steer by - and trust in front of a board, a lender or a buyer",
+                  "Works from the transactions and ties them to the ledger - the part most firms can't do",
+                  "Answers the diligence questions: concentration, real margin, working capital, run-rate",
+                  "A second pair of eyes before the hostile pair arrives, with the fixes sized",
+                  "Numbers you can steer by, and defend in front of a board, a lender or a buyer",
+                  "Sits before or beside the chartered firm. Never instead of it, and never called QoE",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-[#1e2126]">
                     <span className="mt-[7px] w-2 h-2 rounded-full bg-gold flex-shrink-0" />
@@ -321,7 +301,7 @@ export default function Home() {
                 Are the numbers real, and where&apos;s the money? Unit economics, working capital,
                 margin durability and cash - the profit machine, read line by line.
               </p>
-              <p className="text-[#c24a36] text-sm font-medium">Usually where we start: the Cash X-Ray.</p>
+              <p className="text-[#c24a36] text-sm font-medium">The first thing diligence-ready numbers runs.</p>
             </div>
 
             <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
@@ -361,168 +341,112 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Where the cash hides */}
-      <section className="py-20 px-6 relative overflow-hidden">
-        {/* Decorative floating dots */}
-        <div className="absolute top-16 left-[3%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float2" />
-        <div className="absolute top-40 left-[8%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float1" />
-        <div className="absolute top-28 left-[14%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float3" />
-        <div className="absolute bottom-20 right-[4%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float3" />
-        <div className="absolute bottom-40 right-[10%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float2" />
-        <div className="absolute bottom-28 right-[16%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float1" />
-        <div className="absolute top-24 right-[6%] w-6 h-6 bg-[#e85d47]/20 rounded-full animate-float1" />
-
-        <div className="max-w-5xl mx-auto relative z-10">
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            A foundation solid enough to automate on
-          </h2>
-          <p className="text-[#75706c] mb-12 max-w-2xl">
-            Everyone wants to point AI at their business. But AI is only as good as the data beneath it -
-            bolt it onto scattered, unreconciled numbers and you just automate the mess faster. The
-            clean, reconciled layer we build to answer your questions is the same foundation your AI,
-            forecasting and automation have to stand on. Get it right once, and what you build on top holds.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">One source of truth</h3>
-              <p className="text-[#75706c] text-sm">Every number traces back to source, and the &ldquo;three teams, three numbers&rdquo; problem goes away. One definition, documented and agreed.</p>
-            </div>
-            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Reconciled to the pound</h3>
-              <p className="text-[#75706c] text-sm">Audit-grade, tied back to the accounts - so a model can trust its inputs, and you can trust its outputs enough to act on them.</p>
-            </div>
-            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Built to build on</h3>
-              <p className="text-[#75706c] text-sm">A clean transaction layer that automation, forecasting and AI can sit on top of without collapsing. Rock, not sand.</p>
-            </div>
-          </div>
-
-          <p className="text-[#1e2126] mt-12 max-w-2xl">
-            This is the unglamorous work most people skip - and it&apos;s what earns the right to talk
-            about AI at all.
-          </p>
-        </div>
-      </section>
-
-      {/* What We Can Do - the value ladder */}
-      <section className="py-20 px-6 relative overflow-hidden">
+      {/* The three services */}
+      <section id="services" className="py-20 px-6 relative overflow-hidden scroll-mt-24">
         <div className="absolute top-16 right-[5%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
         <div className="absolute top-36 right-[12%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float3" />
         <div className="absolute bottom-20 left-[5%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float2" />
         <div className="absolute bottom-36 left-[11%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
 
         <div className="max-w-5xl mx-auto relative z-10">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />What we do</p>
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            We start where it pays back fastest. Then it compounds.
+            Three services. One skill. Prices on the page.
           </h2>
           <p className="text-[#75706c] mb-14 max-w-2xl">
-            Freeing trapped cash usually funds everything that follows. And because it all runs on the
-            same clean foundation, each step makes the next one faster - from cash, to profit, to
-            planning, to numbers that stand up to a buyer.
+            The same work, checking whether the numbers hold up at transaction level, sold at the
+            three moments it matters: before someone looks at yours, before you rely on someone
+            else&apos;s, and every month after.
           </p>
 
-          {/* Desktop: ascending value staircase - each box top sits higher */}
-          <div className="hidden lg:flex gap-4">
-            {/* Y-axis: value rises upward */}
-            <div className="flex flex-col items-center justify-end pb-4">
-              <span className="text-gold text-lg leading-none">&#8593;</span>
-              <span className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-[#75706c] [writing-mode:vertical-rl] rotate-180">
-                Value to you
-              </span>
-            </div>
-
-            <div className="flex-1">
-              <div className="flex items-start gap-6">
-                {valueLadder.map((stage, si) => (
-                  <div
-                    key={si}
-                    className="flex-1"
-                    style={{ marginTop: `${(valueLadder.length - 1 - si) * 64}px` }}
-                  >
-                    <div
-                      className={`relative rounded-[14px] p-5 border shadow-[0_2px_14px_rgba(30,33,38,0.06)] ${
-                        stage.highlight
-                          ? "bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border-gold/30"
-                          : "bg-white border-[#eae5e1]"
-                      }`}
-                    >
-                      {/* Connector arrow climbing to the next step */}
-                      {si < valueLadder.length - 1 && (
-                        <div className="absolute top-1/2 -translate-y-1/2 -right-[23px] z-20 text-gold text-2xl font-bold leading-none">
-                          &#8599;
-                        </div>
-                      )}
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-gold text-[#2b1209] text-sm font-bold flex items-center justify-center">{si + 1}</span>
-                        <span className="text-[#75706c] text-xs font-semibold uppercase tracking-wider">{stage.tag}</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-[#1e2126] mb-2">{stage.headline}</h3>
-                      {/* Value meter - fills further each step */}
-                      <div className="flex items-center gap-1 mb-3">
-                        {[0, 1, 2, 3].map((n) => (
-                          <span key={n} className={`h-1.5 w-5 rounded-full ${n <= si ? "bg-gold" : "bg-[#eae5e1]"}`} />
-                        ))}
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {stage.items.map((it, i) => (
-                          <span
-                            key={i}
-                            className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#faf7f5] border border-[#eae5e1] text-[#1e2126] text-xs font-medium"
-                          >
-                            {it}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-right text-xs font-medium text-[#75706c] mt-4">As we dig deeper, each stage is worth more &#8594;</p>
-            </div>
-          </div>
-
-          {/* Mobile / tablet: numbered ascending stack */}
-          <div className="lg:hidden max-w-2xl mx-auto">
-            {valueLadder.map((stage, si, arr) => (
-              <div key={si} className="relative flex gap-4 pb-5 last:pb-0">
-                {/* Connecting spine */}
-                {si < arr.length - 1 && (
-                  <div className="absolute left-5 top-12 -bottom-1 w-0.5 bg-gold/25" />
-                )}
-                <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-full bg-gold text-[#2b1209] flex items-center justify-center font-bold ring-4 ring-[#faf7f5]">
-                  {si + 1}
+          <div className="grid md:grid-cols-3 gap-6">
+            {services.map((svc) => (
+              <div
+                key={svc.n}
+                className={`flex flex-col rounded-[14px] p-7 border shadow-[0_2px_14px_rgba(30,33,38,0.06)] ${
+                  svc.highlight
+                    ? "bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border-gold/30"
+                    : "bg-white border-[#eae5e1]"
+                }`}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-gold text-[#2b1209] text-sm font-bold flex items-center justify-center">{svc.n}</span>
+                  <span className="text-[#75706c] text-xs font-semibold uppercase tracking-wider">{svc.tag}</span>
                 </div>
-                <div
-                  className={`flex-1 rounded-[14px] p-5 border shadow-[0_2px_14px_rgba(30,33,38,0.06)] ${
-                    stage.highlight
-                      ? "bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border-gold/30"
-                      : "bg-white border-[#eae5e1]"
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-3 mb-1">
-                    <span className="text-[#75706c] text-xs font-semibold uppercase tracking-wider">{stage.tag}</span>
-                    <div className="flex items-center gap-1 flex-shrink-0">
-                      {[0, 1, 2, 3].map((n) => (
-                        <span key={n} className={`h-1.5 w-4 rounded-full ${n <= si ? "bg-gold" : "bg-[#eae5e1]"}`} />
-                      ))}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-[#1e2126] mb-2">{stage.headline}</h3>
-                  <p className="text-[#75706c] text-sm mb-3 leading-relaxed">{stage.lead}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {stage.items.map((it, i) => (
-                      <span
-                        key={i}
-                        className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#faf7f5] border border-[#eae5e1] text-[#1e2126] text-xs font-medium"
-                      >
-                        {it}
-                      </span>
-                    ))}
-                  </div>
+                <h3 className="text-xl font-bold text-[#1e2126] mb-2">{svc.name}</h3>
+                <p className="font-mono text-sm text-[#c24a36] mb-4">{svc.time} &middot; {svc.fee}</p>
+                <p className="text-[#1e2126] text-sm font-medium mb-3">{svc.who}</p>
+                <p className="text-[#75706c] text-sm leading-relaxed mb-5">{svc.what}</p>
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                  {svc.chips.map((chip) => (
+                    <span
+                      key={chip}
+                      className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#faf7f5] border border-[#eae5e1] text-[#1e2126] text-xs font-medium"
+                    >
+                      {chip}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
+          </div>
+
+          <p className="text-[#75706c] text-sm mt-10 max-w-2xl">
+            Not sure which one? Say what&apos;s coming up on the call and we&apos;ll tell you, including
+            if the honest answer is &ldquo;none of them yet&rdquo;.
+          </p>
+        </div>
+      </section>
+
+      {/* Founder - who you would be working with */}
+      <section className="py-20 px-6 relative overflow-hidden">
+        <div className="absolute top-12 right-[8%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
+        <div className="absolute top-32 right-[4%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float2" />
+        <div className="absolute bottom-16 left-[6%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float3" />
+        <div className="absolute bottom-36 left-[12%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
+
+        <div className="max-w-3xl mx-auto relative z-10">
+          <div className="bg-white rounded-[14px] p-8 md:p-12 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <Image
+                src="/lu.jpg"
+                alt="Lu Luo, founder of Brightmere"
+                width={128}
+                height={128}
+                className="w-32 h-32 rounded-[14px] object-cover flex-shrink-0 shadow-[0_2px_14px_rgba(30,33,38,0.12)]"
+              />
+              <div>
+                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Who you&apos;d be working with</p>
+                <h2 className="text-2xl font-bold text-[#1e2126] mb-4">Lu Luo, founder</h2>
+                <div className="space-y-4 text-[#75706c] leading-relaxed">
+                  <p>
+                    I trained in accounting and economics and started out in accounting and
+                    corporate finance. Then I moved into data science and engineering, and spent
+                    years building the systems that finance teams report from. That mix is rare:
+                    most people who can build the system can&apos;t read a P&amp;L, and most who can
+                    read the P&amp;L can&apos;t build the system. I do both, and Brightmere is me doing it
+                    for you.
+                  </p>
+                  <p>
+                    The job I keep being asked to do is the same one. Someone is about to put a
+                    business&apos;s numbers in front of people with money, and wants to know what
+                    those people will find before they find it. At a B2B commerce platform
+                    preparing for an IPO, the growth story was strong: sales up quarter after
+                    quarter. Nobody had run the cohorts. When I did, the customers behind that
+                    growth were mostly new ones, and most of them didn&apos;t come back. The
+                    headline was true. The business underneath it was different, and leadership
+                    needed to know that before the investors&apos; analysts told them. The same
+                    gap, between what the numbers say and what the transactions show, is in
+                    almost every business I open.
+                  </p>
+                  <p className="text-[#1e2126]">
+                    That is what I built Brightmere to do: hand owners numbers they can run the
+                    business on, and defend in front of a board, a lender or a buyer. I work from
+                    London, with clients in the UK and the US, and I do the work myself.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -586,10 +510,10 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">One Week, Not One Quarter</h3>
+              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">Three Weeks, Not Three Months</h3>
               <p className="text-[#75706c] text-sm">
-                Bias for action. A sharp answer in days beats a perfect answer delivered after
-                the cash crunch has already happened.
+                Deals run on a clock. A sharp answer before the other side asks beats a perfect
+                answer delivered after the price has moved.
               </p>
             </div>
           </div>
@@ -597,97 +521,23 @@ export default function Home() {
       </section>
 
 
-      {/* Founder Story */}
-      <section className="py-20 px-6 relative overflow-hidden">
-        {/* Decorative floating dots */}
-        <div className="absolute top-12 right-[8%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
-        <div className="absolute top-32 right-[4%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float2" />
-        <div className="absolute top-24 right-[14%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float3" />
-        <div className="absolute bottom-16 left-[6%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float3" />
-        <div className="absolute bottom-36 left-[12%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
-        <div className="absolute bottom-24 left-[3%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float2" />
-
-        <div className="max-w-3xl mx-auto relative z-10">
-          <div className="bg-white rounded-[14px] p-8 md:p-12 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-24 h-24 bg-[#eae5e1] rounded-[14px] flex-shrink-0 flex items-center justify-center text-3xl font-bold text-[#75706c]">
-                Lu
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-[#1e2126] mb-4">Why I Started Brightmere</h2>
-                <div className="space-y-4 text-[#75706c] leading-relaxed">
-                  <p>
-                    I&apos;m Lu. I started in accounting and corporate finance before moving into
-                    data and engineering. The gap between those two worlds - what a business does,
-                    and what its numbers record - is where I&apos;ve spent my career, because that
-                    gap is where the money and the clarity hide.
-                  </p>
-                  <p>
-                    Operationally complex companies are sitting on answers they can&apos;t see: cash
-                    trapped in the detail, growth that&apos;s harder than it should be, decisions made
-                    on averages. The answer is usually already in their own systems. They just
-                    don&apos;t have anyone who can read the P&amp;L <em>and</em> get into the data to find it.
-                  </p>
-                  <p className="text-[#1e2126]">
-                    So I built Brightmere to do both - and to hand owners something rare: numbers they
-                    can actually run the business on, and trust in front of a board, a lender, or a buyer.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* How we price - the services above carry the numbers; this is the principle */}
+      <section className="py-16 px-6">
+        <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-            Start With a Cash X-Ray
+            Fixed fees, agreed before we start
           </h2>
-          <p className="text-[#75706c] mb-12">
-            Priced as an investment, not an hourly bill. If we find $200K stuck in your
-            business, the fee pays for itself many times over.
+          <p className="text-[#75706c] mb-6">
+            No day rates and no meter running. The fee is on the page, every finding carries a
+            pound figure you can weigh it against, and if the first look says the prize is small,
+            we say so and stop.
           </p>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto text-left">
-            <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-2">Stage 1 &middot; Discovery</div>
-              <h3 className="flex items-center gap-3 text-xl font-bold text-[#1e2126] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />The Data Map</h3>
-              <p className="font-mono text-sm text-[#c24a36] mb-6">2&ndash;3 days &middot; fixed fee</p>
-              <p className="text-[#75706c] text-sm">
-                We map what&apos;s actually in your finance and ERP systems - what&apos;s accessible,
-                what&apos;s clean, what&apos;s missing - and scope the X-Ray precisely. Useful on its
-                own, even if you go no further.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-8">
-              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-2">Stage 2 &middot; The Cash X-Ray</div>
-              <h3 className="flex items-center gap-3 text-xl font-bold text-[#1e2126] mb-2"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />The Diagnostic</h3>
-              <p className="font-mono text-sm text-[#c24a36] mb-6">2&ndash;3 weeks &middot; fixed fee</p>
-              <p className="text-[#1e2126] text-sm">
-                A clear findings document: where your cash is trapped, sized in pounds, ranked by
-                impact and speed - with the specific moves to free it. Every number traced back
-                to your own data.
-              </p>
-            </div>
-          </div>
-
-          <p className="text-[#75706c] text-sm mt-8 max-w-xl mx-auto">
-            What it earns into: an ongoing <span className="font-medium text-[#1e2126]">Cashflow Operating System</span> retainer - a
-            live forecast and a cadence that keeps cash visible for good.
-          </p>
-
           <a
-            href="#contact"
-            className="inline-block mt-8 px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold hover:bg-gold-deep transition-colors"
+            href="/pricing"
+            className="text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
           >
-            Let&apos;s Talk
+            How we price, in full &rarr;
           </a>
-          <p className="text-[#75706c] text-sm mt-4">
-            No commitment. We&apos;ll tell you honestly if we can help.
-          </p>
         </div>
       </section>
 
@@ -701,20 +551,20 @@ export default function Home() {
           <div className="space-y-6">
             {[
               {
-                q: "Couldn't our finance team do this themselves?",
-                a: "In theory, yes - and most CFOs ask exactly that. In practice, three things stop them. Bandwidth: the team is running close and board reporting, with no slack for a three-week deep-dive. Tooling: Excel chokes at SKU-level, 24-month, cross-system data - you need a real database. And the data engineering: joining ERP, billing, and inventory into one clean transaction layer is where most internal projects die. We show up, do all three, and get to an answer in weeks."
+                q: "Why wouldn't I just ask my accountant?",
+                a: "Because this isn't their job, and most will say so. Your accountant works from the ledger and records what happened, correctly. A buyer's or lender's team works from the transactions and asks whether the business is what you say it is: how concentrated the revenue is, which customers and products really make money, whether the working capital is normal or flattered. Answering that means joining the order book, the job sheets and the bank to the accounts, line by line. That's engineering as much as accounting, and it's the part most firms can't do. We do it before the other side does."
+              },
+              {
+                q: "Is this a quality of earnings report?",
+                a: "No, and we won't call it one. A QoE is a chartered firm's validation of your earnings, and a lender or buyer may still insist on one. What we produce sits before it or alongside it: the transaction-level read that tells you what that report will find, with time to fix it. If you need a QoE, we'll say so and point you to a firm."
               },
               {
                 q: "Isn't a strong fractional CFO already doing this?",
-                a: "For ongoing operations, often yes - and we're not a replacement for that relationship. But when the answer lives below the averages - which 20 customers drove last quarter's margin move, including freight, returns, and the cost of slow payment - most fractional CFOs hit a tooling wall. We're the answer engine for the moments the question gets too granular for a spreadsheet."
-              },
-              {
-                q: "Isn't the answer just a bigger bank facility?",
-                a: "Sometimes you do need more headroom. But borrowing to cover cash that's trapped in your own operations is the expensive way - you're paying interest to a lender for money you've already earned. We find that cash first. Often it's enough that the facility conversation changes entirely."
+                a: "For ongoing finance leadership, often yes, and we're not a replacement for that relationship. But when the answer lives below the averages - which 20 customers drove last quarter's margin move, including freight, returns and the cost of slow payment - most fractional CFOs hit a tooling wall. We're the answer engine for the moments the question gets too granular for a spreadsheet, and we're happy to work alongside yours."
               },
               {
                 q: "What if our data is a mess?",
-                a: "Most is. That's exactly why Stage 1 exists - we map what's actually usable before committing to scope. You'd be surprised: basic finance and inventory data usually has more than enough signal to find trapped cash. We work with what you have, not what you wish you had."
+                a: "Most is. The first few days of every engagement map what's actually usable before we commit to the findings. You'd be surprised: basic finance, sales and operational exports usually carry more than enough signal. We work with what you have, not what you wish you had."
               },
               {
                 q: "Do you replace our ERP or BI tools?",
@@ -751,8 +601,8 @@ export default function Home() {
             Let&apos;s See If We&apos;re a Fit
           </h2>
           <p className="text-[#75706c] mb-8">
-            30-minute call. No pitch deck. We&apos;ll ask about your business and tell you
-            honestly if there&apos;s cash worth going after.
+            30-minute call. No pitch deck. Tell us what&apos;s coming - a raise, a sale, a
+            refinance, a deal - and we&apos;ll tell you honestly whether your numbers need the work.
           </p>
 
           <form
@@ -812,14 +662,14 @@ export default function Home() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-[#1e2126] mb-2">
-                Where do you suspect your cash is getting stuck?
+                What&apos;s coming up, and when?
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
                 className="w-full px-4 py-3 bg-white border border-[#eae5e1] rounded-lg text-[#1e2126] placeholder-[#b5aca6] focus:ring-2 focus:ring-gold focus:border-gold"
-                placeholder="e.g., We're growing but cash is always tight, and our inventory keeps creeping up..."
+                placeholder="e.g., We're raising in Q1 and I'm not sure the margin numbers will stand up..."
               />
             </div>
 

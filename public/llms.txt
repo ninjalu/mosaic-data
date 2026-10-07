@@ -1,17 +1,22 @@
 # Brightmere
 
-> Brightmere gives operationally complex businesses operational and financial clarity - run at a resolution a spreadsheet can't reach. We read the same business through three lenses: financial clarity (is the profit real, repeatable and cash-backed - unit economics, working capital, margin, cash), operational clarity (can the operation physically deliver the plan - capacity and the true bottleneck, read from the operational log), and leadership clarity (how much depends on the founder or a few key people, measured from what the systems reveal). Every finding is computed from a company's actual data, line by line, and sized in pounds. Owner-led or PE-backed, and on either side of a deal.
+> Brightmere checks whether a £5-50m business's numbers hold up, transaction by transaction, before the people with money look at them. Your accountant records what happened; a buyer's or lender's diligence team asks whether the business is what the owner says it is. Brightmere answers that question first, from the company's own operational transactions tied to its ledger, and sizes every finding in pounds. Founded and run by Lu Luo (accounting and economics, then corporate finance, then data science and engineering), London. Owner-led or PE-backed, and on either side of a deal.
 
-## What Brightmere does
+## The three services (fixed fees, published)
 
-- Financial clarity (the Cash X-Ray): a diagnostic connecting finance and ERP systems to trace cash and profit line by line, finding where money is trapped or leaking and sizing each gap in pounds
-- Operational clarity (the operator lens): computing real capacity and the binding constraint from the operational log, to test whether a growth or deal plan is physically deliverable
-- Leadership clarity (the dependency lens): reconstructing founder and key-person dependency from system exhaust - who the revenue is attached to, who actually decides, and what happens when they step back
-- Ongoing: a live operating cadence and reporting that keeps the numbers clear, and trustworthy in front of a board, a lender, or a buyer
+- Diligence-ready numbers: £10,000 fixed, 3 weeks. For owners about to raise, sell, refinance or take on a new facility. Cash proof, real margin by customer and product, working capital stripped of the flattering month, revenue concentration, every heroic assumption named. A findings pack a lender's or buyer's team can test, with time to fix what they would have found. Sits before the chartered accountant's report, not instead of it.
+- Operator diligence for buyers: £15,000 fixed per target, 2-3 weeks. For acquirers, searchers and holding companies buying a £3-20m business, and the advisers and lenders backing them. Is the revenue what the data room says, which customers and jobs make money, how much cash the business really needs, can the operation deliver the plan. Runs alongside the chartered firm's financial due diligence. Not a quality of earnings (QoE) report.
+- Numbers kept true: from £1,500 a month. The rebuilt view stays live: reconciled monthly with exceptions flagged, real margin and cash watched at line level, a rolling 13-week cash view, one session a month on the numbers and decisions. Cancel any time.
+
+## How the work is done
+
+- From the transactions, not the trial balance: order book, job sheets, loads, TMS or ERP exports joined to the ledger, line by line, at a resolution a spreadsheet cannot reach
+- Three lenses on the same business: financial (is the profit real, repeatable and cash-backed), operational (can the operation physically deliver the plan - capacity and the true bottleneck), leadership (how much depends on the founder or a few key people)
+- Every finding sized in pounds and traced to source; no day rates; fees agreed before work starts
 
 ## Pages
 
-- [Home](https://brightmerehq.com/): Operational and financial clarity - close the gap between what your operation does and what your finance records
+- [Home](https://brightmerehq.com/): Numbers that survive diligence - the three services, who they are for, and what they cost
 - [Methodology](https://brightmerehq.com/methodology): The three lenses - financial, operational, and leadership clarity - explained
-- [FAQ](https://brightmerehq.com/faq): Straight answers to the questions owners and finance leaders ask us
-- [Pricing](https://brightmerehq.com/pricing): How engagements are scoped and priced
+- [FAQ](https://brightmerehq.com/faq): Straight answers to the questions owners, buyers and finance leaders ask us
+- [Pricing](https://brightmerehq.com/pricing): The three services and how each is priced
