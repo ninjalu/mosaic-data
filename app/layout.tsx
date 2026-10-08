@@ -15,16 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brightmerehq.com"),
-  title: "Brightmere | Numbers That Survive Diligence",
-  description: "We check whether a £5-50m business's numbers hold up, transaction by transaction, before the people with money look at them: a raise, a sale, a refinance, or a business you are about to buy. Three fixed-fee services. Every finding sized in pounds.",
+  title: "Brightmere | Finance and Operations Clarity",
+  description: "Brightmere joins what a £5-50m business's operation does to what its finance records, transaction by transaction, so the numbers it runs on are the numbers that survive diligence. For owners and finance leaders, and for whoever is about to buy, back or lend to them. Three fixed-fee services, every finding sized in pounds.",
   keywords: ["due diligence preparation", "investor readiness", "sell-side preparation", "financial due diligence", "operator diligence", "working capital", "revenue quality", "customer concentration", "margin analysis", "mid-market", "owner-managed business", "search fund", "acquisition"],
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Brightmere | Numbers That Survive Diligence",
-    description: "Granular due diligence on £5-50m businesses, from the transactions up. Buy side or sell side. Three fixed-fee services, prices on the page.",
+    title: "Brightmere | Finance and Operations Clarity",
+    description: "Operations joined to finance, transaction by transaction, so the numbers you run the business on are the numbers that survive diligence. For operators and for the deal. Three fixed-fee services, prices on the page.",
     type: "website",
   },
 };
