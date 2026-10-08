@@ -1,44 +1,11 @@
 import Wordmark from "../components/Wordmark";
+import Header from "../components/Header";
 import Emblem from "../components/Emblem";
 
 export default function MethodologyPage() {
   return (
     <div className="min-h-screen bg-[#faf7f5] text-[#1e2126]">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-[#16181c]/90 backdrop-blur-md z-50">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3">
-            <Emblem />
-            <Wordmark dark />
-          </a>
-          <div className="flex items-center gap-8">
-            <a
-              href="/story"
-              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
-            >
-              Story
-            </a>
-            <a
-              href="/faq"
-              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
-            >
-              FAQ
-            </a>
-            <a
-              href="/pricing"
-              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
-            >
-              Pricing
-            </a>
-            <a
-              href="/#contact"
-              className="px-5 py-2.5 bg-gold text-[#2b1209] rounded-full font-bold text-[15px] hover:bg-gold-deep transition-colors"
-            >
-              Book a call
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header current="/methodology" />
 
       {/* Hero */}
       <section className="pt-36 pb-20 px-6 relative overflow-hidden bg-[linear-gradient(110deg,#16181c_0%,#1e2126_55%,#26292f_100%)]">
