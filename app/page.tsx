@@ -463,7 +463,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto text-center">
           <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Where this started</p>
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-            A growth chart and a cohort table that disagreed
+            Does your board pack know what your order book knows?
           </h2>
           <p className="text-[#75706c] text-lg mb-6 max-w-2xl mx-auto">
             A fast-growing business preparing for investment, a top line everyone trusted, and

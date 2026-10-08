@@ -4,7 +4,7 @@ import Wordmark from "../components/Wordmark";
 import Emblem from "../components/Emblem";
 
 export const metadata: Metadata = {
-  title: "The Story | Brightmere - Where Finance and Operations Came Apart",
+  title: "The Story | Brightmere - When the Board Pack and the Transactions Disagree",
   description:
     "Why Brightmere exists: a fast-growing business preparing for investment, a growth chart everyone trusted, and a cohort table nobody had run. The gap between what the operation did and what finance recorded is where the truth was. Brightmere was built to close it.",
 };
@@ -82,15 +82,16 @@ export default function StoryPage() {
             The story
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.1] tracking-[-1px] mb-6">
-            Where Brightmere started:{" "}
+            Your board pack says one thing.{" "}
             <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">
-              a growth chart and a cohort table that disagreed.
+              Your transactions may say another.
             </span>
           </h1>
           <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
             Every business keeps two records of itself: what the operation does, and what
-            finance writes down about it. The money, and the truth, live in the moments they
-            don&apos;t agree.
+            finance writes down about it. The money, and the truth, live where they disagree.
+            This is how I found that gap in a fast-growing business, and why Brightmere exists
+            to find it in yours.
           </p>
         </div>
       </section>
