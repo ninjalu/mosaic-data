@@ -6,22 +6,20 @@ import Emblem from "../components/Emblem";
 export const metadata: Metadata = {
   title: "The Story | Brightmere - Where Finance and Operations Came Apart",
   description:
-    "Why Brightmere exists: a fast-growing B2B commerce platform preparing for investment, a growth chart everyone trusted, and a cohort table nobody had run. The gap between what the operation did and what finance recorded is where the truth was. Brightmere was built to close it.",
+    "Why Brightmere exists: a fast-growing business preparing for investment, a growth chart everyone trusted, and a cohort table nobody had run. The gap between what the operation did and what finance recorded is where the truth was. Brightmere was built to close it.",
 };
 
 // The founding story. Anonymised on purpose: the company is not named and the
 // figures are kept generic (Lu, 7-8 Oct 2026). The point is the mechanism, not the firm.
 const SAW = {
   finance: [
-    "Revenue more than doubling year on year, every quarter up on the last",
+    "Revenue more than doubling year on year",
     "A growing customer count on every board slide",
-    "Marketing and sales spend justified by the top line it bought",
-    "A growth story that read the same in the deck, the accounts and the forecast",
+    "The deck, the accounts and the forecast all telling the same story",
   ],
   transactions: [
     "Most of the growth came from customers acquired that quarter",
     "Cohort by cohort, most of them did not come back",
-    "Orders per customer, the number nobody tracked, was flat to falling",
     "The curve was being refilled from the top, not compounding from the base",
   ],
 };
@@ -90,10 +88,9 @@ export default function StoryPage() {
             </span>
           </h1>
           <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
-            Every business keeps two records of itself. One is what the operation does: the
-            orders, the customers, the deliveries, the returns. The other is what finance
-            writes down about it. Most of the time they agree. The money, and the truth, live
-            in the moments they don&apos;t.
+            Every business keeps two records of itself: what the operation does, and what
+            finance writes down about it. The money, and the truth, live in the moments they
+            don&apos;t agree.
           </p>
         </div>
       </section>
@@ -110,19 +107,14 @@ export default function StoryPage() {
           </h2>
           <div className="space-y-5 text-[#75706c] text-lg leading-relaxed">
             <p>
-              I was the data scientist at a fast-growing B2B commerce platform. It connected
-              consumer-goods brands and distributors to tens of thousands of small retailers
-              across several emerging markets, and it was preparing for investment.
-            </p>
-            <p>
-              The story the business told about itself was a good one, and it was true. Revenue
-              had more than doubled year on year. The customer count on every board slide went
-              up and to the right. The finance view, the investor deck and the forecast all said
-              the same thing, because they were all built from the same numbers.
+              I was the data scientist at a fast-growing B2B commerce platform, connecting
+              consumer-goods brands to tens of thousands of small retailers, and preparing for
+              investment. Revenue had more than doubled year on year. The deck, the accounts and
+              the forecast all said the same thing, because they were built from the same numbers.
             </p>
             <p className="text-[#1e2126]">
-              My job was to find commercial signal in the platform&apos;s transaction data. The
-              first thing I did was the thing nobody had done: I ran the cohorts.
+              My job was to find commercial signal in the platform&apos;s transactions. The first
+              thing I did was the thing nobody had done: I ran the cohorts.
             </p>
           </div>
         </div>
@@ -131,14 +123,9 @@ export default function StoryPage() {
       {/* Two records */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-12 pb-4 border-b-2 border-[#eae5e1]">
             Two records of the same business
           </h2>
-          <p className="text-[#75706c] mb-12 max-w-2xl">
-            Same company, same months, same customers. One record was built from the ledger
-            and the headline counts. The other was built from every order, by the customer who
-            placed it and the month they first arrived.
-          </p>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
@@ -184,28 +171,17 @@ export default function StoryPage() {
           </h2>
           <div className="space-y-5 text-[#75706c] text-lg leading-relaxed">
             <p>
-              Nobody had hidden anything. Finance had recorded every sale correctly. The gap was
-              not an error, it was a missing join: the ledger knew how much was sold, and the
-              platform knew who bought it and whether they came back, and no one had put the two
-              side by side.
-            </p>
-            <p>
-              Once they were, the questions changed. Not &ldquo;how fast are we growing&rdquo;
-              but &ldquo;which customers stay, what do they have in common, and what does it
-              cost us to replace the ones who leave&rdquo;. Segmentation built on the
-              transactions replaced gut-feel targeting, and gave the commercial team defensible
-              criteria for where pricing and promotional money went.
-            </p>
-            <p>
-              The same data answered the next question too. A national pricing change was on
-              the table, with strong opinions on both sides. Instead of arguing, we ran it as a
-              controlled experiment on the platform and took the decision on evidence before the
-              rollout, not after.
+              Nobody had hidden anything, and finance had recorded every sale correctly. The gap
+              was a missing join: the ledger knew how much was sold, the platform knew who bought
+              it and whether they came back, and no one had put the two side by side.
             </p>
             <p className="text-[#1e2126]">
-              Leadership walked into the investment conversations knowing what the cohorts
-              showed, with the answer ready. That is a very different position from finding out
-              in the other side&apos;s diligence.
+              Once they were, the questions changed. Not &ldquo;how fast are we growing&rdquo; but
+              &ldquo;which customers stay, and what does it cost to replace the ones who
+              leave&rdquo;. Targeting moved from gut feel to the transactions, a national pricing
+              change was decided on a controlled experiment instead of an argument, and leadership
+              walked into the investment conversations knowing what the cohorts showed, with the
+              answer ready.
             </p>
           </div>
         </div>
@@ -232,25 +208,17 @@ export default function StoryPage() {
                 <h2 className="text-2xl font-bold text-[#1e2126] mb-4">Why I built Brightmere</h2>
                 <div className="space-y-4 text-[#75706c] leading-relaxed">
                   <p>
-                    I had seen the same gap before, from the other side. I trained in accounting
-                    and economics and started out in corporate finance, so I knew how the ledger
-                    gets built: the real world happens, it is recorded as transactions, reconciled,
-                    closed and reported, and only then does anyone interpret it. Finance is a
-                    translation of operations. It is monthly, it is lagging, and it averages away
-                    the thing you most need to see.
-                  </p>
-                  <p>
-                    Then I spent years as a data scientist and engineer building the systems that
-                    hold the other record, the operational one. And I kept finding the same thing:
-                    the answer the owner or the CFO needed was already in their own systems. It
-                    just lived in the join between two sources that had never been put side by
-                    side, and almost nobody can read a P&amp;L and build that join.
+                    I had seen the same gap from the other side. I trained in accounting and
+                    started out in corporate finance, so I knew how the ledger gets built: the
+                    real world happens, it is recorded, reconciled, closed and reported, and only
+                    then does anyone interpret it. Finance is a translation of operations. It is
+                    monthly, it is lagging, and it averages away the thing you most need to see.
                   </p>
                   <p className="text-[#1e2126]">
-                    Brightmere is that join, done for £5-50m businesses. Operations connected to
-                    finance at the transaction, so the numbers you run the business on are the
-                    numbers that survive diligence. For the people running it, and for the people
-                    about to buy, back or lend to it.
+                    Brightmere is the join between the two records, done for £5-50m businesses.
+                    Operations connected to finance at the transaction, so the numbers you run the
+                    business on are the numbers that survive diligence. For the people running it,
+                    and for the people about to buy, back or lend to it.
                   </p>
                 </div>
               </div>
