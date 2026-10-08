@@ -330,6 +330,12 @@ export default function FAQPage() {
           </a>
           <div className="flex items-center gap-8">
             <a
+              href="/story"
+              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
+            >
+              Story
+            </a>
+            <a
               href="/methodology"
               className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
             >

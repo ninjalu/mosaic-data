@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://brightmerehq.com/story",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://brightmerehq.com/methodology",
       lastModified: new Date(),
       changeFrequency: "monthly",

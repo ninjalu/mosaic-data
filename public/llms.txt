@@ -17,6 +17,7 @@
 ## Pages
 
 - [Home](https://brightmerehq.com/): Numbers that survive diligence - the three services, who they are for, and what they cost
+- [Story](https://brightmerehq.com/story): Where Brightmere started - a fast-growing business preparing for investment, a growth chart everyone trusted, and the cohort table nobody had run; why operations and finance are joined at the transaction
 - [Methodology](https://brightmerehq.com/methodology): The three lenses - financial, operational, and leadership clarity - explained
 - [FAQ](https://brightmerehq.com/faq): Straight answers to the questions owners, buyers and finance leaders ask us
 - [Pricing](https://brightmerehq.com/pricing): The three services and how each is priced

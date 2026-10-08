@@ -53,6 +53,12 @@ export default function Home() {
           </a>
           <div className="flex items-center gap-8">
             <a
+              href="/story"
+              className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
+            >
+              Story
+            </a>
+            <a
               href="/methodology"
               className="text-greenmuted text-[15px] hover:text-offwhite transition-colors hidden md:block"
             >
@@ -449,6 +455,27 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* The story - teaser */}
+      <section className="py-16 px-6 border-y border-[#eae5e1]">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Where this started</p>
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
+            A growth chart and a cohort table that disagreed
+          </h2>
+          <p className="text-[#75706c] text-lg mb-6 max-w-2xl mx-auto">
+            A fast-growing business preparing for investment, a top line everyone trusted, and
+            the cohorts nobody had run. Same company, two records, one of them right. It is why
+            Brightmere joins operations to finance at the transaction.
+          </p>
+          <a
+            href="/story"
+            className="text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
+          >
+            Read the story &rarr;
+          </a>
         </div>
       </section>
 
