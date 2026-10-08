@@ -183,10 +183,6 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="text-[#1e2126] text-lg mt-12 max-w-2xl">
-            If none of these is in your next twelve months, your accountant is probably all you
-            need, and we&apos;ll tell you so on the call.
-          </p>
         </div>
       </section>
 
