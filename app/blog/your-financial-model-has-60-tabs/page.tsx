@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BOOKING_URL } from "../../components/booking";
 
 export const metadata = {
   title: "Your Financial Model Has 60 Tabs. Nobody Trusts It. | Mosaic Data",
@@ -32,7 +33,9 @@ export default function BlogPost() {
               Insights
             </a>
             <a
-              href="/#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
               className="px-5 py-2 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors"
             >
               Book a call
@@ -278,7 +281,9 @@ export default function BlogPost() {
               Book a 30-minute call and we&apos;ll tell you honestly where to look.
             </p>
             <a
-              href="/#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-coral text-white rounded-lg font-semibold hover:bg-coral-light transition-colors"
             >
               Book a call &rarr;

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Wordmark from "./components/Wordmark";
 import Header from "./components/Header";
 import Emblem from "./components/Emblem";
+import { BOOKING_URL } from "./components/booking";
 
 export default function Home() {
   // Three named services (7 Oct 2026). One skill - checking whether the numbers hold up at
@@ -108,7 +109,9 @@ export default function Home() {
               See the three services &rarr;
             </a>
             <a
-              href="#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
               className="inline-block px-8 py-4 border-2 border-gold/55 text-offwhite rounded-full font-semibold hover:border-gold transition-colors text-lg"
             >
               Book a call
@@ -590,6 +593,24 @@ export default function Home() {
             refinance, a deal - and we&apos;ll tell you honestly whether your numbers need the work.
           </p>
 
+          <div className="text-center mb-10">
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-9 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
+            >
+              Pick a time &rarr;
+            </a>
+            <p className="mt-3 text-sm text-[#75706c]">
+              30 minutes on Google Meet. Choose a slot that suits you.
+            </p>
+          </div>
+
+          <p className="text-center text-[#75706c] mb-4">
+            Prefer to write first? Send a note and we&apos;ll come back to you.
+          </p>
+
           <form
             action="https://formspree.io/f/mwvvkjnb"
             method="POST"
@@ -676,7 +697,9 @@ export default function Home() {
         </a>
         <p className="mt-4 text-sm tracking-[5px] uppercase text-greenmuted">London, UK</p>
         <a
-          href="#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           className="inline-block mt-9 px-9 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors"
         >
           Book a call

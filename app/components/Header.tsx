@@ -1,5 +1,6 @@
 import Emblem from "./Emblem";
 import Wordmark from "./Wordmark";
+import { BOOKING_URL } from "./booking";
 
 // One header for every page, so the tabs never change from page to page
 // (Lu, 8 Oct 2026). `current` just marks the page you are on.
@@ -33,7 +34,9 @@ export default function Header({ current }: { current?: string }) {
             </a>
           ))}
           <a
-            href="/#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-5 py-2.5 bg-gold text-[#2b1209] rounded-full font-bold text-[15px] hover:bg-gold-deep transition-colors"
           >
             Book a call

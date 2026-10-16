@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Wordmark from "../components/Wordmark";
 import Header from "../components/Header";
 import Emblem from "../components/Emblem";
+import { BOOKING_URL } from "../components/booking";
 
 export const metadata: Metadata = {
   title: "FAQ | Brightmere - Cash Flow & Working Capital, Answered Straight",
@@ -412,7 +413,9 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
                 className="px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
               >
                 Book a call &rarr;
@@ -432,7 +435,9 @@ export default function FAQPage() {
         </a>
         <p className="mt-4 text-sm tracking-[5px] uppercase text-greenmuted">London, UK</p>
         <a
-          href="/#contact"
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           className="inline-block mt-9 px-9 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors"
         >
           Book a call
