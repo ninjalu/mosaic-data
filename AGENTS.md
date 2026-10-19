@@ -57,7 +57,7 @@ postcss.config.mjs
 ... (truncated)
 ```
 
-**Git:** branch: `main` | last commit: 2026-10-18 | remote: https://github.com/ninjalu/mosaic-data.git
+**Git:** branch: `main` | last commit: 2026-10-19 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
 
 ## AI-agent bridge (Codex / open-source)
 
