@@ -44,15 +44,15 @@ export default function StoryPage() {
             The story
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.1] tracking-[-1px] mb-6">
-            Revenue doubled.{" "}
+            The financials were correct.{" "}
             <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">
-              Most of the customers behind it never came back.
+              The business was going downhill.
             </span>
           </h1>
           <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
-            Every number in the accounts was correct, and a review of the ledger would have
-            confirmed it. Anyone who paid a multiple for that growth would still have been paying
-            for a business that did not exist.
+            Revenue had doubled and every sale was booked properly. Underneath, most of the
+            customers behind that growth never came back, and the base was shrinking every
+            quarter. A review of the ledger would have passed it. A buyer would have paid for it.
           </p>
         </div>
       </section>
