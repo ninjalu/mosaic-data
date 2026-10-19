@@ -184,7 +184,7 @@ export default function StoryPage() {
                     kind of thing it does not run.
                   </p>
                   <p className="text-[#1e2126]">
-                    Brightmere is that read, done for buyers of £3-20m businesses. The target&apos;s
+                    Brightmere is that read, done for buyers of £5-20m businesses. The target&apos;s
                     own transactions, joined to its ledger, so you know whether the business
                     underneath the headline is the one you are paying for, before you sign.
                   </p>

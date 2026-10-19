@@ -95,7 +95,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
-            Before you buy a £3-20m business, we rebuild its revenue, margin, cash and capacity
+            Before you buy a £5-20m business, we rebuild its revenue, margin, cash and capacity
             from its own orders, invoices and jobs, and show you where the data room story and
             the transactions part ways. Alongside your financial due diligence, not instead of it.
           </p>
@@ -141,7 +141,7 @@ export default function Home() {
             </div>
             <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
               <h3 className="text-lg font-semibold text-[#1e2126] mb-2">The deal is decided below it</h3>
-              <p className="text-[#75706c] text-sm">Retention, real margin, cash needs and capacity live in the order book, the job sheets, the TMS and the ERP. Few diligence teams open them, and rarely at a price that suits a £3-20m deal.</p>
+              <p className="text-[#75706c] text-sm">Retention, real margin, cash needs and capacity live in the order book, the job sheets, the TMS and the ERP. Few diligence teams open them, and rarely at a price that suits a £5-20m deal.</p>
             </div>
             <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-7">
               <h3 className="text-lg font-semibold text-[#1e2126] mb-2">We read that layer</h3>
@@ -215,7 +215,7 @@ export default function Home() {
               <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-3">Who it is for</p>
               <p className="text-[#1e2126] mb-4">
                 Independent sponsors, holding companies, family offices and serial acquirers
-                buying a £3-20m UK business.
+                buying a £5-20m UK business.
               </p>
               <p className="text-[#75706c] text-sm mb-4">
                 It earns its fee fastest in operationally complex targets: thousands of SKUs,

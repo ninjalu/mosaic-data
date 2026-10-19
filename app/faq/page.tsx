@@ -7,7 +7,7 @@ import { BOOKING_URL } from "../components/booking";
 export const metadata: Metadata = {
   title: "FAQ | Brightmere - Operator Due Diligence, Answered Straight",
   description:
-    "Straight answers for people buying a £3-20m business: what operator due diligence is, how it differs from financial and commercial due diligence, whether a lender can rely on it, what it finds, what data it needs, how long it takes and what it costs.",
+    "Straight answers for people buying a £5-20m business: what operator due diligence is, how it differs from financial and commercial due diligence, whether a lender can rely on it, what it finds, what data it needs, how long it takes and what it costs.",
 };
 
 type QA = { q: string; a: string[] };
@@ -38,7 +38,7 @@ const SECTIONS: Section[] = [
       {
         q: "How is it different from commercial due diligence?",
         a: [
-          "Commercial due diligence looks outward: the market, competitors, customer interviews. Operator diligence looks inward, at what the target's own transactions show. On a £3-20m deal, commercial DD is often skipped; the questions it would have asked about customers can usually be answered more cheaply, and more reliably, from the order book.",
+          "Commercial due diligence looks outward: the market, competitors, customer interviews. Operator diligence looks inward, at what the target's own transactions show. On a £5-20m deal, commercial DD is often skipped; the questions it would have asked about customers can usually be answered more cheaply, and more reliably, from the order book.",
         ],
       },
       {
