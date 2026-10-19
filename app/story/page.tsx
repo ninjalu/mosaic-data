@@ -8,7 +8,7 @@ import { BOOKING_URL } from "../components/booking";
 export const metadata: Metadata = {
   title: "The Story | Brightmere - When the Board Pack and the Transactions Disagree",
   description:
-    "Why Brightmere exists: a fast-growing business preparing for investment, a growth chart everyone trusted, and a cohort table nobody had run. The gap between what the operation did and what finance recorded is where the truth was. Brightmere was built to close it.",
+    "Why Brightmere exists: a fast-growing business preparing for investment, a growth chart everyone trusted, and a cohort table nobody had run. The headline was true; the business underneath it was different. That gap is what operator diligence finds before a buyer pays for the headline.",
 };
 
 // The founding story. Anonymised on purpose: the company is not named and the
@@ -177,11 +177,16 @@ export default function StoryPage() {
                     then does anyone interpret it. Finance is a translation of operations. It is
                     monthly, it is lagging, and it averages away the thing you most need to see.
                   </p>
+                  <p>
+                    The same gap sits inside most acquisitions. Financial due diligence works from
+                    the same ledger, adjusts the earnings and stops at the trial balance. A cohort
+                    table like the one that changed everything at that platform is exactly the
+                    kind of thing it does not run.
+                  </p>
                   <p className="text-[#1e2126]">
-                    Brightmere is the join between the two records, done for £5-50m businesses.
-                    Operations connected to finance at the transaction, so the numbers you run the
-                    business on are the numbers that survive diligence. For the people running it,
-                    and for the people about to buy, back or lend to it.
+                    Brightmere is that read, done for buyers of £3-20m businesses. The target&apos;s
+                    own transactions, joined to its ledger, so you know whether the business
+                    underneath the headline is the one you are paying for, before you sign.
                   </p>
                 </div>
               </div>
@@ -195,11 +200,11 @@ export default function StoryPage() {
         <div className="max-w-3xl mx-auto relative z-10">
           <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-10 md:p-14 text-center">
             <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-              Which of your two records is right?
+              Looking at a business now?
             </h2>
             <p className="text-lg text-[#75706c] mb-8 max-w-xl mx-auto">
-              A 30-minute call is enough to tell you whether yours disagree, and where. No
-              pitch deck, no follow-up sequence.
+              A 30-minute call is enough to tell you whether the target&apos;s two records are
+              likely to disagree, and where to look. No pitch deck, no follow-up sequence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -211,10 +216,10 @@ export default function StoryPage() {
                 Book a call &rarr;
               </a>
               <a
-                href="/#services"
+                href="/#what-we-check"
                 className="px-8 py-4 border-2 border-gold/55 text-green rounded-full font-semibold hover:border-gold transition-colors text-lg"
               >
-                See the three services
+                What we check
               </a>
             </div>
           </div>

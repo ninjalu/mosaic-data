@@ -15,16 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://brightmerehq.com"),
-  title: "Brightmere | Finance and Operations Clarity",
-  description: "Brightmere joins what a £5-50m business's operation does to what its finance records, transaction by transaction, so the numbers it runs on are the numbers that survive diligence. For owners and finance leaders, and for whoever is about to buy, back or lend to them. Three fixed-fee services, every finding sized in pounds.",
-  keywords: ["due diligence preparation", "investor readiness", "sell-side preparation", "financial due diligence", "operator diligence", "working capital", "revenue quality", "customer concentration", "margin analysis", "mid-market", "owner-managed business", "search fund", "acquisition"],
+  title: "Brightmere | Operator Diligence for Buyers",
+  description: "Financial due diligence stops at the trial balance. Brightmere starts below it: before you buy a £3-20m business, we rebuild its revenue, margin, cash and capacity from its own orders, invoices and jobs. Alongside your financial DD, not instead of it. 2-3 weeks, £15,000 fixed per target.",
+  keywords: ["operator due diligence", "buy-side due diligence", "operational due diligence", "acquisition due diligence UK", "customer cohort analysis", "revenue quality", "customer concentration", "margin by customer", "working capital peg", "independent sponsor", "holding company acquisition", "lower mid-market M&A"],
   icons: {
     icon: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Brightmere | Finance and Operations Clarity",
-    description: "Operations joined to finance, transaction by transaction, so the numbers you run the business on are the numbers that survive diligence. For operators and for the deal. Three fixed-fee services, prices on the page.",
+    title: "Brightmere | Operator Diligence for Buyers",
+    description: "Financial due diligence stops at the trial balance. We start below it. Transaction-level diligence for buyers of £3-20m businesses. 2-3 weeks, £15,000 fixed per target.",
     type: "website",
   },
 };

@@ -5,43 +5,47 @@ import Emblem from "./components/Emblem";
 import { BOOKING_URL } from "./components/booking";
 
 export default function Home() {
-  // Three named services (7 Oct 2026). One skill - checking whether the numbers hold up at
-  // transaction level - sold at three moments. Prices are fixed and published on purpose:
-  // people go looking for a thing they need done, with a price on it.
-  const services = [
+  // DD only (19 Oct 2026). One service, one buyer: operator diligence for people buying a
+  // business. Financial DD stops at the trial balance; this starts below it. Never called
+  // QoE, never sold as a replacement for the FDD firm's report (that firm gives lender reliance).
+  const checks = [
     {
-      n: "1",
-      tag: "Most people start here",
-      name: "Diligence-ready numbers",
-      who: "Owners of £5-50m businesses about to raise, sell, refinance or take on a new facility.",
-      what: "We rebuild the picture from your own transactions, not the trial balance: cash proof, real margin by customer and product, working capital stripped of the flattering month, revenue concentration, and every heroic assumption named out loud. You get a findings pack a lender's or buyer's team can test, and the answers before they ask the questions.",
-      time: "3 weeks",
-      fee: "£10,000 fixed",
-      chips: ["Fixed fee, agreed before we start", "Every finding sized in pounds", "Sits before the accountant's report, not instead of it"],
-      highlight: true,
+      q: "Is the revenue real, and will it repeat?",
+      how: "Customer cohorts, retention and churn, concentration, and the one-offs sitting inside the run-rate.",
+      why: "Whether you are paying a multiple on revenue that compounds, or on a top line refilled every quarter.",
     },
     {
-      n: "2",
-      tag: "The other side of the deal",
-      name: "Operator diligence for buyers",
-      who: "Acquirers, searchers and holding companies buying a £3-20m business, and the advisers and lenders backing them.",
-      what: "The same transaction-level read, pointed at the target: is the revenue what the data room says, which customers and jobs actually make money, how much cash the business really needs, and whether the operation can deliver the plan you are paying for. Runs alongside the chartered firm's financial due diligence and answers what it does not.",
-      time: "2-3 weeks",
-      fee: "£15,000 fixed",
-      chips: ["Alongside the chartered FDD, not in place of it", "Capacity and bottleneck tested from the operational log", "Days, not months"],
-      highlight: false,
+      q: "Where is the money actually made?",
+      how: "Margin by customer, product and job, after freight, returns, rebates and discounts.",
+      why: "Which part of the EBITDA you are really buying, and which part loses money.",
     },
     {
-      n: "3",
-      tag: "What it earns into",
-      name: "Numbers kept true",
-      who: "Owners and finance leads who want the picture to stay reconciled after the event, month after month.",
-      what: "The rebuilt view stays live: reconciled every month with anything that does not tie flagged, real margin and cash watched at line level, a rolling 13-week cash view, and one session a month on the numbers and the decisions in front of you. No day rates, no open-ended scope.",
-      time: "Monthly",
-      fee: "From £1,500 a month",
-      chips: ["Reconciled monthly, exceptions flagged", "Cancel any time", "Grows with the business, not the hours"],
-      highlight: false,
+      q: "How much cash does it really need?",
+      how: "Working capital month by month from the debtor, creditor and stock ledgers, with the flattering month named.",
+      why: "Evidence for the working capital peg, before completion accounts settle it for you.",
     },
+    {
+      q: "Can the operation deliver the plan?",
+      how: "Capacity and the one true bottleneck, computed from the operational log rather than a site visit.",
+      why: "Whether the growth case needs capex, hires or a second site nobody has priced.",
+    },
+    {
+      q: "How much leaves with the seller?",
+      how: "Owner and key-person dependency, measured from who sells, approves and fixes things in the systems.",
+      why: "What the earn-out and the handover plan need to protect.",
+    },
+    {
+      q: "Does the data room match the transactions?",
+      how: "Management accounts tied down to the order, invoice and job records underneath them.",
+      why: "The totals usually agree. Where the detail does not is where your questions to the seller come from.",
+    },
+  ];
+
+  const steps = [
+    { when: "Day 1", what: "Scoping call, NDA and a short data request: the order, invoice, stock and job exports the business already has." },
+    { when: "Days 2-4", what: "We map what the data can support. If it cannot answer the questions, we say so and stop. You pay for the days used." },
+    { when: "Weeks 1-2", what: "The read: every check above, run on the target's own records and tied back to the ledger." },
+    { when: "Week 3", what: "Findings memo and a working session with you and your advisers. Faster if exclusivity is tight." },
   ];
 
   return (
@@ -83,284 +87,203 @@ export default function Home() {
         </svg>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Numbers that survive diligence</p>
+          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-5"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Operator diligence for buyers</p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.15] tracking-[-1px] mb-6">
-            Finance and operations clarity.
+            Financial due diligence stops at the trial balance.
             <br />
-            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">For the people running the business, and the people buying it.</span>
+            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">We start below it.</span>
           </h1>
 
           <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
-            Brightmere joins what your operation does to what your finance records, transaction
-            by transaction, so the numbers you run a £5-50m business on are the same numbers that
-            survive diligence. For owners and finance leaders. And for whoever is about to buy,
-            back or lend to them.
+            Before you buy a £3-20m business, we rebuild its revenue, margin, cash and capacity
+            from its own orders, invoices and jobs, and show you where the data room story and
+            the transactions part ways. Alongside your financial due diligence, not instead of it.
           </p>
-          <p className="text-lg text-greenmuted max-w-2xl mx-auto mb-10 leading-relaxed">
-            Three named services. Fixed fees, published below. Every finding sized in pounds and
-            traced to your own data.
+          <p className="font-mono text-base text-offwhite max-w-2xl mx-auto mb-10">
+            2-3 weeks &middot; £15,000 fixed per target &middot; every finding sized in pounds
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#services"
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
             >
-              See the three services &rarr;
+              Talk about a live deal &rarr;
             </a>
             <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+              href="#what-we-check"
               className="inline-block px-8 py-4 border-2 border-gold/55 text-offwhite rounded-full font-semibold hover:border-gold transition-colors text-lg"
             >
-              Book a call
+              What we check
             </a>
           </div>
         </div>
       </section>
 
-      {/* Sound familiar? - the symptoms */}
+      {/* The gap */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            When people call us
+            The accounts can be right and the business still not be what you are paying for
           </h2>
           <p className="text-[#75706c] mb-12 max-w-2xl">
-            Someone is about to go through your numbers with a hostile eye, or you are about to
-            rely on someone else&apos;s. That is the moment.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              "You're raising money and the investor's first question will be whether the numbers are real.",
-              "You're going to market and a buyer's diligence team will spend three weeks trying to pick them apart.",
-              "You're refinancing or taking on a new facility and the lender wants the working capital story to hold.",
-              "You're buying a business and the data room tells a smoother story than the transactions do.",
-              "A new finance director has arrived and doesn't yet trust the number they inherited.",
-              "The board pack, the sales report and the finance number never quite agree, and a deal is coming.",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white rounded-[14px] p-5 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-                <span className="mt-[7px] w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />
-                <span className="text-[#1e2126]">{item}</span>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* Who it's for */}
-      <section className="py-12 px-6 border-y border-[#eae5e1]">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[#75706c] text-sm uppercase tracking-[1.5px] mb-4">
-            Built for operationally complex businesses
-          </p>
-          <p className="text-[#75706c] text-base max-w-2xl mx-auto">
-            Hundreds or thousands of SKUs, customers, jobs, loads or transactions - more than anyone
-            can track by hand, where the average hides the answer and the money is buried in the
-            detail. Owner-led or PE-backed. Whichever side of the deal you&apos;re on.
-          </p>
-        </div>
-      </section>
-
-      {/* The core idea: operations + finance, one language */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Your operations and your finances don&apos;t speak the same language
-          </h2>
-          <p className="text-[#75706c] mb-12 max-w-2xl">
-            Finance is really just a translation of operations. The real world happens - stock ships,
-            a customer takes 90 days, a job runs long - and only weeks later does it surface as a number,
-            blended into an average that buries where the money actually went. That lag, and that
-            averaging, is where the money and the clarity hide.
+            Nobody has to be hiding anything. The ledger records every sale correctly. It just
+            cannot tell you which customers come back, which jobs lose money, or whether the
+            operation can carry the plan in the information memorandum.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Two systems, two truths</h3>
-              <p className="text-[#75706c] text-sm">Sales counts it one way, operations runs it another, finance books a third. Same business, three numbers - and the difference falls on the floor between them.</p>
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Financial DD tests the ledger</h3>
+              <p className="text-[#75706c] text-sm">Earnings adjustments, net debt, normalised working capital, worked from the trial balance and management accounts. Essential, and your lender will insist on it. It stops there.</p>
             </div>
             <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">Answers arrive too late</h3>
-              <p className="text-[#75706c] text-sm">By the time a problem reaches the P&amp;L, the cash has already moved and the decision has already been made on an average. You&apos;re always explaining the past.</p>
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">The deal is decided below it</h3>
+              <p className="text-[#75706c] text-sm">Retention, real margin, cash needs and capacity live in the order book, the job sheets, the TMS and the ERP. Few diligence teams open them, and rarely at a price that suits a £3-20m deal.</p>
             </div>
-            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">We make them one</h3>
-              <p className="text-[#75706c] text-sm">We join operations and finance into a single view where every event carries its money - so the numbers agree, tie to source, and finally answer the questions you actually have.</p>
+            <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-7">
+              <h3 className="text-lg font-semibold text-[#1e2126] mb-2">We read that layer</h3>
+              <p className="text-[#1e2126] text-sm">Transaction by transaction, tied back to the ledger so the totals agree. Then we show you where the detail does not, and what it is worth.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Solution Comparison */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-[14px] p-8 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">Your accountant</div>
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold/40 flex-shrink-0" />Records what happened</h3>
-              <ul className="space-y-4">
-                {[
-                  "Works from the ledger: statutory accounts, management accounts, tax. Correctly.",
-                  "Never opens the order book, the job sheets, the TMS or the ERP",
-                  "Sees one or two transactions a year, so doesn't know what the other side's diligence pulls",
-                  "Prepared the numbers, so their reassurance carries little weight with a buyer or lender",
-                  "Still essential: the statutory sign-off and the chartered report a lender insists on",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#75706c]">
-                    <span className="mt-[7px] w-2 h-2 rounded-full bg-gold/40 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* What we check */}
+      <section id="what-we-check" className="py-20 px-6 relative overflow-hidden scroll-mt-24">
+        <div className="absolute top-12 right-[5%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
+        <div className="absolute top-32 right-[12%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float3" />
+        <div className="absolute bottom-16 left-[4%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float2" />
+        <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
 
-            <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-8">
-              <div className="text-[#75706c] text-sm font-medium uppercase tracking-wider mb-4">Brightmere</div>
-              <h3 className="flex items-center gap-3 text-2xl font-bold text-[#1e2126] mb-6"><span className="w-2.5 h-2.5 rounded-full bg-gold flex-shrink-0" />Tests whether it holds up</h3>
+        <div className="max-w-5xl mx-auto relative z-10">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />What we check</p>
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            Six questions the price depends on
+          </h2>
+          <p className="text-[#75706c] mb-14 max-w-2xl">
+            Each one answered from the target&apos;s own records, line by line, at a resolution a
+            spreadsheet cannot reach.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {checks.map((c, i) => (
+              <div key={c.q} className="flex flex-col bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Check {i + 1}</p>
+                <h3 className="text-xl font-semibold text-[#1e2126] mb-3">{c.q}</h3>
+                <p className="text-[#75706c] text-sm mb-4">{c.how}</p>
+                <p className="text-[#c24a36] text-sm font-medium mt-auto">{c.why}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The offer */}
+      <section id="fee" className="py-20 px-6 scroll-mt-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-8 items-start">
+            <div className="md:col-span-3 bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-8 md:p-10">
+              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-3">The engagement</p>
+              <h2 className="text-3xl font-bold text-[#1e2126] mb-2">Operator diligence</h2>
+              <p className="font-mono text-[#c24a36] mb-6">2-3 weeks &middot; £15,000 fixed per target</p>
               <ul className="space-y-4">
                 {[
-                  "Works from the transactions and ties them to the ledger - the part most firms can't do",
-                  "Answers the diligence questions: concentration, real margin, working capital, run-rate",
-                  "A second pair of eyes before the hostile pair arrives, with the fixes sized",
-                  "Numbers you can steer by, and defend in front of a board, a lender or a buyer",
-                  "Sits before or beside the chartered firm. Never instead of it, and never called QoE",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#1e2126]">
+                  "A findings memo ranked by price impact, every finding sized in pounds and traced to the source rows",
+                  "The questions to put to the seller before you sign, with the evidence behind each one",
+                  "A working session with you and your advisers to walk the findings",
+                  "The rebuilt dataset, so your first numbers after completion start from something true",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-[#1e2126]">
                     <span className="mt-[7px] w-2 h-2 rounded-full bg-gold flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
+              <div className="flex flex-wrap gap-1.5 mt-8">
+                {["Half on instruction, half on delivery", "Fixed before we start", "Stop early if the data can't support it"].map((chip) => (
+                  <span key={chip} className="inline-flex items-center px-2.5 py-1 rounded-lg bg-white border border-[#eae5e1] text-[#1e2126] text-xs font-medium">
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="md:col-span-2">
+              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-3">Who it is for</p>
+              <p className="text-[#1e2126] mb-4">
+                Independent sponsors, holding companies, family offices and serial acquirers
+                buying a £3-20m UK business.
+              </p>
+              <p className="text-[#75706c] text-sm mb-4">
+                It earns its fee fastest in operationally complex targets: thousands of SKUs,
+                customers, jobs or loads, where the average hides the answer.
+              </p>
+              <p className="text-[#75706c] text-sm">
+                Advising or lending on a deal? Bring us in as a workstream alongside the
+                financial due diligence firm. We report to the buyer and work to the deal
+                timetable.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="how-it-works" className="py-20 px-6 relative overflow-hidden">
-        {/* Decorative floating dots */}
-        <div className="absolute top-12 right-[5%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
-        <div className="absolute top-32 right-[12%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float3" />
-        <div className="absolute top-24 right-[3%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float2" />
-        <div className="absolute bottom-16 left-[4%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float2" />
-        <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
-        <div className="absolute bottom-24 left-[16%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float3" />
-        <div className="absolute top-20 left-[3%] w-6 h-6 bg-[#e85d47]/20 rounded-full animate-float3" />
-
-        <div className="max-w-5xl mx-auto relative z-10">
-          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />The method</p>
+      {/* How it runs */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            One business, three lenses
+            Built to fit inside exclusivity
           </h2>
-          <p className="text-[#75706c] mb-16 max-w-2xl">
-            We read the same business three ways - and each lens is run at a resolution a
-            spreadsheet can&apos;t reach: on your actual data, line by line, not category averages.
+          <p className="text-[#75706c] mb-12 max-w-2xl">
+            A sharp answer before you sign beats a perfect one after the price is agreed.
           </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
-              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Lens 1</p>
-              <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Financial clarity</h3>
-              <p className="text-[#75706c] mb-3">
-                Are the numbers real, and where&apos;s the money? Unit economics, working capital,
-                margin durability and cash - the profit machine, read line by line.
-              </p>
-              <p className="text-[#c24a36] text-sm font-medium">The first thing diligence-ready numbers runs.</p>
-            </div>
-
-            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
-              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Lens 2</p>
-              <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Operational clarity</h3>
-              <p className="text-[#75706c] mb-3">
-                Can the operation actually deliver the plan? Capacity, the one true bottleneck,
-                and where it breaks under load - read from the operational log, not a site visit.
-              </p>
-              <p className="text-[#c24a36] text-sm font-medium">The question growth is really asking.</p>
-            </div>
-
-            <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
-              <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Lens 3</p>
-              <h3 className="text-xl font-semibold text-[#1e2126] mb-3">Leadership clarity</h3>
-              <p className="text-[#75706c] mb-3">
-                How much of the business depends on you, or a handful of key people? Founder and
-                key-person dependency, measured from what the systems reveal - not the org chart.
-              </p>
-              <p className="text-[#c24a36] text-sm font-medium">What walks out the door if they do.</p>
-            </div>
-          </div>
-
-          <p className="text-[#1e2126] text-center mt-12 max-w-3xl mx-auto">
-            Read the plan like a finance person, name the constraint like an operator, compute it
-            like a data scientist. That bridge is the whole point.
-          </p>
-
-          <div className="text-center mt-8">
-            <a
-              href="/methodology"
-              className="text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
-            >
-              See the full methodology &rarr;
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* The three services */}
-      <section id="services" className="py-20 px-6 relative overflow-hidden scroll-mt-24">
-        <div className="absolute top-16 right-[5%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
-        <div className="absolute top-36 right-[12%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float3" />
-        <div className="absolute bottom-20 left-[5%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float2" />
-        <div className="absolute bottom-36 left-[11%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float1" />
-
-        <div className="max-w-5xl mx-auto relative z-10">
-          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />What we do</p>
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Three services. One skill. Prices on the page.
-          </h2>
-          <p className="text-[#75706c] mb-14 max-w-2xl">
-            The same work, checking whether the numbers hold up at transaction level, sold at the
-            three moments it matters: before someone looks at yours, before you rely on someone
-            else&apos;s, and every month after.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((svc) => (
-              <div
-                key={svc.n}
-                className={`flex flex-col rounded-[14px] p-7 border shadow-[0_2px_14px_rgba(30,33,38,0.06)] ${
-                  svc.highlight
-                    ? "bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border-gold/30"
-                    : "bg-white border-[#eae5e1]"
-                }`}
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-gold text-[#2b1209] text-sm font-bold flex items-center justify-center">{svc.n}</span>
-                  <span className="text-[#75706c] text-xs font-semibold uppercase tracking-wider">{svc.tag}</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#1e2126] mb-2">{svc.name}</h3>
-                <p className="font-mono text-sm text-[#c24a36] mb-4">{svc.time} &middot; {svc.fee}</p>
-                <p className="text-[#1e2126] text-sm font-medium mb-3">{svc.who}</p>
-                <p className="text-[#75706c] text-sm leading-relaxed mb-5">{svc.what}</p>
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                  {svc.chips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#faf7f5] border border-[#eae5e1] text-[#1e2126] text-xs font-medium"
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </div>
+          <div className="space-y-4">
+            {steps.map((s) => (
+              <div key={s.when} className="flex flex-col sm:flex-row gap-2 sm:gap-6 bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
+                <p className="font-mono text-sm text-[#c24a36] font-semibold sm:w-28 flex-shrink-0 sm:pt-0.5">{s.when}</p>
+                <p className="text-[#1e2126]">{s.what}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <p className="text-[#75706c] text-sm mt-10 max-w-2xl">
-            Not sure which one? Say what&apos;s coming up on the call and we&apos;ll tell you, including
-            if the honest answer is &ldquo;none of them yet&rdquo;.
+      {/* Where it sits */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            Where it sits in your diligence
+          </h2>
+          <p className="text-[#75706c] mb-12 max-w-2xl">
+            A complement to the reports you already commission, answering the question they
+            leave open.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: "Financial DD", by: "Your accountants", from: "Trial balance, management accounts, statutory accounts", answers: "Are the earnings and net debt what the seller claims?", hl: false },
+              { name: "Commercial DD", by: "Market consultants", from: "Market data, customer interviews", answers: "Is this a good market to be in?", hl: false },
+              { name: "Operator diligence", by: "Brightmere", from: "The target's own orders, invoices, stock, jobs and operational logs", answers: "Is the business underneath the numbers the one you are paying for?", hl: true },
+            ].map((col) => (
+              <div
+                key={col.name}
+                className={`rounded-[14px] p-7 ${col.hl ? "bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30" : "bg-white shadow-[0_2px_14px_rgba(30,33,38,0.06)]"}`}
+              >
+                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">{col.by}</p>
+                <h3 className="flex items-center gap-3 text-xl font-bold text-[#1e2126] mb-5"><span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${col.hl ? "bg-gold" : "bg-gold/40"}`} />{col.name}</h3>
+                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-1">Works from</p>
+                <p className={`text-sm mb-4 ${col.hl ? "text-[#1e2126]" : "text-[#75706c]"}`}>{col.from}</p>
+                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-1">Answers</p>
+                <p className={`text-sm ${col.hl ? "text-[#1e2126] font-medium" : "text-[#75706c]"}`}>{col.answers}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-[#75706c] text-sm mt-8 max-w-3xl">
+            Brightmere is not an accountancy firm and this is not a quality of earnings report.
+            Our report is addressed to you. If your lender needs a report it can rely on, that
+            is the financial due diligence firm&apos;s, and we work alongside them.
           </p>
         </div>
       </section>
@@ -383,149 +306,37 @@ export default function Home() {
                 className="w-32 h-32 rounded-[14px] object-cover flex-shrink-0 shadow-[0_2px_14px_rgba(30,33,38,0.12)]"
               />
               <div>
-                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Who you&apos;d be working with</p>
+                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-2">Who does the work</p>
                 <h2 className="text-2xl font-bold text-[#1e2126] mb-4">Lu Luo, founder</h2>
                 <div className="space-y-4 text-[#75706c] leading-relaxed">
                   <p>
                     I trained in accounting and economics and started out in accounting and
                     corporate finance. Then I moved into data science and engineering, and spent
-                    years building the systems that finance teams report from. That mix is rare:
-                    most people who can build the system can&apos;t read a P&amp;L, and most who can
-                    read the P&amp;L can&apos;t build the system. I do both, and Brightmere is me doing it
-                    for you.
+                    years building the systems that finance teams report from. Most people who
+                    can read a P&amp;L can&apos;t pull apart millions of transaction lines, and
+                    most who can pull them apart can&apos;t read the P&amp;L. Diligence below the
+                    trial balance needs both.
                   </p>
                   <p>
-                    The job I keep being asked to do is the same one. Someone is about to put a
-                    business&apos;s numbers in front of people with money, and wants to know what
-                    those people will find before they find it. At a fast-growing B2B commerce
-                    platform preparing for investment, the growth story was strong: sales up
-                    quarter after quarter. Nobody had run the cohorts. When I did, the customers behind that
-                    growth were mostly new ones, and most of them didn&apos;t come back. The
-                    headline was true. The business underneath it was different, and leadership
-                    needed to know that before the investors&apos; analysts told them. The same
-                    gap, between what the numbers say and what the transactions show, is in
-                    almost every business I open.
+                    At a fast-growing B2B commerce platform preparing for investment, sales were
+                    up quarter after quarter. Nobody had run the cohorts. When I did, the growth
+                    was mostly new customers, and most of them didn&apos;t come back. The headline
+                    was true. The business underneath it was different.
                   </p>
                   <p className="text-[#1e2126]">
-                    That is what I built Brightmere to do: hand owners numbers they can run the
-                    business on, and defend in front of a board, a lender or a buyer. I work from
-                    London, with clients in the UK and the US, and I do the work myself.
+                    That is the gap I look for in every target: between what the numbers say and
+                    what the transactions show. I work from London and I do the work myself.
                   </p>
                 </div>
+                <a
+                  href="/story"
+                  className="inline-block mt-5 text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
+                >
+                  Read the story &rarr;
+                </a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* The story - teaser */}
-      <section className="py-16 px-6 border-y border-[#eae5e1]">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3"><span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />Where this started</p>
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-            Does your board pack know what your order book knows?
-          </h2>
-          <p className="text-[#75706c] text-lg mb-6 max-w-2xl mx-auto">
-            A fast-growing business preparing for investment, a top line everyone trusted, and
-            the cohorts nobody had run. Same company, two records, one of them right. It is why
-            Brightmere joins operations to finance at the transaction.
-          </p>
-          <a
-            href="/story"
-            className="text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
-          >
-            Read the story &rarr;
-          </a>
-        </div>
-      </section>
-
-      {/* Why Us - Team Background */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Accounting Brain. Data-Science Hands.
-          </h2>
-          <p className="text-[#75706c] mb-12 max-w-2xl">
-            Most data consultants can build the model but can&apos;t read the P&amp;L. Most accountants
-            can read the P&amp;L but can&apos;t build the model. We do both - which is why we know
-            where to look and how to actually go and get it.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="w-12 h-12 bg-[#e85d47]/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-[#e85d47]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">We Speak Both Languages</h3>
-              <p className="text-[#75706c] text-sm">
-                A finance and accounting background, plus the engineering to build the system. We read
-                the P&amp;L and the operation, and translate cleanly between them - which is the whole job.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="w-12 h-12 bg-[#e85d47]/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-[#e85d47]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7C5 4 4 5 4 7z M4 9h16 M9 4v16" />
-                </svg>
-              </div>
-              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">We Work at Line Level</h3>
-              <p className="text-[#75706c] text-sm">
-                Excel chokes around a million rows. Your business has tens of millions of
-                transaction lines once you join stock, sales, returns, and terms. We work where
-                the cash actually is.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="w-12 h-12 bg-[#e85d47]/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-[#e85d47]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">Every Finding Sized in Pounds</h3>
-              <p className="text-[#75706c] text-sm">
-                Not &ldquo;your inventory is high.&rdquo; We tell you how much cash is trapped, in which
-                lines, and what it&apos;s worth to free it. If we can&apos;t find it, we say so.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
-              <div className="w-12 h-12 bg-[#e85d47]/10 rounded-lg flex items-center justify-center mb-4">
-                <svg className="w-6 h-6 text-[#e85d47]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-[#1e2126] font-semibold text-lg mb-2">Three Weeks, Not Three Months</h3>
-              <p className="text-[#75706c] text-sm">
-                Deals run on a clock. A sharp answer before the other side asks beats a perfect
-                answer delivered after the price has moved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* How we price - the services above carry the numbers; this is the principle */}
-      <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-            Fixed fees, agreed before we start
-          </h2>
-          <p className="text-[#75706c] mb-6">
-            No day rates and no meter running. The fee is on the page, every finding carries a
-            pound figure you can weigh it against, and if the first look says the prize is small,
-            we say so and stop.
-          </p>
-          <a
-            href="/pricing"
-            className="text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
-          >
-            How we price, in full &rarr;
-          </a>
         </div>
       </section>
 
@@ -533,34 +344,30 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-12 pb-4 border-b-2 border-[#eae5e1]">
-            Questions We Get Asked
+            Questions buyers ask
           </h2>
 
           <div className="space-y-6">
             {[
               {
-                q: "Why wouldn't I just ask my accountant?",
-                a: "Because this isn't their job, and most will say so. Your accountant works from the ledger and records what happened, correctly. A buyer's or lender's team works from the transactions and asks whether the business is what you say it is: how concentrated the revenue is, which customers and products really make money, whether the working capital is normal or flattered. Answering that means joining the order book, the job sheets and the bank to the accounts, line by line. That's engineering as much as accounting, and it's the part most firms can't do. We do it before the other side does."
+                q: "We already have financial due diligence. Why add this?",
+                a: "Because it answers a different question. The financial DD firm tests whether the earnings and net debt are what the seller says, working from the trial balance. We test whether the business underneath is what you are paying for: which customers stay, which jobs make money, how much cash it really needs and whether it can deliver the plan. That lives in the operational records, which financial DD rarely opens."
               },
               {
                 q: "Is this a quality of earnings report?",
-                a: "No, and we won't call it one. A QoE is a chartered firm's validation of your earnings, and a lender or buyer may still insist on one. What we produce sits before it or alongside it: the transaction-level read that tells you what that report will find, with time to fix it. If you need a QoE, we'll say so and point you to a firm."
+                a: "No, and we won't call it one. A QoE is an accountancy firm's report on earnings, and your lender will usually want one it can rely on. Our work sits alongside it and often gives that firm sharper questions to ask."
               },
               {
-                q: "Isn't a strong fractional CFO already doing this?",
-                a: "For ongoing finance leadership, often yes, and we're not a replacement for that relationship. But when the answer lives below the averages - which 20 customers drove last quarter's margin move, including freight, returns and the cost of slow payment - most fractional CFOs hit a tooling wall. We're the answer engine for the moments the question gets too granular for a spreadsheet, and we're happy to work alongside yours."
+                q: "What do you need from the seller?",
+                a: "Exports the business already has: sales orders and invoices, customer and product lists, stock movements, debtor and creditor ledgers, and whatever operational system runs the work (TMS, ERP, job management). No new reports. Read-only, through the data room or a secure transfer."
               },
               {
-                q: "What if our data is a mess?",
-                a: "Most is. The first few days of every engagement map what's actually usable before we commit to the findings. You'd be surprised: basic finance, sales and operational exports usually carry more than enough signal. We work with what you have, not what you wish you had."
+                q: "What if the target's data is a mess?",
+                a: "Most is, and that is itself a finding. The first few days map what the data can support. If it cannot answer the questions, we tell you and stop, and you pay only for those days."
               },
               {
-                q: "Do you replace our ERP or BI tools?",
-                a: "No. We plug into whatever you're running - Sage, NetSuite, Xero, QuickBooks, your warehouse system - and read it. We make your existing investment more valuable; we don't rip it out."
-              },
-              {
-                q: "How do you handle sensitive financial data?",
-                a: "Data stays in your environment - we work via secure, read-only access, not data transfers. Happy to walk through our security posture on a call before anything is connected."
+                q: "Do you work with the deal team we already have?",
+                a: "Yes. We report to you, share findings with your lawyers, financial DD firm and lender as you direct, and run to their timetable."
               },
             ].map((item, i) => (
               <div key={i} className="bg-white rounded-[14px] p-6 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
@@ -568,6 +375,15 @@ export default function Home() {
                 <p className="text-[#75706c] leading-relaxed">{item.a}</p>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="/faq"
+              className="text-[#1e2126] underline underline-offset-4 font-semibold hover:text-gold transition-colors"
+            >
+              More questions, answered &rarr;
+            </a>
           </div>
         </div>
       </section>
@@ -586,11 +402,12 @@ export default function Home() {
 
         <div className="max-w-xl mx-auto relative z-10">
           <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
-            Let&apos;s See If We&apos;re a Fit
+            Looking at a business now?
           </h2>
           <p className="text-[#75706c] mb-8">
-            30-minute call. No pitch deck. Tell us what&apos;s coming - a raise, a sale, a
-            refinance, a deal - and we&apos;ll tell you honestly whether your numbers need the work.
+            30-minute call. Tell us about the target and the timetable, and we&apos;ll tell you
+            honestly whether operator diligence would change your view of it, and what the data
+            room would need to contain.
           </p>
 
           <div className="text-center mb-10">
@@ -668,14 +485,14 @@ export default function Home() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-[#1e2126] mb-2">
-                What&apos;s coming up, and when?
+                What are you buying, and when?
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows={4}
                 className="w-full px-4 py-3 bg-white border border-[#eae5e1] rounded-lg text-[#1e2126] placeholder-[#b5aca6] focus:ring-2 focus:ring-gold focus:border-gold"
-                placeholder="e.g., We're raising in Q1 and I'm not sure the margin numbers will stand up..."
+                placeholder="e.g., £8m revenue distributor, heads of terms signed, six weeks of exclusivity..."
               />
             </div>
 

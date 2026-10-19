@@ -29,6 +29,17 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // DD-only site (19 Oct 2026): both pages folded into the home page
+      {
+        source: "/methodology",
+        destination: "/#what-we-check",
+        permanent: true,
+      },
+      {
+        source: "/pricing",
+        destination: "/#fee",
+        permanent: true,
+      },
     ];
   },
 };

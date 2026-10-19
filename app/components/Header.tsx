@@ -4,11 +4,12 @@ import { BOOKING_URL } from "./booking";
 
 // One header for every page, so the tabs never change from page to page
 // (Lu, 8 Oct 2026). `current` just marks the page you are on.
+// DD-only site (19 Oct 2026): methodology and pricing folded into the home page.
 const TABS = [
+  { href: "/#what-we-check", label: "What we check" },
+  { href: "/#fee", label: "Fee" },
   { href: "/story", label: "Story" },
-  { href: "/methodology", label: "Methodology" },
   { href: "/faq", label: "FAQ" },
-  { href: "/pricing", label: "Pricing" },
 ];
 
 export default function Header({ current }: { current?: string }) {
