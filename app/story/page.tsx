@@ -44,15 +44,15 @@ export default function StoryPage() {
             The story
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.1] tracking-[-1px] mb-6">
-            Every number was correct.{" "}
+            Revenue doubled.{" "}
             <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">
-              The business still wasn&apos;t what it looked like.
+              Most of the customers behind it never came back.
             </span>
           </h1>
           <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
-            This is the story of a growth curve that a review of the ledger would have confirmed,
-            because it was true, and that would still have misled anyone who paid for it. It is
-            why Brightmere does diligence below the trial balance.
+            Every number in the accounts was correct, and a review of the ledger would have
+            confirmed it. Anyone who paid a multiple for that growth would still have been paying
+            for a business that did not exist.
           </p>
         </div>
       </section>
