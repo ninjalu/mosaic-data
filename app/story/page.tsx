@@ -6,9 +6,9 @@ import Emblem from "../components/Emblem";
 import { BOOKING_URL } from "../components/booking";
 
 export const metadata: Metadata = {
-  title: "The Story | Brightmere - When the Board Pack and the Transactions Disagree",
+  title: "The Story | Brightmere - Why Diligence Has to Go Below the Ledger",
   description:
-    "Why Brightmere exists: a fast-growing business preparing for investment, a growth chart everyone trusted, and a cohort table nobody had run. The headline was true; the business underneath it was different. That gap is what operator diligence finds before a buyer pays for the headline.",
+    "Why Brightmere exists: a fast-growing business preparing for investment, a growth chart everyone trusted, and a cohort table nobody had run. The headline was true; the business underneath it was different. A review of the ledger would have confirmed it; the price would still have been wrong. That is the gap operator diligence closes before a buyer signs.",
 };
 
 // The founding story. Anonymised on purpose: the company is not named and the
@@ -44,16 +44,15 @@ export default function StoryPage() {
             The story
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.1] tracking-[-1px] mb-6">
-            Your board pack says one thing.{" "}
+            Every number was correct.{" "}
             <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">
-              Your transactions may say another.
+              The business still wasn&apos;t what it looked like.
             </span>
           </h1>
           <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
-            Every business keeps two records of itself: what the operation does, and what
-            finance writes down about it. The money, and the truth, live where they disagree.
-            This is how I found that gap in a fast-growing business, and why Brightmere exists
-            to find it in yours.
+            This is the story of a growth curve that a review of the ledger would have confirmed,
+            because it was true, and that would still have misled anyone who paid for it. It is
+            why Brightmere does diligence below the trial balance.
           </p>
         </div>
       </section>
@@ -126,27 +125,103 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* What changed */}
+      {/* Put a buyer in the room */}
       <section className="py-20 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1e2126] mb-8 pb-4 border-b-2 border-[#eae5e1]">
-            What changed
+        <div className="max-w-5xl mx-auto">
+          <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3">
+            <span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />
+            Now put a buyer in the room
+          </p>
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            The ledger would have passed. The price would have been wrong.
           </h2>
-          <div className="space-y-5 text-[#75706c] text-lg leading-relaxed">
+          <p className="text-[#75706c] mb-12 max-w-2xl">
+            Nobody had hidden anything. Every sale was invoiced, paid and booked correctly. So
+            picture the same business in a data room.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                label: "What the buyer is shown",
+                body: "Revenue more than doubling, a rising customer count, a forecast that extends the curve. A multiple priced on growth.",
+                hl: false,
+              },
+              {
+                label: "What financial DD confirms",
+                body: "The revenue is real, recognised properly and backed by cash. All true. The work is done from the ledger, so that is where it stops.",
+                hl: false,
+              },
+              {
+                label: "What the transactions show",
+                body: "Most of the growth is customers who arrived that quarter, and most of them never come back. The buyer is not paying for a compounding asset. They are paying for a treadmill they will have to keep funding.",
+                hl: true,
+              },
+            ].map((c) => (
+              <div
+                key={c.label}
+                className={`rounded-[14px] p-7 ${c.hl ? "bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30" : "bg-white shadow-[0_2px_14px_rgba(30,33,38,0.06)]"}`}
+              >
+                <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-3">{c.label}</p>
+                <p className={c.hl ? "text-[#1e2126]" : "text-[#75706c]"}>{c.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 max-w-3xl space-y-5 text-[#75706c] text-lg leading-relaxed">
             <p>
-              Nobody had hidden anything, and finance had recorded every sale correctly. The gap
-              was a missing join: the ledger knew how much was sold, the platform knew who bought
-              it and whether they came back, and no one had put the two side by side.
+              That one table changes the deal. The multiple, because durable revenue and
+              rented revenue are not worth the same. The earn-out, which should pay on customers
+              retained, not on total sales. The model, which needs a line for what it costs to
+              replace the customers who leave. And the first hundred days, which start with
+              retention, not growth.
             </p>
             <p className="text-[#1e2126]">
-              Once they were, the questions changed. Not &ldquo;how fast are we growing&rdquo; but
-              &ldquo;which customers stay, and what does it cost to replace the ones who
-              leave&rdquo;. Targeting moved from gut feel to the transactions, a national pricing
-              change was decided on a controlled experiment instead of an argument, and leadership
-              walked into the investment conversations knowing what the cohorts showed, with the
-              answer ready.
+              At the platform, the cohorts were run before the investors arrived, and leadership
+              walked into those conversations with the answer ready. A buyer is rarely that lucky.
+              Unless someone runs the read for them, they find out after completion.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Why it belongs in diligence */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1e2126] mb-4 pb-4 border-b-2 border-[#eae5e1]">
+            Why this has to be part of diligence
+          </h2>
+          <p className="text-[#75706c] mb-12 max-w-2xl">
+            Not a nice-to-have alongside the real work. The part that tells you what you are
+            actually buying.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                t: "It isn't an accounting error",
+                b: "So a review of the accounts won't catch it. Every number is right. The problem is what the numbers average away.",
+              },
+              {
+                t: "It only shows when two records meet",
+                b: "The ledger knows how much was sold. The operational system knows who bought, what it cost to serve them and whether they came back. The answer lives in the join, below the trial balance.",
+              },
+              {
+                t: "It goes straight to the price",
+                b: "A multiple is a bet on durability. Durability lives in cohorts, margin by customer and the capacity to deliver the plan, not in the headline.",
+              },
+            ].map((c) => (
+              <div key={c.t} className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)] border-t-2 border-gold">
+                <h3 className="text-lg font-semibold text-[#1e2126] mb-2">{c.t}</h3>
+                <p className="text-[#75706c] text-sm">{c.b}</p>
+              </div>
+            ))}
+          </div>
+          <blockquote className="mt-14 max-w-3xl mx-auto text-center">
+            <p className="text-2xl md:text-3xl font-bold text-[#1e2126] leading-snug">
+              Financial due diligence tells you the numbers are right. Operator diligence tells
+              you what they mean for the price.
+            </p>
+          </blockquote>
         </div>
       </section>
 
@@ -171,21 +246,14 @@ export default function StoryPage() {
                 <h2 className="text-2xl font-bold text-[#1e2126] mb-4">Why I built Brightmere</h2>
                 <div className="space-y-4 text-[#75706c] leading-relaxed">
                   <p>
-                    I had seen the same gap from the other side. I trained in accounting and
-                    started out in corporate finance, so I knew how the ledger gets built: the
-                    real world happens, it is recorded, reconciled, closed and reported, and only
-                    then does anyone interpret it. Finance is a translation of operations. It is
-                    monthly, it is lagging, and it averages away the thing you most need to see.
-                  </p>
-                  <p>
-                    The same gap sits inside most acquisitions. Financial due diligence works from
-                    the same ledger, adjusts the earnings and stops at the trial balance. A cohort
-                    table like the one that changed everything at that platform is exactly the
-                    kind of thing it does not run.
+                    I trained in accounting and started out in corporate finance, so I know how
+                    the ledger gets built: the real world happens, then it is recorded, closed and
+                    averaged. Then I spent years in data science and engineering, building the
+                    systems the ledger is fed from. I can read both records, and join them.
                   </p>
                   <p className="text-[#1e2126]">
-                    Brightmere is that read, done for buyers of £5-20m businesses. The target&apos;s
-                    own transactions, joined to its ledger, so you know whether the business
+                    Brightmere does that for buyers of £5-20m businesses: the target&apos;s own
+                    transactions, joined to its ledger, so you know whether the business
                     underneath the headline is the one you are paying for, before you sign.
                   </p>
                 </div>
