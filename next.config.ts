@@ -29,15 +29,15 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
-      // DD-only site (19 Oct 2026): both pages folded into the home page
+      // DD-only site (19 Oct 2026); premium redesign (Oct 2026) moved both onto /operator-diligence
       {
         source: "/methodology",
-        destination: "/#what-we-check",
+        destination: "/operator-diligence#what-we-check",
         permanent: true,
       },
       {
         source: "/pricing",
-        destination: "/#fee",
+        destination: "/operator-diligence#fee",
         permanent: true,
       },
     ];

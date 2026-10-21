@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf7f5;
-  --foreground: #1e2126;
+  --background: #fafaf7;
+  --foreground: #1c2a24;
 }
 
 @theme {
@@ -16,7 +16,29 @@
   --color-greenmuted: #a09a95;
 }
 
+@theme {
+  /* Forest palette (Lu, 21 Oct 2026): taken from the Lake Jasna hero photo - pine, sage, beach
+     stone - laid out in HaysMac's colour blocks. Token names are historical (mustard = first colour
+     block, moss = second, coral = highlight). Earlier versions: aubergine tgz
+     (~/luluo/brightmere-site-redesign-aubergine-20261021.tgz), Fedaia blue, glacier teal. */
+  --color-ink: #162d27; /* dark pine - headings, dark bands */
+  --color-ink-soft: #24443a;
+  --color-paper: #fafaf7;
+  --color-mustard: #b8cfa4; /* sage - first colour block, accents on dark */
+  --color-mustard-deep: #7e9c6a;
+  --color-blush: #e4e8df;
+  --color-moss: #d8d4c8; /* beach stone - second colour block */
+  --color-mist: #f0f2ec;
+  --color-coral: #3f7a4f; /* leaf green - highlight on light */
+  --color-coral-soft: #c5e0a5; /* highlight on dark */
+  --color-slate: #55605a; /* body text */
+  --color-tint: #dde8cf; /* pale block (Book a call, How we work) */
+  --color-field: #eceee8; /* form fields, side panels */
+}
+
 @theme inline {
+  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-dm: var(--font-dm-sans), system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -36,7 +58,7 @@ html {
 
 /* Custom selection color */
 ::selection {
-  background-color: rgba(232, 93, 71, 0.26);
+  background-color: rgba(22, 45, 39, 0.18);
 }
 
 /* Form focus states */
@@ -117,3 +139,156 @@ select:focus {
 .animate-float3 {
   animation: float3 12s ease-in-out infinite;
 }
+
+/* Premium redesign helpers */
+.chamfer {
+  clip-path: polygon(44px 0, 100% 0, 100% 100%, 0 100%, 0 44px);
+}
+.chamfer-r {
+  clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%);
+}
+.rule-dot {
+  border-bottom: 1px dotted rgba(22, 45, 39, 0.45);
+}
+.rule-dot-light {
+  border-bottom: 1px dotted rgba(251, 249, 246, 0.35);
+}
+.display {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+}
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-plus {
+  transform: rotate(45deg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .field-drift {
+    animation: field-drift 18s ease-in-out infinite alternate;
+  }
+}
+@keyframes field-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-40px); }
+}
+
+/* --- Brand device + motion (premium v2) --- */
+.chamfer-sm {
+  clip-path: polygon(16px 0, 100% 0, 100% 100%, 0 100%, 0 16px);
+}
+.chamfer-bl {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%, 0 calc(100% - 40px));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sun-rise {
+    animation: sun-rise 2.6s cubic-bezier(.2,.7,.2,1) both, sun-breathe 9s ease-in-out 2.6s infinite alternate;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .sun-glow {
+    animation: glow 6s ease-in-out infinite alternate;
+    transform-box: fill-box;
+    transform-origin: center bottom;
+  }
+  .ripple {
+    animation: ripple 4.5s ease-in-out infinite alternate;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .group:hover .sun-stripe,
+  .sun-stripes-live .sun-stripe {
+    animation: stripe-in 0.6s cubic-bezier(.2,.7,.2,1) both;
+    transform-box: fill-box;
+    transform-origin: left center;
+  }
+  .loader-line {
+    animation: line-draw 0.7s cubic-bezier(.2,.7,.2,1) both;
+    transform-box: fill-box;
+    transform-origin: left center;
+  }
+  .loader-sun {
+    animation: loader-sun 1s cubic-bezier(.2,.7,.2,1) 0.45s both;
+  }
+  .loader-word {
+    animation: fade-up 0.7s ease-out 0.9s both;
+  }
+}
+@keyframes sun-rise {
+  from { transform: translateY(46%); }
+  to { transform: translateY(0); }
+}
+@keyframes sun-breathe {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3%); }
+}
+@keyframes glow {
+  from { opacity: 0.7; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1.04); }
+}
+@keyframes ripple {
+  0% { transform: scaleX(1) translateX(0); }
+  50% { transform: scaleX(0.9) translateX(-6px); }
+  100% { transform: scaleX(1.06) translateX(5px); }
+}
+@keyframes stripe-in {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes line-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes loader-sun {
+  from { transform: translateY(60px); }
+  to { transform: translateY(0); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll reveals (premium v3) */
+.reveal-on section h2,
+.reveal-on section .chamfer,
+.reveal-on section .chamfer-r,
+.reveal-on section .rule-dot,
+.reveal-on [data-reveal] {
+  transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+.reveal-on section h2:not(.is-in),
+.reveal-on section .rule-dot:not(.is-in),
+.reveal-on [data-reveal]:not(.is-in) {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.reveal-on section .chamfer:not(.is-in),
+.reveal-on section .chamfer-r:not(.is-in) {
+  opacity: 0;
+  transform: translateY(48px) scale(0.985);
+}
+
+/* Hero photo: a slow drift, like Fedaia's landscape. Off for reduced-motion users. */
+@keyframes hero-drift {
+  from { transform: scale(1.06); }
+  to { transform: scale(1); }
+}
+.hero-photo {
+  animation: hero-drift 9s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo { animation: none; }
+}
+
