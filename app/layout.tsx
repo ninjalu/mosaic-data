@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   keywords: ["operator due diligence", "buy-side due diligence", "operational due diligence", "acquisition due diligence UK", "customer cohort analysis", "revenue quality", "customer concentration", "margin by customer", "working capital peg", "independent searcher", "search fund", "holding company acquisition", "lower mid-market M&A"],
   icons: {
     icon: "/favicon.png",
-    apple: "/favicon.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "Brightmere | Operator Diligence for Buyers",

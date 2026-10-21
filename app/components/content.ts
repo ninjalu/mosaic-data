@@ -62,7 +62,7 @@ export const PRINCIPLES = [
   { t: "Every finding sized in pounds", b: "Ranked by what it does to the price, and traced back to the rows it came from." },
   { t: "Fixed before we start", b: "£15,000 per target, agreed up front. Half on instruction, half on delivery. No day rates." },
   { t: "We stop if the data can't answer", b: "The first few days map what the data can support. If it cannot, we say so, and you pay for those days only." },
-  { t: "The person you speak to does the work", b: "No layers between you and the analysis. Lu scopes it, runs it and walks you through it." },
+  { t: "Founder-led, start to finish", b: "Lu scopes every engagement, reviews every finding before it reaches you and walks you through the results." },
 ];
 
 export const NAV = [

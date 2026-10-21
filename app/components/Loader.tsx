@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { MARK_BANDS, MARK_GOLD } from "./Emblem";
 
 // Opening sequence, after the HaysMac logo intro: the three water lines draw in, the sun
 // rises over them, the wordmark appears, then the big emblem flies into the header logo while
@@ -56,16 +57,16 @@ export default function Loader() {
       <div className={`absolute inset-0 bg-ink transition-opacity duration-[900ms] ease-in ${phase === "fly" ? "opacity-0" : "opacity-100"}`} />
       <div className="relative h-full flex items-center justify-center">
         <div className="flex flex-col items-center">
-          <svg ref={mark} viewBox="0 0 130 120" className="w-[min(46vw,300px)] h-auto overflow-visible">
+          <svg ref={mark} viewBox="18 18 84 84" className="w-[min(36vw,220px)] h-auto overflow-visible">
             <clipPath id="loaderSky">
-              <rect x="0" y="0" width="130" height="66" />
+              <rect x="0" y="0" width="120" height="62" />
             </clipPath>
             <g clipPath="url(#loaderSky)">
-              <path d="M20,62 A45,45 0 0 1 110,62 Z" fill="#e3b23c" className="loader-sun" />
+              <path d={MARK_BANDS[0]} fill={MARK_GOLD} className="loader-sun" />
             </g>
-            <rect x="8" y="70" width="114" height="7" rx="3.5" fill="#ff9a82" opacity=".7" className="loader-line" style={{ animationDelay: "0ms" }} />
-            <rect x="24" y="84" width="82" height="6" rx="3" fill="#ff9a82" opacity=".4" className="loader-line" style={{ animationDelay: "120ms" }} />
-            <rect x="40" y="97" width="50" height="5" rx="2.5" fill="#ff9a82" opacity=".22" className="loader-line" style={{ animationDelay: "240ms" }} />
+            {MARK_BANDS.slice(1).map((d, i) => (
+              <path key={d} d={d} fill={MARK_GOLD} className="loader-line" style={{ animationDelay: `${i * 120}ms` }} />
+            ))}
           </svg>
           <span
             ref={word}

@@ -22,6 +22,7 @@ export default function PageHero({
   standfirst,
   sections,
   cta,
+  image,
 }: {
   eyebrow: string;
   title: string;
@@ -29,11 +30,12 @@ export default function PageHero({
   standfirst: string;
   sections?: { id: string; label: string }[];
   cta?: { label: string; href: string };
+  image?: string;
 }) {
   return (
     <>
       <section className="relative overflow-hidden bg-ink text-paper pt-40 md:pt-48 pb-16 md:pb-20 px-6 md:px-8">
-        <LakePhoto crop="shore" priority />
+        <LakePhoto src={image} crop="shore" priority />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--color-ink)_88%,transparent)_0%,color-mix(in_srgb,var(--color-ink)_62%,transparent)_50%,color-mix(in_srgb,var(--color-ink)_25%,transparent)_100%)]" />
         <div className="max-w-7xl mx-auto relative z-10">
           <p className="text-[13px] tracking-[0.28em] uppercase text-paper/60 mb-6">{eyebrow}</p>

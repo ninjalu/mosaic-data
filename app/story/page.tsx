@@ -64,6 +64,7 @@ export default function StoryPage() {
     <div className="min-h-screen bg-paper text-ink font-dm">
       <Header current="/story" />
       <PageHero
+        image="/story-ice.jpg"
         eyebrow="The story"
         title="Revenue doubled."
         accent="But the real business was sinking fast."
@@ -191,7 +192,7 @@ export default function StoryPage() {
       <section id="lesson" className="px-6 md:px-8 scroll-mt-36">
         <div className="max-w-7xl mx-auto bg-mist chamfer-r px-6 sm:px-12 md:px-20 py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-4">
-            <BrandPhoto src="/lu.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[340px]" />
+            <BrandPhoto src="/lu-headshot-2.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px]" />
           </div>
           <div className="lg:col-span-8">
             <h2 className="font-serif text-[40px] md:text-[56px] leading-none tracking-[-0.03em]">Why I built Brightmere</h2>

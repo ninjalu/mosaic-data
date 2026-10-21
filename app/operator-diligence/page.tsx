@@ -119,7 +119,7 @@ export default function OperatorDiligence() {
           <div className="mt-20 grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 lg:col-start-1 space-y-10">
               {[
-                { t: "Both records, read by one person", b: "Most people who can read a P&L can't pull apart millions of transaction lines, and most who can pull them apart can't read the P&L. Diligence below the trial balance needs both, in the same head." },
+                { t: "Both records, read together", b: "Most people who can read a P&L can't pull apart millions of transaction lines, and most who can pull them apart can't read the P&L. Diligence below the trial balance needs both, joined in one analysis." },
                 { t: "Priced for a £5-50m deal", b: "Transaction-level diligence has usually been a large-deal luxury. Fixed at £15,000 per target, it fits the deals where an average hides the most." },
                 { t: "Built to fit inside exclusivity", b: "A sharp answer before you sign beats a perfect one after the price is agreed. Two to three weeks from receiving the data." },
               ].map((w) => (
@@ -130,7 +130,7 @@ export default function OperatorDiligence() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:col-start-8">
-              <BrandPhoto src="/lu.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5]" />
+              <BrandPhoto src="/lu-headshot-2.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px]" />
             </div>
           </div>
         </div>
