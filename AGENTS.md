@@ -5,7 +5,7 @@
 ## Project info (auto-detected)
 
 **Stack:** Node.js, TypeScript, Next.js, React
-**Files:** ~58
+**Files:** ~56
 
 **Entry points:**
 - `npm run start`
@@ -34,7 +34,6 @@ app/
     Loader.tsx
     Logo.tsx
     PageHero.tsx
-    PaletteSwitcher.tsx
     Reveal.tsx
     SunStripes.tsx
     Wordmark.tsx
@@ -54,10 +53,11 @@ app/
   robots.ts
   sitemap.ts
 public/
+  favicon.ico
 ... (truncated)
 ```
 
-**Git:** branch: `redesign-premium` | last commit: 2026-10-20 | 29 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
+**Git:** branch: `main` | last commit: 2026-10-21 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
 
 ## AI-agent bridge (Codex / open-source)
 
@@ -65,7 +65,7 @@ Working notes for any AI agent (Codex, open-source, etc.) in this directory.
 
 ### Memory for this project
 No project memory has been recorded yet. As facts accumulate they will live at:
-`/Users/luluo/.claude/projects/-Users-luluo-luluo-brightmere-site-redesign/memory/MEMORY.md` (read it first once it exists).
+`/Users/luluo/.claude/projects/-Users-luluo-luluo-brightmere-site/memory/MEMORY.md` (read it first once it exists).
 
 ### Full protocol + skills catalog
 See the global bridge at `/Users/luluo/AGENTS.md` for the memory read/write protocol,
