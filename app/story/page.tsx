@@ -252,7 +252,7 @@ export default function StoryPage() {
                     systems the ledger is fed from. I can read both records, and join them.
                   </p>
                   <p className="text-[#1e2126]">
-                    Brightmere does that for buyers of £5-20m businesses: the target&apos;s own
+                    Brightmere does that for buyers of £5-50m businesses: the target&apos;s own
                     transactions, joined to its ledger, so you know whether the business
                     underneath the headline is the one you are paying for, before you sign.
                   </p>

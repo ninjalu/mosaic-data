@@ -1,11 +1,11 @@
 # Brightmere
 
-> Brightmere does operator due diligence for people buying a £5-20m UK business. Financial due diligence works from the trial balance and stops there; Brightmere starts below it, rebuilding the target's revenue, margin, cash needs and capacity from its own orders, invoices, stock movements and jobs, tied back to the ledger. It runs alongside the financial due diligence firm's work, not instead of it, and is not a quality of earnings (QoE) report. 2-3 weeks, £15,000 fixed per target, every finding sized in pounds. Founded and run by Lu Luo (accounting and economics, then corporate finance, then data science and engineering), London.
+> Brightmere does operator due diligence for people buying a £5-50m UK business. Financial due diligence works from the trial balance and stops there; Brightmere starts below it, rebuilding the target's revenue, margin, cash needs and capacity from its own orders, invoices, stock movements and jobs, tied back to the ledger. It includes quality of earnings tested at transaction level, and runs alongside the financial due diligence firm's work, not instead of it. 2-3 weeks, £15,000 fixed per target, every finding sized in pounds. Founded and run by Lu Luo (accounting and economics, then corporate finance, then data science and engineering), London.
 
 ## The engagement
 
 - Operator diligence: £15,000 fixed per target, 2-3 weeks. Half on instruction, half on delivery. If the first few days show the data cannot support the answers, the work stops and the buyer pays only for those days.
-- For: independent sponsors, holding companies, family offices and serial acquirers buying a £5-20m UK business, and the M&A advisers and lenders who run their diligence. Strongest fit: operationally complex targets with thousands of SKUs, customers, jobs or loads.
+- For: independent sponsors, holding companies, family offices and serial acquirers buying a £5-50m UK business, and the M&A advisers and lenders who run their diligence. Strongest fit: operationally complex targets with thousands of SKUs, customers, jobs or loads.
 - Deliverables: findings memo ranked by price impact, each finding sized in pounds and traced to source rows; the questions to put to the seller before signing; a working session with the buyer and advisers; the rebuilt dataset for use after completion.
 - Report is addressed to the buyer. Lender reliance comes from the financial due diligence firm.
 

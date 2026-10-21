@@ -6,8 +6,9 @@ import { BOOKING_URL } from "./components/booking";
 
 export default function Home() {
   // DD only (19 Oct 2026). One service, one buyer: operator diligence for people buying a
-  // business. Financial DD stops at the trial balance; this starts below it. Never called
-  // QoE, never sold as a replacement for the FDD firm's report (that firm gives lender reliance).
+  // business. Financial DD stops at the trial balance; this starts below it. Quality of
+  // earnings is part of the work, tested at transaction level (Lu, 21 Oct 2026). Lender
+  // reliance still comes from the FDD firm's report; we work alongside it.
   const checks = [
     {
       q: "Is the revenue real, and will it repeat?",
@@ -95,7 +96,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-greenmuted max-w-2xl mx-auto mb-6 leading-relaxed">
-            Before you buy a £5-20m business, we rebuild its revenue, margin, cash and capacity
+            Before you buy a £5-50m business, we rebuild its revenue, margin, cash and capacity
             from its own orders, invoices and jobs, and show you where the data room story and
             the transactions part ways. Alongside your financial due diligence, not instead of it.
           </p>
@@ -141,7 +142,7 @@ export default function Home() {
             </div>
             <div className="bg-white rounded-[14px] p-7 shadow-[0_2px_14px_rgba(30,33,38,0.06)]">
               <h3 className="text-lg font-semibold text-[#1e2126] mb-2">The deal is decided below it</h3>
-              <p className="text-[#75706c] text-sm">Retention, real margin, cash needs and capacity live in the order book, the job sheets, the TMS and the ERP. Few diligence teams open them, and rarely at a price that suits a £5-20m deal.</p>
+              <p className="text-[#75706c] text-sm">Retention, real margin, cash needs and capacity live in the order book, the job sheets, the TMS and the ERP. Few diligence teams open them, and rarely at a price that suits a £5-50m deal.</p>
             </div>
             <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-7">
               <h3 className="text-lg font-semibold text-[#1e2126] mb-2">We read that layer</h3>
@@ -215,7 +216,7 @@ export default function Home() {
               <p className="text-[#75706c] text-xs font-semibold uppercase tracking-wider mb-3">Who it is for</p>
               <p className="text-[#1e2126] mb-4">
                 Independent sponsors, holding companies, family offices and serial acquirers
-                buying a £5-20m UK business.
+                buying a £5-50m UK business.
               </p>
               <p className="text-[#75706c] text-sm mb-4">
                 It earns its fee fastest in operationally complex targets: thousands of SKUs,
@@ -281,9 +282,10 @@ export default function Home() {
             ))}
           </div>
           <p className="text-[#75706c] text-sm mt-8 max-w-3xl">
-            Brightmere is not an accountancy firm and this is not a quality of earnings report.
-            Our report is addressed to you. If your lender needs a report it can rely on, that
-            is the financial due diligence firm&apos;s, and we work alongside them.
+            Quality of earnings is part of the work: we test the earnings against the
+            transactions behind them, line by line. Our report is addressed to you. If your
+            lender needs a report it can formally rely on, that is the financial due diligence
+            firm&apos;s, and we work alongside them.
           </p>
         </div>
       </section>
@@ -354,8 +356,8 @@ export default function Home() {
                 a: "Because it answers a different question. The financial DD firm tests whether the earnings and net debt are what the seller says, working from the trial balance. We test whether the business underneath is what you are paying for: which customers stay, which jobs make money, how much cash it really needs and whether it can deliver the plan. That lives in the operational records, which financial DD rarely opens."
               },
               {
-                q: "Is this a quality of earnings report?",
-                a: "No, and we won't call it one. A QoE is an accountancy firm's report on earnings, and your lender will usually want one it can rely on. Our work sits alongside it and often gives that firm sharper questions to ask."
+                q: "Do you do quality of earnings?",
+                a: "Yes, at transaction level. We test whether the earnings are real and will repeat from the customers, orders and jobs behind them, and tie every adjustment back to the ledger. If your lender wants a report it can formally rely on, that comes from the financial DD firm, and we work alongside it."
               },
               {
                 q: "What do you need from the seller?",

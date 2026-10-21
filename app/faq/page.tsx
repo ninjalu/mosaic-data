@@ -7,14 +7,14 @@ import { BOOKING_URL } from "../components/booking";
 export const metadata: Metadata = {
   title: "FAQ | Brightmere - Operator Due Diligence, Answered Straight",
   description:
-    "Straight answers for people buying a £5-20m business: what operator due diligence is, how it differs from financial and commercial due diligence, whether a lender can rely on it, what it finds, what data it needs, how long it takes and what it costs.",
+    "Straight answers for people buying a £5-50m business: what operator due diligence is, how it differs from financial and commercial due diligence, whether a lender can rely on it, what it finds, what data it needs, how long it takes and what it costs.",
 };
 
 type QA = { q: string; a: string[] };
 type Section = { id: string; eyebrow: string; title: string; intro?: string; items: QA[] };
 
-// DD only (19 Oct 2026). Never call the work QoE; never imply accountancy-firm status.
-// Reliance for a lender comes from the financial DD firm, not from us.
+// DD only (19 Oct 2026). Quality of earnings is part of the work, tested at transaction level
+// (Lu, 21 Oct 2026). Never imply accountancy-firm status; lender reliance comes from the FDD firm.
 const SECTIONS: Section[] = [
   {
     id: "what-it-is",
@@ -38,13 +38,14 @@ const SECTIONS: Section[] = [
       {
         q: "How is it different from commercial due diligence?",
         a: [
-          "Commercial due diligence looks outward: the market, competitors, customer interviews. Operator diligence looks inward, at what the target's own transactions show. On a £5-20m deal, commercial DD is often skipped; the questions it would have asked about customers can usually be answered more cheaply, and more reliably, from the order book.",
+          "Commercial due diligence looks outward: the market, competitors, customer interviews. Operator diligence looks inward, at what the target's own transactions show. On a £5-50m deal, commercial DD is often skipped; the questions it would have asked about customers can usually be answered more cheaply, and more reliably, from the order book.",
         ],
       },
       {
-        q: "Is this a quality of earnings report?",
+        q: "Do you do quality of earnings?",
         a: [
-          "No, and we won't call it one. A quality of earnings report is an accountancy firm's work on earnings. Brightmere is not an accountancy firm. Our work sits alongside that report, and often gives the firm writing it sharper questions to ask.",
+          "Yes, at transaction level. Most quality of earnings work adjusts the reported numbers from the trial balance. We test whether the earnings are real and will repeat from the customers, orders and jobs behind them, and tie every adjustment back to the ledger.",
+          "If your lender needs a report it can formally rely on, that comes from the financial due diligence firm, and our findings often give that firm sharper questions to ask.",
         ],
       },
       {
