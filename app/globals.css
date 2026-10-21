@@ -216,7 +216,7 @@ details[open] .faq-plus {
     animation: loader-sun 1s cubic-bezier(.2,.7,.2,1) 0.45s both;
   }
   .loader-word {
-    animation: fade-up 0.7s ease-out 0.9s both;
+    animation: fade-up 0.8s ease-out 0.15s both;
   }
 }
 @keyframes sun-rise {

@@ -76,7 +76,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto">
           <a href="/" aria-label="Brightmere home" className="flex items-end gap-[2vw]">
             <span className="font-serif text-ink/85 tracking-[-0.04em] leading-[0.8] text-[15vw] lg:text-[190px]">brightmere</span>
-            <span className="pb-[1.2vw] lg:pb-4"><Emblem size={130} /></span>
+            <span className="pb-[3vw] lg:pb-10"><Emblem size={96} /></span>
           </a>
           <div className="mt-10 pt-5 border-t border-ink/20 flex flex-col sm:flex-row justify-between gap-2 text-[13px] text-ink/65">
             <span>&copy; 2026 Brightmere. Smart Pig Limited, trading as Brightmere.</span>
