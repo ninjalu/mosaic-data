@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import Wordmark from "../components/Wordmark";
 import Header from "../components/Header";
-import Emblem from "../components/Emblem";
-import { BOOKING_URL } from "../components/booking";
+import Footer from "../components/Footer";
+import PageHero from "../components/PageHero";
+import ContactBlock from "../components/ContactBlock";
 
 export const metadata: Metadata = {
   title: "FAQ | Brightmere - Operator Due Diligence, Answered Straight",
   description:
-    "Straight answers for people buying a £5-20m business: what operator due diligence is, how it differs from financial and commercial due diligence, whether a lender can rely on it, what it finds, what data it needs, how long it takes and what it costs.",
+    "Straight answers for people buying a £5-50m business: what operator due diligence is, how it differs from financial and commercial due diligence, whether a lender can rely on it, what it finds, what data it needs, how long it takes and what it costs.",
 };
 
 type QA = { q: string; a: string[] };
 type Section = { id: string; eyebrow: string; title: string; intro?: string; items: QA[] };
 
-// DD only (19 Oct 2026). Never call the work QoE; never imply accountancy-firm status.
+// DD only (19 Oct 2026). Quality of earnings is part of the work, tested at transaction level
+// (Lu, 21 Oct 2026). Never imply accountancy-firm status.
 // Reliance for a lender comes from the financial DD firm, not from us.
 const SECTIONS: Section[] = [
   {
@@ -38,13 +39,14 @@ const SECTIONS: Section[] = [
       {
         q: "How is it different from commercial due diligence?",
         a: [
-          "Commercial due diligence looks outward: the market, competitors, customer interviews. Operator diligence looks inward, at what the target's own transactions show. On a £5-20m deal, commercial DD is often skipped; the questions it would have asked about customers can usually be answered more cheaply, and more reliably, from the order book.",
+          "Commercial due diligence looks outward: the market, competitors, customer interviews. Operator diligence looks inward, at what the target's own transactions show. On a £5-50m deal, commercial DD is often skipped; the questions it would have asked about customers can usually be answered more cheaply, and more reliably, from the order book.",
         ],
       },
       {
-        q: "Is this a quality of earnings report?",
+        q: "Do you do quality of earnings?",
         a: [
-          "No, and we won't call it one. A quality of earnings report is an accountancy firm's work on earnings. Brightmere is not an accountancy firm. Our work sits alongside that report, and often gives the firm writing it sharper questions to ask.",
+          "Yes, at transaction level. Most quality of earnings work adjusts the reported numbers from the trial balance. We test whether the earnings are real and will repeat from the customers, orders and jobs behind them, and tie every adjustment back to the ledger.",
+          "If your lender needs a report it can formally rely on, that comes from the financial due diligence firm, and our findings often give that firm sharper questions to ask.",
         ],
       },
       {
@@ -168,139 +170,51 @@ function faqJsonLd() {
 }
 
 export default function FAQPage() {
+  const blocks = ["bg-mustard", "bg-blush", "bg-mist", "bg-moss"];
   return (
-    <div className="min-h-screen bg-[#faf7f5] text-[#1e2126]">
+    <div className="min-h-screen bg-paper text-ink font-dm">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }}
       />
-
       <Header current="/faq" />
+      <PageHero
+        eyebrow="Questions, answered"
+        title="Operator diligence,"
+        accent="answered straight."
+        standfirst="These are the questions buyers, advisers and lenders ask us most, answered the way we'd answer them on a call: plainly, including the parts that don't favour us."
+        sections={SECTIONS.map((s) => ({ id: s.id, label: s.title }))}
+        cta={{ label: "Ask on a call", href: "#contact" }}
+      />
 
-      {/* Hero */}
-      <section className="pt-36 pb-20 px-6 relative overflow-hidden bg-[linear-gradient(110deg,#16181c_0%,#1e2126_55%,#26292f_100%)]">
-        <div className="absolute top-28 left-[5%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float1" />
-        <div className="absolute top-44 right-[8%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float2" />
-        <div className="absolute bottom-16 left-[12%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float3" />
-        <div className="absolute bottom-28 right-[6%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float1" />
-
-        <div className="max-w-3xl mx-auto text-center relative z-10">
-          <p className="flex items-center justify-center gap-2.5 text-[13px] tracking-[3px] text-greenmuted font-semibold uppercase mb-4">
-            <span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />
-            Questions, answered
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-offwhite leading-[1.1] tracking-[-1px] mb-6">
-            Operator Diligence,{" "}
-            <span className="text-[#ff7a5c] [text-shadow:0_0_26px_rgba(255,122,92,0.4)]">
-              Answered Straight
-            </span>
-          </h1>
-          <p className="text-xl text-greenmuted max-w-2xl mx-auto leading-relaxed">
-            Brightmere checks whether a business you are buying is what its numbers say, from
-            its own transactions. These are the questions buyers, advisers and lenders ask us
-            most, answered the way we&apos;d answer them on a call: plainly, including the parts
-            that don&apos;t favour us.
-          </p>
-        </div>
-      </section>
-
-      {/* Section index */}
-      <section className="py-10 px-6 border-b border-[#eae5e1]">
-        <div className="max-w-5xl mx-auto flex flex-wrap gap-3 justify-center">
-          {SECTIONS.map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className="px-4 py-2 bg-white rounded-full text-sm font-medium text-[#75706c] shadow-[0_2px_14px_rgba(30,33,38,0.06)] hover:text-[#c24a36] transition-colors"
-            >
-              {s.title}
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQ sections */}
-      {SECTIONS.map((section) => (
-        <section key={section.id} id={section.id} className="py-16 px-6 scroll-mt-24">
-          <div className="max-w-3xl mx-auto">
-            <p className="flex items-center gap-2.5 text-[13px] tracking-[3px] text-[#75706c] font-semibold uppercase mb-3">
-              <span className="w-[9px] h-[9px] rounded-full bg-gold flex-shrink-0" />
-              {section.eyebrow}
-            </p>
-            <h2 className="text-3xl font-bold text-[#1e2126] mb-10 pb-4 border-b-2 border-[#eae5e1]">
-              {section.title}
-            </h2>
-
-            <div className="space-y-10">
+      {SECTIONS.map((section, si) => (
+        <section key={section.id} id={section.id} className="px-6 md:px-8 pt-16 md:pt-24 scroll-mt-36">
+          <div className={`max-w-7xl mx-auto ${blocks[si % blocks.length]} ${si % 2 ? "chamfer-r" : "chamfer"} px-6 sm:px-12 md:px-20 py-14 md:py-20 grid lg:grid-cols-12 gap-10`}>
+            <div className="lg:col-span-4">
+              <p className="text-[13px] tracking-[0.28em] uppercase text-ink/60 mb-5">{section.eyebrow}</p>
+              <h2 className="font-serif text-[38px] md:text-[52px] leading-none tracking-[-0.03em]">{section.title}</h2>
+            </div>
+            <div className="lg:col-span-8 border-t border-dotted border-ink/50">
               {section.items.map((item) => (
-                <div key={item.q}>
-                  <h3 className="text-xl font-semibold text-[#1e2126] mb-3">{item.q}</h3>
-                  {item.a.map((para, i) => (
-                    <p key={i} className="text-[#75706c] leading-relaxed mb-3">
-                      {para}
-                    </p>
-                  ))}
-                </div>
+                <details key={item.q} className="rule-dot group">
+                  <summary className="py-6 flex items-start justify-between gap-6 cursor-pointer">
+                    <span className="font-serif text-[24px] md:text-[30px] leading-[1.12] tracking-[-0.015em] group-hover:text-coral transition-colors">{item.q}</span>
+                    <span className="faq-plus text-[30px] font-light leading-none mt-1 transition-transform">+</span>
+                  </summary>
+                  <div className="pb-8 pr-6 space-y-4 text-[17px] leading-relaxed text-ink/85 max-w-3xl">
+                    {item.a.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
+                </details>
               ))}
             </div>
           </div>
         </section>
       ))}
 
-      {/* CTA */}
-      <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute top-12 left-[6%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float2" />
-        <div className="absolute top-28 right-[10%] w-6 h-6 bg-[#e85d47]/30 rounded-full animate-float1" />
-        <div className="absolute bottom-16 left-[14%] w-6 h-6 bg-[#e85d47]/35 rounded-full animate-float3" />
-        <div className="absolute bottom-28 right-[5%] w-6 h-6 bg-[#e85d47]/25 rounded-full animate-float2" />
-
-        <div className="max-w-3xl mx-auto relative z-10">
-          <div className="bg-gradient-to-br from-[#e85d47]/10 to-[#ff9a82]/20 border border-gold/30 rounded-[14px] p-10 md:p-14 text-center">
-            <h2 className="text-3xl font-bold text-[#1e2126] mb-4">
-              Have a question that isn&apos;t here?
-            </h2>
-            <p className="text-lg text-[#75706c] mb-8 max-w-xl mx-auto">
-              Ask it on a 30-minute call - no pitch deck, no obligation. Tell us about the
-              target and the timetable, and we&apos;ll tell you honestly whether we can help.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-                className="px-8 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors text-lg"
-              >
-                Book a call &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-24 px-6 text-center bg-[linear-gradient(110deg,#16181c_0%,#1e2126_60%,#26292f_100%)]">
-        <a href="/" className="inline-block">
-          <span className="flex justify-center mb-[18px]">
-            <Emblem width={86} height={79} />
-          </span>
-          <Wordmark dark big />
-        </a>
-        <p className="mt-4 text-sm tracking-[5px] uppercase text-greenmuted">London, UK</p>
-        <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          className="inline-block mt-9 px-9 py-4 bg-gold text-[#2b1209] rounded-full font-bold shadow-[0_6px_30px_rgba(232,93,71,0.3)] hover:bg-gold-deep transition-colors"
-        >
-          Book a call
-        </a>
-        <p className="mt-11 text-[13px] text-[#75706c]">
-          <a href="mailto:lu@brightmerehq.com" className="hover:text-gold transition-colors">
-            lu@brightmerehq.com
-          </a>{" "}
-          &middot; &copy; 2026 Brightmere
-        </p>
-      </footer>
+      <ContactBlock title="Have a question that isn't here?" />
+      <Footer />
     </div>
   );
 }
