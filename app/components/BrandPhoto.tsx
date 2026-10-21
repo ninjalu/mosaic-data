@@ -5,7 +5,7 @@ import SunStripes from "./SunStripes";
 export default function BrandPhoto({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
     <div className={`relative group chamfer-bl overflow-hidden ${className}`}>
-      <Image src={src} alt={alt} width={640} height={640} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+      <Image src={src} alt={alt} width={960} height={1200} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
       <SunStripes className="absolute left-[7%] bottom-0 w-[38%] h-auto translate-y-[2px]" />
     </div>
   );

@@ -62,30 +62,52 @@ export default function Home() {
         <div className="relative z-10 flex-1 flex items-end px-6 md:px-8 pt-40 pb-16">
           <div className="max-w-7xl mx-auto w-full">
             <p className="text-[13px] tracking-[0.28em] uppercase text-paper/80 mb-8">Operator diligence for buyers</p>
-            <h1 className="display drop-shadow-[0_2px_24px_rgba(8,30,29,0.35)] text-[48px] sm:text-[64px] md:text-[72px] lg:text-[88px] max-w-[34rem] md:max-w-[38rem] lg:max-w-[46rem]">
-              Financial due diligence stops at the trial balance.{" "}
-              <span className="italic text-coral-soft">We start below it.</span>
+            {/* Clarity first (Lu, 21 Oct 2026); the trial-balance line is the second layer. */}
+            <h1 className="display drop-shadow-[0_2px_24px_rgba(8,30,29,0.35)] text-[52px] sm:text-[72px] md:text-[84px] lg:text-[104px] max-w-[34rem] md:max-w-[40rem] lg:max-w-[52rem]">
+              Before you buy, <span className="italic text-coral-soft">see it clearly.</span>
             </h1>
+            <p className="mt-8 font-serif text-[22px] md:text-[28px] leading-[1.3] text-paper/90 max-w-[40rem] drop-shadow-[0_2px_16px_rgba(8,30,29,0.4)]">
+              Financial due diligence stops at the trial balance.<br className="hidden sm:block" /> We start below it.
+            </p>
           </div>
         </div>
-        {/* quick-link bar, as on HaysMac */}
-        <div className="relative z-10 grid grid-cols-4 text-ink">
-          {[
-            { label: "What we check", href: "/operator-diligence#what-we-check", bg: "bg-mustard" },
-            { label: "Who we work with", href: "/who-we-work-with", bg: "bg-mustard" },
-            { label: "How it runs", href: "/operator-diligence#how-it-runs", bg: "bg-mustard" },
-            { label: "Book a call", href: BOOKING_URL, bg: "bg-tint" },
-          ].map((q, i) => (
-            <a
-              key={q.label}
-              href={q.href}
-              {...(q.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className={`${q.bg} group flex items-center justify-center gap-2 px-1 py-5 md:py-8 whitespace-nowrap font-serif text-[clamp(10.5px,2.4vw,24px)] tracking-[-0.01em] border-ink/15 ${i > 0 ? "border-l" : ""} hover:bg-paper transition-colors`}
-            >
-              {q.label} <span className="hidden sm:inline text-[0.7em] group-hover:translate-x-1 transition-transform">&rarr;</span>
-            </a>
-          ))}
-        </div>
+        {/* Quick links (v2, Lu 21 Oct 2026: "more sophisticated"): a frosted strip on the photo -
+            number, serif title, one-line note, arrow. Book a call is the one solid accent. */}
+        <nav aria-label="Quick links" className="relative z-10 border-t border-paper/20 bg-ink/35 backdrop-blur-md text-paper">
+          <div className="grid grid-cols-2 lg:grid-cols-4">
+            {[
+              { n: "01", label: "What we check", note: "Six questions behind the price", href: "/operator-diligence#what-we-check" },
+              { n: "02", label: "Who we work with", note: "Buyers, advisers and lenders", href: "/who-we-work-with" },
+              { n: "03", label: "How it runs", note: "2-3 weeks, one fixed fee", href: "/operator-diligence#how-it-runs" },
+              { n: "04", label: "Book a call", note: "30 minutes on your deal", href: BOOKING_URL, cta: true },
+            ].map((q, i) => (
+              <a
+                key={q.label}
+                href={q.href}
+                {...(q.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={`group relative flex items-center justify-between gap-4 px-6 md:px-8 lg:px-10 py-5 md:py-7 transition-colors duration-300 ${
+                  q.cta ? "bg-mustard text-ink hover:bg-paper" : "hover:bg-paper/10"
+                } ${i % 2 ? "border-l border-paper/15" : ""} ${i === 2 ? "lg:border-l lg:border-paper/15" : ""} ${i > 1 ? "border-t lg:border-t-0 border-paper/15" : ""}`}
+              >
+                <span className="min-w-0">
+                  <span className={`block text-[11px] tracking-[0.24em] mb-2 ${q.cta ? "text-ink/60" : "text-paper/55"}`}>{q.n}</span>
+                  <span className="block font-serif text-[19px] md:text-[23px] leading-tight tracking-[-0.01em] whitespace-nowrap">{q.label}</span>
+                  <span className={`hidden md:block mt-1.5 text-[13px] truncate ${q.cta ? "text-ink/70" : "text-paper/65"}`}>{q.note}</span>
+                </span>
+                <span
+                  className={`shrink-0 grid place-items-center w-9 h-9 md:w-10 md:h-10 rounded-full border text-[15px] transition-all duration-300 group-hover:translate-x-1 ${
+                    q.cta ? "border-ink/30 group-hover:bg-ink group-hover:text-paper" : "border-paper/35 group-hover:bg-paper group-hover:text-ink"
+                  }`}
+                  aria-hidden="true"
+                >
+                  &rarr;
+                </span>
+                {/* underline that draws in on hover */}
+                <span className={`absolute left-6 md:left-8 right-6 md:right-8 bottom-0 h-px origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ${q.cta ? "bg-ink/40" : "bg-mustard"}`} />
+              </a>
+            ))}
+          </div>
+        </nav>
       </section>
 
       {/* Statement + story feature */}
@@ -119,7 +141,7 @@ export default function Home() {
             </a>
           </div>
           <a href="/story" className="relative block bg-ink text-paper chamfer group overflow-hidden aspect-[4/3]">
-            <LakePhoto crop="below" className="transition-transform duration-700 group-hover:scale-[1.03]" />
+            <LakePhoto src="/story-ice.jpg" crop="shore" className="transition-transform duration-700 group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-ink)_5%,transparent)_0%,color-mix(in_srgb,var(--color-ink)_85%,transparent)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
               <p className="font-serif text-[30px] md:text-[40px] leading-[1.05] tracking-[-0.025em]">
@@ -188,10 +210,10 @@ export default function Home() {
       <section className="px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
-            <BrandPhoto src="/lu.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[460px]" />
+            <BrandPhoto src="/lu-headshot-2.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px] lg:max-w-[340px]" />
           </div>
           <div className="lg:col-span-7">
-            <p className="text-[13px] tracking-[0.28em] uppercase text-slate mb-6">Who does the work</p>
+            <p className="text-[13px] tracking-[0.28em] uppercase text-slate mb-6">Who leads the work</p>
             <p className="font-serif text-[34px] md:text-[50px] leading-[1.08] tracking-[-0.025em]">
               Most people who can read a P&amp;L can&apos;t pull apart millions of transaction lines.{" "}
               <span className="text-coral">Diligence below the trial balance needs both.</span>
@@ -199,7 +221,8 @@ export default function Home() {
             <p className="mt-8 text-slate text-[17px] leading-relaxed max-w-2xl">
               Lu Luo trained in accounting and economics, started out in accounting and corporate
               finance, then spent years in data science and engineering building the systems finance
-              teams report from. Lu works from London and runs every engagement personally.
+              teams report from. Lu founded Brightmere and leads every engagement from London: scoping
+              it, reviewing every finding and walking you through the results.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <a href="/about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-ink text-paper hover:bg-ink-soft transition-colors">
@@ -220,7 +243,9 @@ export default function Home() {
           { t: "Questions, answered", b: "Reliance, QoE, the working capital peg, data, timing", href: "/faq", cta: "Read the FAQ" },
         ].map((tile, i) => (
           <a key={tile.t} href={tile.href} className="relative block overflow-hidden bg-ink text-paper min-h-[380px] group">
-            <LakePhoto crop={i === 0 ? "peaks" : "below"} className="transition-transform duration-700 group-hover:scale-[1.03]" />
+            {/* Clear alpine lake, stones visible (Andrew, Unsplash Licence) / foggy path beside an
+                alpine lake (Zion C, Unsplash Licence) */}
+            <LakePhoto src={i === 0 ? "/tile-clear-water.jpg" : "/tile-mountain-path.jpg"} crop={i === 0 ? "below" : "shore"} className="transition-transform duration-700 group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-ink)_10%,transparent)_0%,color-mix(in_srgb,var(--color-ink)_85%,transparent)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
               <p className="font-serif text-[44px] md:text-[56px] leading-none tracking-[-0.03em]">{tile.t}</p>

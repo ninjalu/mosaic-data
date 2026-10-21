@@ -53,7 +53,7 @@ export default function About() {
         </div>
         <div className="bg-blush px-6 md:px-12 py-16 md:py-24 flex flex-col justify-center">
           <a href="/story" className="relative block bg-ink text-paper chamfer overflow-hidden aspect-[4/3] group">
-            <LakePhoto crop="below" className="transition-transform duration-700 group-hover:scale-[1.03]" />
+            <LakePhoto src="/story-ice.jpg" crop="shore" className="transition-transform duration-700 group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-ink)_20%,transparent)_0%,color-mix(in_srgb,var(--color-ink)_85%,transparent)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
               <p className="text-[12px] tracking-[0.22em] uppercase text-mustard mb-3">The story</p>
@@ -93,7 +93,7 @@ export default function About() {
       <section id="lu" className="px-6 md:px-8 py-24 md:py-32 scroll-mt-36">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
-            <BrandPhoto src="/lu.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5]" />
+            <BrandPhoto src="/lu-headshot-2.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[320px]" />
             <p className="mt-6 font-serif text-[36px] tracking-[-0.02em] leading-none">Lu Luo</p>
             <p className="mt-2 text-slate">Founder, London</p>
           </div>
@@ -112,9 +112,9 @@ export default function About() {
               <p>
                 Most people who can read a P&amp;L can&apos;t pull apart millions of transaction
                 lines, and most who can pull them apart can&apos;t read the P&amp;L. Diligence below
-                the trial balance needs both. I can read both records, and join them.
+                the trial balance needs both. Brightmere is built to read both records, and join them.
               </p>
-              <p className="text-ink">I work from London and I do the work myself.</p>
+              <p className="text-ink">I lead every engagement from London, and every finding is reviewed by me before it reaches you.</p>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 # Brightmere
 
-> Brightmere does operator due diligence for people buying a £5-50m UK business. Financial due diligence works from the trial balance and stops there; Brightmere starts below it, rebuilding the target's revenue, margin, cash needs and capacity from its own orders, invoices, stock movements and jobs, tied back to the ledger. It includes quality of earnings tested at transaction level, and runs alongside the financial due diligence firm's work, not instead of it. 2-3 weeks, £15,000 fixed per target, every finding sized in pounds. Founded and run by Lu Luo (accounting and economics, then corporate finance, then data science and engineering), London.
+> Brightmere does operator due diligence for people buying a £5-50m UK business. Financial due diligence works from the trial balance and stops there; Brightmere starts below it, rebuilding the target's revenue, margin, cash needs and capacity from its own orders, invoices, stock movements and jobs, tied back to the ledger. It includes quality of earnings tested at transaction level, and runs alongside the financial due diligence firm's work, not instead of it. 2-3 weeks, £15,000 fixed per target, every finding sized in pounds. Founded and led by Lu Luo (accounting and economics, then corporate finance, then data science and engineering), London.
 
 ## The engagement
 

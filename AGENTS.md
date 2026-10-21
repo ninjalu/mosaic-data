@@ -5,7 +5,7 @@
 ## Project info (auto-detected)
 
 **Stack:** Node.js, TypeScript, Next.js, React
-**Files:** ~58
+**Files:** ~61
 
 **Entry points:**
 - `npm run start`
@@ -34,7 +34,6 @@ app/
     Loader.tsx
     Logo.tsx
     PageHero.tsx
-    PaletteSwitcher.tsx
     Reveal.tsx
     SunStripes.tsx
     Wordmark.tsx
@@ -54,10 +53,11 @@ app/
   robots.ts
   sitemap.ts
 public/
+  favicon.ico
 ... (truncated)
 ```
 
-**Git:** branch: `redesign-premium` | last commit: 2026-10-20 | 29 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
+**Git:** branch: `redesign-premium` | last commit: 2026-10-21 | 14 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
 
 ## AI-agent bridge (Codex / open-source)
 
