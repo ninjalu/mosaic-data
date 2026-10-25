@@ -210,7 +210,7 @@ export default function Home() {
       <section className="px-6 md:px-8 py-24 md:py-32">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
-            <BrandPhoto src="/lu-headshot-2.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px] lg:max-w-[340px]" />
+            <BrandPhoto src="/lu-headshot-0281bw.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px] lg:max-w-[340px]" />
           </div>
           <div className="lg:col-span-7">
             <p className="text-[13px] tracking-[0.28em] uppercase text-slate mb-6">Who leads the work</p>

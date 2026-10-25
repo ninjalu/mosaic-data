@@ -130,7 +130,7 @@ export default function OperatorDiligence() {
               ))}
             </div>
             <div className="lg:col-span-5 lg:col-start-8">
-              <BrandPhoto src="/lu-headshot-2.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px]" />
+              <BrandPhoto src="/lu-headshot-0281bw.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px]" />
             </div>
           </div>
         </div>

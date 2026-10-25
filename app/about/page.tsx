@@ -93,7 +93,7 @@ export default function About() {
       <section id="lu" className="px-6 md:px-8 py-24 md:py-32 scroll-mt-36">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
-            <BrandPhoto src="/lu-headshot-2.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[320px]" />
+            <BrandPhoto src="/lu-headshot-0281bw.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[320px]" />
             <p className="mt-6 font-serif text-[36px] tracking-[-0.02em] leading-none">Lu Luo</p>
             <p className="mt-2 text-slate">Founder, London</p>
           </div>
