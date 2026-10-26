@@ -192,7 +192,7 @@ export default function StoryPage() {
       <section id="lesson" className="px-6 md:px-8 scroll-mt-36">
         <div className="max-w-7xl mx-auto bg-mist chamfer-r px-6 sm:px-12 md:px-20 py-16 md:py-24 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-4">
-            <BrandPhoto src="/lu-headshot-0281bw.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px]" />
+            <BrandPhoto src="/lu-headshot-0303bw.jpg" alt="Lu Luo, founder of Brightmere" className="aspect-[4/5] max-w-[300px]" />
           </div>
           <div className="lg:col-span-8">
             <h2 className="font-serif text-[40px] md:text-[56px] leading-none tracking-[-0.03em]">Why I built Brightmere</h2>
