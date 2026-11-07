@@ -57,7 +57,7 @@ public/
 ... (truncated)
 ```
 
-**Git:** branch: `main` | last commit: 2026-11-05 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
+**Git:** branch: `main` | last commit: 2026-11-06 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
 
 ## AI-agent bridge (Codex / open-source)
 
