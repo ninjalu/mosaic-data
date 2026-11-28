@@ -57,7 +57,7 @@ public/
 ... (truncated)
 ```
 
-**Git:** branch: `main` | last commit: 2026-11-26 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
+**Git:** branch: `main` | last commit: 2026-11-27 | 1 uncommitted | remote: https://github.com/ninjalu/mosaic-data.git
 
 ## AI-agent bridge (Codex / open-source)
 
@@ -69,6 +69,6 @@ No project memory has been recorded yet. As facts accumulate they will live at:
 
 ### Full protocol + skills catalog
 See the global bridge at `/Users/luluo/AGENTS.md` for the memory read/write protocol,
-the catalog of all 24 skills, and how to invoke them.
+the catalog of all 25 skills, and how to invoke them.
 
 <!-- END build-bridge -->
